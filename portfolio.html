@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio — Anindya Mutsuddy</title>
+  <title>Portfolio &mdash; Anindya Mutsuddy</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,89 +30,26 @@
     section { margin-bottom: 72px; scroll-margin-top: 40px; }
     .section-label { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
     .section-title { font-size: 1.85rem; font-weight: 800; color: var(--navy); margin-bottom: 28px; line-height: 1.2; }
-    .about-text { font-size: 1rem; line-height: 1.85; color: var(--text); max-width: 640px; }
-    .about-text strong { color: var(--navy); }
-    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .tag { background: var(--navy); color: var(--white); font-size: 0.78rem; font-weight: 500; padding: 6px 14px; border-radius: 20px; }
-    .tag.gold { background: var(--gold); color: var(--navy); }
-    .timeline { display: flex; flex-direction: column; gap: 24px; }
-    .card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; }
-    .card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
-    .card-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
-    .card-date { font-size: 0.73rem; font-weight: 600; background: rgba(240,180,41,0.15); color: #a07000; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
-    .card-subtitle { font-size: 0.84rem; color: var(--text-light); margin-bottom: 14px; font-style: italic; }
-    .card-subtitle strong { color: var(--navy); font-style: normal; }
-    .card ul { padding-left: 18px; }
-    .card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
-    .card ul li::marker { color: var(--gold); }
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .skill-group { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); }
-    .skill-group h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-tag { background: var(--off-white); border: 1px solid var(--border); color: var(--text); font-size: 0.77rem; font-weight: 500; padding: 5px 12px; border-radius: 8px; transition: all 0.2s; }
-    .skill-tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .lang-grid { display: flex; flex-wrap: wrap; gap: 16px; }
-    .lang-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 22px; display: flex; flex-direction: column; gap: 4px; min-width: 130px; }
-    .lang-card:hover { box-shadow: 0 4px 16px rgba(26,39,68,0.08); }
-    .lang-name { font-weight: 700; font-size: 0.93rem; color: var(--navy); }
-    .lang-level { font-size: 0.7rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
-    .lang-bar { height: 4px; border-radius: 4px; background: var(--border); margin-top: 6px; overflow: hidden; }
-    .lang-bar-fill { height: 100%; background: var(--gold); border-radius: 4px; }
-    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
-    .interest-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
-    .interest-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(240,180,41,0.15); transform: translateY(-3px); }
-    .interest-emoji { font-size: 1.9rem; margin-bottom: 10px; }
-    .interest-name { font-size: 0.87rem; font-weight: 600; color: var(--navy); }
-    .interest-desc { font-size: 0.74rem; color: var(--text-light); margin-top: 4px; line-height: 1.4; }
+    .empty-state { text-align: center; padding: 80px 32px; background: var(--white); border-radius: 20px; border: 2px dashed var(--border); }
+    .empty-icon { font-size: 3rem; margin-bottom: 18px; }
+    .empty-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .empty-text { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; max-width: 340px; margin: 0 auto; }
     footer { text-align: center; padding: 32px 0 0; font-size: 0.8rem; color: var(--text-light); border-top: 1px solid var(--border); }
     footer span { color: var(--gold); }
-    .empty-state { text-align: center; padding: 72px 32px; background: var(--white); border-radius: 16px; border: 2px dashed var(--border); }
-    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 16px; }
-    .empty-state h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .empty-state p { font-size: 0.88rem; color: var(--text-light); max-width: 360px; margin: 0 auto; line-height: 1.6; }
-    .blog-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; display: block; color: inherit; }
-    .blog-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
-    .blog-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
-    .blog-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(240,180,41,0.15); color: #a07000; padding: 3px 10px; border-radius: 20px; }
-    .blog-date { font-size: 0.75rem; color: var(--text-light); }
-    .blog-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .blog-excerpt { font-size: 0.87rem; color: var(--text-light); line-height: 1.6; }
-    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .cert-card { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); transition: all 0.2s; display: flex; flex-direction: column; gap: 6px; }
-    .cert-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); border-color: var(--gold); }
-    .cert-icon { font-size: 1.8rem; margin-bottom: 4px; }
-    .cert-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
-    .cert-issuer { font-size: 0.8rem; color: var(--text-light); }
-    .cert-status { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 20px; margin-top: 4px; }
-    .cert-status.planned { background: rgba(113,128,150,0.12); color: var(--text-light); }
-    .cert-status.inprogress { background: rgba(240,180,41,0.15); color: #a07000; }
-    .cert-status.earned { background: rgba(72,187,120,0.15); color: #276749; }
-    .portfolio-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; }
-    .portfolio-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
-    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
-    .portfolio-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
-    .portfolio-size { font-size: 0.73rem; font-weight: 700; background: var(--navy); color: var(--gold); padding: 4px 12px; border-radius: 20px; }
-    .portfolio-sector { font-size: 0.8rem; color: var(--text-light); margin-bottom: 12px; font-style: italic; }
-    .portfolio-card ul { padding-left: 18px; }
-    .portfolio-card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
-    .portfolio-card ul li::marker { color: var(--gold); }
-    @media (max-width: 768px) {
-      .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; }
-      .main { margin-left: 0; padding: 32px 24px; }
-      body { flex-direction: column; }
-      .skills-grid, .cert-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 768px) { .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; } .main { margin-left: 0; padding: 32px 24px; } body { flex-direction: column; } }
 </style>
 </head>
-<body><aside class="sidebar">
+<body>
+<aside class="sidebar">
   <div class="sidebar-profile">
     <div class="avatar">AM</div>
     <h1>Anindya Mutsuddy</h1>
     <p class="title">Investment Analyst<br/>Corporate Finance Analyst</p>
   </div>
   <hr class="sidebar-divider"/>
-  <nav><p class="nav-label">Pages</p><ul><li><a href="index.html#about">&#128100; About</a></li><li><a href="certifications.html">&#127942; Certifications</a></li><li><a href="blog.html">&#9997;&#65039; Blog</a></li><li><a href="portfolio.html" class="active">&#128188; Portfolio</a></li></ul>
+  <nav>
+    <p class="nav-label">Pages</p>
+    <ul><li><a href="index.html#about">&#128100; About</a></li><li><a href="certifications.html">&#127942; Certifications</a></li><li><a href="blog.html">&#9997;&#65039; Blog</a></li><li><a href="portfolio.html" class="active">&#128188; Portfolio</a></li></ul>
   </nav>
   <div class="sidebar-contact">
     <p>Contact</p>
@@ -122,46 +59,16 @@
   </div>
 </aside>
 <main class="main">
-  <section id="portfolio">
+  <section>
     <div class="section-label">Deal Work</div>
     <h2 class="section-title">Portfolio</h2>
-    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:28px;line-height:1.7;max-width:600px;">A selection of anonymised transactions and financial work from my time at ZA Capital Advisory. Deal names and counterparties have been withheld in line with confidentiality obligations.</p>
-    <div class="timeline">
-      <div class="portfolio-card">
-        <div class="portfolio-header"><span class="portfolio-title">REIT Launch &mdash; Feasibility &amp; Valuation</span><span class="portfolio-size">$500M</span></div>
-        <p class="portfolio-sector">Real Estate &middot; Fund Structuring &middot; 2023</p>
-        <ul>
-          <li>Delivered full feasibility study and 3-scenario valuation model for a real estate investment trust launch</li>
-          <li>Authored REIT whitepaper used in investor roadshows; fund secured ~80% subscription within 6 months</li>
-          <li>Tools: Excel (DCF, sensitivity), PowerPoint (investor deck)</li>
-        </ul>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-header"><span class="portfolio-title">Gas Transmission Equity Advisory</span><span class="portfolio-size">$2.6B</span></div>
-        <p class="portfolio-sector">Energy &middot; Equity Placement &middot; 2022&ndash;2023</p>
-        <ul>
-          <li>Co-led advisory team to a premier gas transmission company; assessed 5+ financing structures</li>
-          <li>Built integrated financial model supporting successful offload of 6% equity to institutional investors</li>
-          <li>Additional tranches in progress at time of departure</li>
-        </ul>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-header"><span class="portfolio-title">Eco Resort &mdash; Debt Structuring</span><span class="portfolio-size">$20M</span></div>
-        <p class="portfolio-sector">Hospitality &middot; Debt Financing &middot; 2022</p>
-        <ul>
-          <li>Built sensitivity model across 3 funding scenarios; identified optimal debt-equity mix</li>
-          <li>Secured $2.5M in government subsidies and $8M in syndicated debt; managed full client lifecycle to first tranche disbursement</li>
-        </ul>
-      </div>
-      <div class="portfolio-card">
-        <div class="portfolio-header"><span class="portfolio-title">Recommerce Startup &mdash; Series A Advisory</span><span class="portfolio-size">$10M</span></div>
-        <p class="portfolio-sector">Technology &middot; Venture / Growth Equity &middot; 2022</p>
-        <ul>
-          <li>Conducted due diligence across 4 business units; identified key value drivers and risk factors</li>
-          <li>Financial model supported $10M Series A raise at <strong>23% above target valuation</strong></li>
-        </ul>
-      </div>
+    <div class="empty-state">
+      <div class="empty-icon">&#128188;</div>
+      <div class="empty-title">Coming soon</div>
+      <p class="empty-text">A selection of anonymised deal work and financial models will be showcased here shortly.</p>
     </div>
   </section>
   <footer><p>Built with love by <span>Anindya Mutsuddy</span> &middot; Antwerp, Belgium</p></footer>
-</main></body></html>
+</main>
+</body>
+</html>
