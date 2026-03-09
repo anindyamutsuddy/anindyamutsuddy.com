@@ -150,6 +150,32 @@
       a[href]::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
       .contact-btn::after { display: none; }
     }
+  
+    /* ── Dark mode text & tag fixes ── */
+    [data-theme="dark"] .about-text          { color: var(--text); }
+    [data-theme="dark"] .about-text strong   { color: var(--gold); }
+    [data-theme="dark"] .tag                 { background: #2a2420; color: var(--text); border: 1px solid var(--border); }
+    [data-theme="dark"] .tag.gold            { background: rgba(201,168,76,0.18); color: var(--gold); border-color: rgba(201,168,76,0.3); }
+    [data-theme="dark"] #last-updated        { color: var(--text-light) !important; }
+    [data-theme="dark"] #last-updated strong { color: var(--text) !important; }
+    [data-theme="dark"] .card-title          { color: var(--text); }
+    [data-theme="dark"] .card-date           { color: var(--text-light); }
+    [data-theme="dark"] .card-subtitle       { color: var(--text-light); }
+    [data-theme="dark"] .card li             { color: var(--text); }
+    [data-theme="dark"] .skill-group h3      { color: var(--text); }
+    [data-theme="dark"] .empty-title         { color: var(--text); }
+    [data-theme="dark"] .empty-text          { color: var(--text-light); }
+    [data-theme="dark"] .section-label       { color: var(--navy); }
+    [data-theme="dark"] .pub-meta            { color: var(--text-light); }
+    [data-theme="dark"] .pub-meta strong     { color: var(--text); }
+    [data-theme="dark"] .book-note           { color: var(--text-light); }
+    [data-theme="dark"] .cert-issuer         { color: var(--text-light); }
+    [data-theme="dark"] .cert-list li        { color: var(--text); }
+    [data-theme="dark"] .activity-desc       { color: var(--text-light); }
+    [data-theme="dark"] .interest-desc       { color: var(--text-light); }
+    [data-theme="dark"] .interest-name       { color: var(--text); }
+    [data-theme="dark"] .lang-level          { color: var(--text-light); }
+    [data-theme="dark"] .lang-name           { color: var(--text); }
   </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWSFJ02YDR"></script>

@@ -43,8 +43,7 @@
 <div class="overlay" id="overlay"></div>
 <aside class="sidebar">
   <div class="sidebar-profile">
-    <img src="${PHOTO}" class="avatar" alt="${NAME}"
-         onerror="this.onerror=null;this.src='';this.outerHTML='<div class=\'avatar avatar-initials\'>AM</div>'"/>
+    <div style="position:relative;width:100px;height:100px;margin:0 auto 16px;"><div class="avatar avatar-initials" style="position:absolute;inset:0;margin:0;">AM</div><img src="${PHOTO}" class="avatar" alt="${NAME}" style="position:absolute;inset:0;margin:0;" onerror="this.style.display='none'"/></div>
     <h1>${NAME}</h1>
     <p class="title">${TITLE}</p>
     <div class="open-to-work"><span class="otw-dot"></span>Open to opportunities</div>
