@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home — Anindya Mutsuddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #1a2744; --gold: #f0b429; --white: #ffffff; --off-white: #f8f9fc; --text: #2d3748; --text-light: #718096; --border: #e2e8f0; --sidebar-width: 300px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--off-white); color: var(--text); display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-width); background: var(--navy); position: fixed; top: 0; left: 0; height: 100vh; display: flex; flex-direction: column; padding: 48px 32px; overflow-y: auto; z-index: 100; }
+    .sidebar-profile { text-align: center; margin-bottom: 32px; }
+    .avatar { width: 88px; height: 88px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 800; color: var(--navy); margin: 0 auto 14px; }
+    .sidebar h1 { color: var(--white); font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+    .sidebar .title { color: var(--gold); font-size: 0.76rem; font-weight: 500; margin-top: 6px; line-height: 1.4; }
+    .sidebar-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 18px 0; }
+    .nav-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); padding: 0 14px; margin-bottom: 6px; margin-top: 4px; }
+    nav ul { list-style: none; }
+    nav ul li { margin-bottom: 2px; }
+    nav ul li a { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.83rem; font-weight: 500; padding: 8px 14px; border-radius: 8px; transition: all 0.2s; }
+    nav ul li a:hover, nav ul li a.active { background: rgba(240,180,41,0.12); color: var(--gold); }
+    .sidebar-contact { margin-top: auto; padding-top: 24px; }
+    .sidebar-contact p { font-size: 0.65rem; color: rgba(255,255,255,0.3); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+    .contact-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+    .contact-item a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.75rem; transition: color 0.2s; word-break: break-all; line-height: 1.4; }
+    .contact-item a:hover { color: var(--gold); }
+    .main { margin-left: var(--sidebar-width); flex: 1; padding: 60px 56px; max-width: 920px; }
+    section { margin-bottom: 72px; scroll-margin-top: 40px; }
+    .section-label { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+    .section-title { font-size: 1.85rem; font-weight: 800; color: var(--navy); margin-bottom: 28px; line-height: 1.2; }
+    .about-text { font-size: 1rem; line-height: 1.85; color: var(--text); max-width: 640px; }
+    .about-text strong { color: var(--navy); }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .tag { background: var(--navy); color: var(--white); font-size: 0.78rem; font-weight: 500; padding: 6px 14px; border-radius: 20px; }
+    .tag.gold { background: var(--gold); color: var(--navy); }
+    .timeline { display: flex; flex-direction: column; gap: 24px; }
+    .card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; }
+    .card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+    .card-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+    .card-date { font-size: 0.73rem; font-weight: 600; background: rgba(240,180,41,0.15); color: #a07000; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .card-subtitle { font-size: 0.84rem; color: var(--text-light); margin-bottom: 14px; font-style: italic; }
+    .card-subtitle strong { color: var(--navy); font-style: normal; }
+    .card ul { padding-left: 18px; }
+    .card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
+    .card ul li::marker { color: var(--gold); }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .skill-group { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); }
+    .skill-group h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { background: var(--off-white); border: 1px solid var(--border); color: var(--text); font-size: 0.77rem; font-weight: 500; padding: 5px 12px; border-radius: 8px; transition: all 0.2s; }
+    .skill-tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .lang-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+    .lang-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 22px; display: flex; flex-direction: column; gap: 4px; min-width: 130px; }
+    .lang-card:hover { box-shadow: 0 4px 16px rgba(26,39,68,0.08); }
+    .lang-name { font-weight: 700; font-size: 0.93rem; color: var(--navy); }
+    .lang-level { font-size: 0.7rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+    .lang-bar { height: 4px; border-radius: 4px; background: var(--border); margin-top: 6px; overflow: hidden; }
+    .lang-bar-fill { height: 100%; background: var(--gold); border-radius: 4px; }
+    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+    .interest-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
+    .interest-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(240,180,41,0.15); transform: translateY(-3px); }
+    .interest-emoji { font-size: 1.9rem; margin-bottom: 10px; }
+    .interest-name { font-size: 0.87rem; font-weight: 600; color: var(--navy); }
+    .interest-desc { font-size: 0.74rem; color: var(--text-light); margin-top: 4px; line-height: 1.4; }
+    footer { text-align: center; padding: 32px 0 0; font-size: 0.8rem; color: var(--text-light); border-top: 1px solid var(--border); }
+    footer span { color: var(--gold); }
+    .empty-state { text-align: center; padding: 72px 32px; background: var(--white); border-radius: 16px; border: 2px dashed var(--border); }
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+    .empty-state h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .empty-state p { font-size: 0.88rem; color: var(--text-light); max-width: 360px; margin: 0 auto; line-height: 1.6; }
+    .blog-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; display: block; color: inherit; }
+    .blog-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .blog-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .blog-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(240,180,41,0.15); color: #a07000; padding: 3px 10px; border-radius: 20px; }
+    .blog-date { font-size: 0.75rem; color: var(--text-light); }
+    .blog-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .blog-excerpt { font-size: 0.87rem; color: var(--text-light); line-height: 1.6; }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .cert-card { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); transition: all 0.2s; display: flex; flex-direction: column; gap: 6px; }
+    .cert-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); border-color: var(--gold); }
+    .cert-icon { font-size: 1.8rem; margin-bottom: 4px; }
+    .cert-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .cert-issuer { font-size: 0.8rem; color: var(--text-light); }
+    .cert-status { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 20px; margin-top: 4px; }
+    .cert-status.planned { background: rgba(113,128,150,0.12); color: var(--text-light); }
+    .cert-status.inprogress { background: rgba(240,180,41,0.15); color: #a07000; }
+    .cert-status.earned { background: rgba(72,187,120,0.15); color: #276749; }
+    .portfolio-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; }
+    .portfolio-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .portfolio-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+    .portfolio-size { font-size: 0.73rem; font-weight: 700; background: var(--navy); color: var(--gold); padding: 4px 12px; border-radius: 20px; }
+    .portfolio-sector { font-size: 0.8rem; color: var(--text-light); margin-bottom: 12px; font-style: italic; }
+    .portfolio-card ul { padding-left: 18px; }
+    .portfolio-card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
+    .portfolio-card ul li::marker { color: var(--gold); }
+    @media (max-width: 768px) {
+      .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; }
+      .main { margin-left: 0; padding: 32px 24px; }
+      body { flex-direction: column; }
+      .skills-grid, .cert-grid { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body><aside class="sidebar">
+  <div class="sidebar-profile">
+    <div class="avatar">AM</div>
+    <h1>Anindya Mutsuddy</h1>
+    <p class="title">Investment Analyst<br/>Corporate Finance Analyst</p>
+  </div>
+  <hr class="sidebar-divider"/>
+  <nav><p class="nav-label">Sections</p><ul><li><a href="#about" class="active">&#128100; About</a></li><li><a href="#experience">&#128188; Experience</a></li><li><a href="#education">&#127891; Education</a></li><li><a href="#skills">&#128295; Skills</a></li><li><a href="#languages">&#127758; Languages</a></li><li><a href="#interests">&#10024; Interests</a></li></ul><hr class="sidebar-divider"/><p class="nav-label">Pages</p><ul><li><a href="certifications.html">&#127942; Certifications</a></li><li><a href="blog.html">&#9997;&#65039; Blog</a></li><li><a href="portfolio.html">&#128188; Portfolio</a></li></ul>
+  </nav>
+  <div class="sidebar-contact">
+    <p>Contact</p>
+    <div class="contact-item"><span>&#128231;</span><a href="mailto:anindya.mutsuddy@gmail.com">anindya.mutsuddy@gmail.com</a></div>
+    <div class="contact-item"><span>&#128205;</span><a href="#">Antwerp, Belgium</a></div>
+    <div class="contact-item"><span>&#128279;</span><a href="https://linkedin.com/in/anindyamutsuddy" target="_blank">linkedin.com/in/anindyamutsuddy</a></div>
+  </div>
+</aside>
+<main class="main">
+  <section id="about">
+    <div class="section-label">Hello there</div>
+    <h2 class="section-title">About Me</h2>
+    <p class="about-text">As an <strong>MBA graduate (Cum Laude, KU Leuven)</strong>, I chose corporate finance because numbers directly shape how businesses grow, raise capital and create value &mdash; and I want to contribute to that process with rigour and real commercial intent.<br/><br/>Relocated to Belgium to build a career in corporate finance, I bring <strong>advisory exposure and live deal experience</strong> underpinning over $3B in financing decisions. I want to work for organisations where financial analysis drives meaningful decisions.<br/><br/>Currently on a <strong>zoekjaar permit</strong>, actively seeking an analyst role in corporate finance, investment banking or commercial lending in the <strong>Benelux region</strong>.</p>
+    <div class="about-tags">
+      <span class="tag gold">&#128205; Antwerp, Belgium</span>
+      <span class="tag">Corporate Finance</span>
+      <span class="tag">Investment Banking</span>
+      <span class="tag">DCF &amp; Valuation</span>
+      <span class="tag">Benelux</span>
+    </div>
+  </section>
+  <section id="experience">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="timeline">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Investment Analyst / Corporate Finance Analyst</span><span class="card-date">Apr 2022 &ndash; Dec 2023</span></div>
+        <p class="card-subtitle"><strong>ZA Capital Advisory</strong> &middot; Boutique Investment Bank &middot; Dhaka, Bangladesh</p>
+        <ul>
+          <li>Managed 8+ client mandates across real estate, energy, manufacturing and technology &mdash; from early-stage start-ups to international conglomerates</li>
+          <li>Built DCF valuations, sensitivity analyses and feasibility models underpinning over <strong>$3B in financing decisions</strong>, from runway and treasury planning to syndicated credit facilities</li>
+          <li>Coordinated multidisciplinary deal teams to structure transactions, ensuring full regulatory and documentation compliance</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">Research Trainee (Internship)</span><span class="card-date">Jan 2022 &ndash; Apr 2022</span></div>
+        <p class="card-subtitle"><strong>CandleStone Investment Partners Limited</strong> &middot; Asset Management &middot; Dhaka, Bangladesh</p>
+        <ul>
+          <li>Executed intra-day trades for a BDT 1B (~$10M) mutual fund</li>
+          <li>Supported institutional client reporting and custom index construction for 5+ institutional investors</li>
+          <li>Foundational exposure to equity research and risk monitoring processes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="education">
+    <div class="section-label">Academic</div>
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Master of Business Administration &mdash; Corporate Finance Track</span><span class="card-date">2025</span></div>
+        <p class="card-subtitle"><strong>KU Leuven</strong> &middot; Antwerp, Belgium</p>
+        <ul>
+          <li>Graduated <strong>Cum Laude</strong></li>
+          <li>Thesis: Long-run performance effects of joint ventures &mdash; European M&amp;A in chemical and pharmaceutical sectors (event study)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">Bachelor of Business Administration &mdash; Finance &amp; Banking</span><span class="card-date">2021</span></div>
+        <p class="card-subtitle"><strong>Bangladesh University of Professionals</strong> &middot; Dhaka, Bangladesh</p>
+        <ul><li>Cumulative GPA: <strong>3.52 / 4.0</strong></li></ul>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <div class="section-label">Toolkit</div>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-group"><h3>Technical Skills</h3><div class="skill-tags"><span class="skill-tag">Financial Modelling</span><span class="skill-tag">DCF Analysis</span><span class="skill-tag">Sensitivity Analysis</span><span class="skill-tag">Valuation</span><span class="skill-tag">Credit Analysis</span><span class="skill-tag">Due Diligence</span><span class="skill-tag">Debt &amp; Equity Financing</span><span class="skill-tag">Private Placements</span></div></div>
+      <div class="skill-group"><h3>Tools &amp; Software</h3><div class="skill-tags"><span class="skill-tag">Excel (Advanced)</span><span class="skill-tag">PowerPoint (Advanced)</span><span class="skill-tag">Power BI &#8599;</span><span class="skill-tag">SAP S/4HANA &#8599;</span><span class="skill-tag">IFRS &#8599;</span></div></div>
+      <div class="skill-group"><h3>Soft Skills</h3><div class="skill-tags"><span class="skill-tag">Stakeholder Management</span><span class="skill-tag">Client Relationships</span><span class="skill-tag">Cross-functional Collaboration</span><span class="skill-tag">Presentation &amp; Reporting</span></div></div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-top:14px;">&#8599; Actively developing</p>
+  </section>
+  <section id="languages">
+    <div class="section-label">Languages</div>
+    <h2 class="section-title">Languages</h2>
+    <div class="lang-grid">
+      <div class="lang-card"><span class="lang-name">English</span><span class="lang-level">C2 &middot; Proficient</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+      <div class="lang-card"><span class="lang-name">Bangla</span><span class="lang-level">Native</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+      <div class="lang-card"><span class="lang-name">Dutch</span><span class="lang-level">A1 &middot; Learning</span><div class="lang-bar"><div class="lang-bar-fill" style="width:15%"></div></div></div>
+      <div class="lang-card"><span class="lang-name">French</span><span class="lang-level">A1 &middot; Beginner</span><div class="lang-bar"><div class="lang-bar-fill" style="width:10%"></div></div></div>
+    </div>
+  </section>
+  <section id="interests">
+    <div class="section-label">Beyond Work</div>
+    <h2 class="section-title">Interests</h2>
+    <div class="interests-grid">
+      <div class="interest-card"><div class="interest-emoji">&#129462;</div><div class="interest-name">Hiking</div><div class="interest-desc">Exploring trails and new landscapes on foot</div></div>
+      <div class="interest-card"><div class="interest-emoji">&#128218;</div><div class="interest-name">Reading</div><div class="interest-desc">Curious reader across finance, history and fiction</div></div>
+      <div class="interest-card"><div class="interest-emoji">&#8987;</div><div class="interest-name">Watch Collecting</div><div class="interest-desc">Appreciating the craft of mechanical horology</div></div>
+      <div class="interest-card"><div class="interest-emoji">&#129309;</div><div class="interest-name">BSAAB</div><div class="interest-desc">Active member of the Bangladeshi Student &amp; Alumni Association in Belgium</div></div>
+    </div>
+  </section>
+  <footer><p>Built with love by <span>Anindya Mutsuddy</span> &middot; Antwerp, Belgium</p></footer>
+</main><script>
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) link.classList.add('active');
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => observer.observe(s));
+</script></body></html>
