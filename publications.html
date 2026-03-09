@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Certifications &mdash; Anindya Mutsuddy</title>
+  <title>Publications   Anindya Mutsuddy</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -67,6 +67,16 @@
     .cert-item-date { font-size: 0.7rem; color: var(--text-light); margin-top: 1px; }
     @media (max-width: 768px) { .cert-grid { grid-template-columns: 1fr; } }
 
+  
+    .pub-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; }
+    .pub-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .pub-type { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
+    .pub-type.thesis { background: rgba(240,180,41,0.15); color: #a07000; }
+    .pub-type.journal { background: rgba(72,187,120,0.15); color: #276749; }
+    .pub-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+    .pub-meta { font-size: 0.82rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.6; }
+    .pub-meta strong { color: var(--text); font-weight: 600; }
+    .pub-abstract { font-size: 0.85rem; color: var(--text); line-height: 1.75; border-left: 3px solid var(--gold); padding-left: 14px; margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -79,7 +89,13 @@
   <hr class="sidebar-divider"/>
   <nav>
     <p class="nav-label">Pages</p>
-    <ul><li><a href="index.html#about">&#128100; About</a></li><li><a href="certifications.html" class="active">&#127942; Certifications</a></li><li><a href="blog.html">&#9997;&#65039; Blog</a></li><li><a href="portfolio.html">&#128188; Portfolio</a></li></ul>
+    <ul>
+      <li><a href="index.html#about">&#128100; About</a></li>
+      <li><a href="certifications.html">&#127942; Certifications</a></li>
+      <li><a href="blog.html">&#9997;&#65039; Blog</a></li>
+      <li><a href="portfolio.html">&#128188; Portfolio</a></li>
+      <li><a href="publications.html" class="active">&#128196; Publications</a></li>
+    </ul>
   </nav>
   <div class="sidebar-contact">
     <p>Contact</p>
@@ -90,80 +106,38 @@
 </aside>
 <main class="main">
   <section>
-    <div class="section-label">Credentials</div>
-    <h2 class="section-title">Certifications</h2>
-    <div class="cert-grid">
+    <div class="section-label">Research</div>
+    <h2 class="section-title">Publications</h2>
+    <div class="timeline">
 
-      <!-- DUTCH -->
-      <div class="cert-card">
-        <div class="cert-card-header">
-          <div class="cert-icon">&#127475;&#127473;</div>
-          <div>
-            <div class="cert-name">Dutch Language</div>
-            <div class="cert-issuer">CVO Encora &mdash; NT2 Programme</div>
-          </div>
+      <div class="pub-card">
+        <span class="pub-type thesis">&#127891; MBA Thesis</span>
+        <div class="pub-title">Long-run Performance Effects of Joint Ventures: European M&amp;A in the Chemical and Pharmaceutical Sectors</div>
+        <div class="pub-meta">
+          <strong>Anindya Mutsuddy</strong> &nbsp;&middot;&nbsp; KU Leuven &nbsp;&middot;&nbsp; 2025<br/>
+          Master of Business Administration   Corporate Finance Track &nbsp;&middot;&nbsp; Graduated <strong>Cum Laude</strong>
         </div>
-        <ul class="cert-list">
-          <li>
-            <div class="cert-dot done">&#10003;</div>
-            <div>
-              <div class="cert-item-text"><strong>NT2 1.1</strong> &mdash; Certified</div>
-              <div class="cert-item-date">CVO Encora</div>
-            </div>
-          </li>
-          <li>
-            <div class="cert-dot progress">&#9679;</div>
-            <div>
-              <div class="cert-item-text"><strong>NT2 1.2</strong> &mdash; In Progress</div>
-              <div class="cert-item-date">CVO Encora</div>
-            </div>
-          </li>
-        </ul>
+        <div class="pub-abstract">
+          I studied whether European parent firms engaging in joint ventures (chemical vs. pharmaceutical; 1998 to 2019) generate long-term abnormal returns. Using 36-month BHARs for 102 firms and regression analysis, I tested the role of profitability (ROA) and R&amp;D intensity.
+          <br/><br/>
+          Results show chemicals outperform over three years while pharma does not (difference not significant), and a skewness-adjusted test confirms no significant abnormal returns overall. ROA predicts BHAR in pharma (not chemicals), while R&amp;D shows a weak negative relationship in pharma, suggesting investors may prioritize operational efficiency over R&amp;D spend in that sector.
+        </div>
       </div>
 
-      <!-- POWER BI -->
-      <div class="cert-card">
-        <div class="cert-card-header">
-          <div class="cert-icon">&#128202;</div>
-          <div>
-            <div class="cert-name">Power BI</div>
-            <div class="cert-issuer">Pragmatic Works</div>
-          </div>
+      <div class="pub-card">
+        <span class="pub-type journal">&#128196; Research Paper</span>
+        <div class="pub-title">Factors Affecting the Success of Female Business Entrepreneurs in Bangladesh</div>
+        <div class="pub-meta">
+          <strong>Anindya Mutsuddy</strong> &nbsp;&middot;&nbsp; SSRN &nbsp;&middot;&nbsp; December 2019 <em>(posted March 2023)</em><br/>
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4381557" target="_blank" style="color:var(--navy);font-weight:600;font-size:0.8rem;">&#128279; View on SSRN &rarr;</a>
         </div>
-        <ul class="cert-list">
-          <li>
-            <div class="cert-dot done">&#10003;</div>
-            <div>
-              <div class="cert-item-text"><strong>Beginner to Pro Workshop</strong></div>
-              <div class="cert-item-date">Pragmatic Works &mdash; 03 Sep 2026</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- SAP S/4HANA -->
-      <div class="cert-card">
-        <div class="cert-card-header">
-          <div class="cert-icon">&#128187;</div>
-          <div>
-            <div class="cert-name">SAP S/4HANA</div>
-            <div class="cert-issuer">SAP / Udemy</div>
-          </div>
+        <div class="pub-abstract">
+          This study examines the factors driving the success of female entrepreneurs in Bangladesh, drawing on survey data from 177 business owners. Using factor analysis and multivariate regression, it identifies key success drivers including efficiency in handling unexpected events, family support, technical skills, and leadership style. This paper represents my foundational exposure to independent research   applying quantitative methods to a real-world economic question before formal postgraduate training.
         </div>
-        <ul class="cert-list">
-          <li>
-            <div class="cert-dot progress">&#9679;</div>
-            <div>
-              <div class="cert-item-text"><strong>SAP S/4HANA Fundamentals</strong> &mdash; In Progress</div>
-              <div class="cert-item-date">Udemy</div>
-            </div>
-          </li>
-        </ul>
       </div>
 
     </div>
   </section>
-  
 </main>
 </body>
 </html>
