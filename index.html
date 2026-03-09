@@ -343,7 +343,7 @@
 
     /* ── SPA page visibility ── */
     .page { display: none; }
-    .page.active { display: block; }
+    .page.active { display: block; animation: fadeIn 0.25s ease; }
   </style>
 </head>
 <body>
@@ -351,7 +351,7 @@
 <div id="progress-bar-wrap"><div id="scroll-progress"></div></div>
 <div id="sidebar-root"></div>
 
-<div class="layout">
+<div class="layout main">
   <main id="main-content">
 
     <!-- ABOUT -->
