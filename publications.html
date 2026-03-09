@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Publications   Anindya Mutsuddy</title>
+  <title>Publications &mdash; Anindya Mutsuddy</title>
+  <meta name="description" content="Academic publications by Anindya Mutsuddy."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e1814'/><text y='70' x='50' text-anchor='middle' font-size='48' font-family='Inter,sans-serif' font-weight='800' fill='%23c9a84c'>AM</text></svg>"/>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CWSFJ02YDR"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --navy: #1e1814; --gold: #c9a84c; --white: #ffffff; --off-white: #f9f7f4; --text: #2d3748; --text-light: #718096; --border: #e2e8f0; --sidebar-width: 300px; }
@@ -42,42 +46,80 @@
     section { margin-bottom: 72px; scroll-margin-top: 40px; }
     .section-label { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
     .section-title { font-size: 1.85rem; font-weight: 800; color: var(--navy); margin-bottom: 28px; line-height: 1.2; }
-    .empty-state { text-align: center; padding: 80px 32px; background: var(--white); border-radius: 20px; border: 2px dashed var(--border); }
-    .empty-icon { font-size: 3rem; margin-bottom: 18px; }
-    .empty-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .empty-text { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; max-width: 340px; margin: 0 auto; }
+    .about-text { font-size: 1rem; line-height: 1.85; color: var(--text); max-width: 640px; }
+    .about-text strong { color: var(--navy); }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .tag { background: var(--navy); color: var(--white); font-size: 0.78rem; font-weight: 500; padding: 6px 14px; border-radius: 20px; }
+    .tag.gold { background: var(--gold); color: var(--navy); }
+    .timeline { display: flex; flex-direction: column; gap: 24px; }
+    .card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; }
+    .card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+    .card-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+    .card-date { font-size: 0.73rem; font-weight: 600; background: rgba(201,168,76,0.15); color: #7a5c00; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .card-subtitle { font-size: 0.84rem; color: var(--text-light); margin-bottom: 14px; font-style: italic; }
+    .card-subtitle strong { color: var(--navy); font-style: normal; }
+    .card ul { padding-left: 18px; }
+    .card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
+    .card ul li::marker { color: var(--gold); }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .skill-group { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); }
+    .skill-group h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { background: var(--off-white); border: 1px solid var(--border); color: var(--text); font-size: 0.77rem; font-weight: 500; padding: 5px 12px; border-radius: 8px; transition: all 0.2s; }
+    .skill-tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .lang-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+    .lang-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 22px; display: flex; flex-direction: column; gap: 4px; min-width: 130px; }
+    .lang-card:hover { box-shadow: 0 4px 16px rgba(26,39,68,0.08); }
+    .lang-name { font-weight: 700; font-size: 0.93rem; color: var(--navy); }
+    .lang-level { font-size: 0.7rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+    .lang-bar { height: 4px; border-radius: 4px; background: var(--border); margin-top: 6px; overflow: hidden; }
+    .lang-bar-fill { height: 100%; background: var(--gold); border-radius: 4px; }
+    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+    .interest-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
+    .interest-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,76,0.15); transform: translateY(-3px); }
+    .interest-emoji { font-size: 1.9rem; margin-bottom: 10px; }
+    .interest-name { font-size: 0.87rem; font-weight: 600; color: var(--navy); }
+    .interest-desc { font-size: 0.74rem; color: var(--text-light); margin-top: 4px; line-height: 1.4; }
     footer { text-align: center; padding: 32px 0 0; font-size: 0.8rem; color: var(--text-light); border-top: 1px solid var(--border); }
     footer span { color: var(--gold); }
-    @media (max-width: 768px) { .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; } .main { margin-left: 0; padding: 32px 24px; } body { flex-direction: column; } }
-
-    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .cert-card { background: var(--white); border-radius: 16px; padding: 26px 28px; border: 1px solid var(--border); transition: all 0.2s; }
+    .empty-state { text-align: center; padding: 72px 32px; background: var(--white); border-radius: 16px; border: 2px dashed var(--border); }
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+    .empty-state h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .empty-state p { font-size: 0.88rem; color: var(--text-light); max-width: 360px; margin: 0 auto; line-height: 1.6; }
+    .blog-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; display: block; color: inherit; }
+    .blog-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .blog-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .blog-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(201,168,76,0.15); color: #7a5c00; padding: 3px 10px; border-radius: 20px; }
+    .blog-date { font-size: 0.75rem; color: var(--text-light); }
+    .blog-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .blog-excerpt { font-size: 0.87rem; color: var(--text-light); line-height: 1.6; }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .cert-card { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); transition: all 0.2s; display: flex; flex-direction: column; gap: 6px; }
     .cert-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); border-color: var(--gold); }
-    .cert-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-    .cert-icon { font-size: 1.8rem; flex-shrink: 0; }
-    .cert-name { font-size: 0.97rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
-    .cert-issuer { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
-    .cert-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-    .cert-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; line-height: 1.5; color: var(--text); }
-    .cert-list li .cert-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .cert-dot.done { background: rgba(72,187,120,0.15); color: #276749; }
-    .cert-dot.progress { background: rgba(201,168,76,0.2); color: #7a5c00; }
-    .cert-dot.planned { background: rgba(113,128,150,0.12); color: var(--text-light); }
-    .cert-item-text { flex: 1; }
-    .cert-item-date { font-size: 0.7rem; color: var(--text-light); margin-top: 1px; }
-    @media (max-width: 768px) { .cert-grid { grid-template-columns: 1fr; } }
+    .cert-icon { font-size: 1.8rem; margin-bottom: 4px; }
+    .cert-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .cert-issuer { font-size: 0.8rem; color: var(--text-light); }
+    .cert-status { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 20px; margin-top: 4px; }
+    .cert-status.planned { background: rgba(113,128,150,0.12); color: var(--text-light); }
+    .cert-status.inprogress { background: rgba(201,168,76,0.15); color: #7a5c00; }
+    .cert-status.earned { background: rgba(72,187,120,0.15); color: #276749; }
+    .portfolio-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; }
+    .portfolio-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .portfolio-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+    .portfolio-size { font-size: 0.73rem; font-weight: 700; background: var(--navy); color: var(--gold); padding: 4px 12px; border-radius: 20px; }
+    .portfolio-sector { font-size: 0.8rem; color: var(--text-light); margin-bottom: 12px; font-style: italic; }
+    .portfolio-card ul { padding-left: 18px; }
+    .portfolio-card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
+    .portfolio-card ul li::marker { color: var(--gold); }
+    @media (max-width: 768px) {
+      .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; }
+      .main { margin-left: 0; padding: 32px 24px; }
+      body { flex-direction: column; }
+      .skills-grid, .cert-grid { grid-template-columns: 1fr; }
+    }
 
-  
-    .pub-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; }
-    .pub-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
-    .pub-type { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
-    .pub-type.thesis { background: rgba(201,168,76,0.15); color: #7a5c00; }
-    .pub-type.journal { background: rgba(72,187,120,0.15); color: #276749; }
-    .pub-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
-    .pub-meta { font-size: 0.82rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.6; }
-    .pub-meta strong { color: var(--text); font-weight: 600; }
-    .pub-abstract { font-size: 0.85rem; color: var(--text); line-height: 1.75; border-left: 3px solid var(--gold); padding-left: 14px; margin-top: 12px; }
-  
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-6px); } }
     .main { animation: fadeIn 0.35s ease; }
@@ -99,9 +141,10 @@
     }
     .skill-tag[data-tooltip]:hover::after, .skill-tag[data-tooltip]:hover::before { opacity: 1; }
     .hamburger { display: none; position: fixed; top: 16px; left: 16px; z-index: 200;
-      background: var(--navy); border: none; border-radius: 10px; padding: 10px 12px;
-      cursor: pointer; flex-direction: column; gap: 5px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 2px; transition: all 0.3s; }
+      background: var(--gold); border: none; border-radius: 10px; padding: 10px 12px;
+      cursor: pointer; flex-direction: column; gap: 5px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
     .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
     .overlay.active { display: block; }
     @media (max-width: 768px) {
@@ -119,116 +162,177 @@
       .card { padding: 20px 20px; }
       .section-title { font-size: 1.5rem; }
     }
+  
+    .avatar-initials { width: 100px; height: 100px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800; color: var(--navy);
+      margin: 0 auto 16px; border: 3px solid var(--gold); }
+  
+    .open-to-work { display: inline-flex; align-items: center; gap: 6px; background: rgba(72,187,120,0.12); color: #48bb78; font-size: 0.68rem; font-weight: 700; padding: 5px 11px; border-radius: 20px; margin-top: 10px; letter-spacing: 0.02em; }
+    .otw-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; flex-shrink:0; animation: otw-pulse 2s infinite; }
+    @keyframes otw-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(72,187,120,0.5); } 60% { box-shadow: 0 0 0 5px rgba(72,187,120,0); } }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    .pub-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; margin-bottom: 24px; }
+    .pub-card:hover { box-shadow: 0 8px 32px rgba(26,24,20,0.08); transform: translateY(-2px); }
+    .pub-type { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
+    .pub-type.thesis { background: rgba(201,168,76,0.15); color: #7a5c00; }
+    .pub-type.journal { background: rgba(72,187,120,0.15); color: #276749; }
+    .pub-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+    .pub-meta { font-size: 0.82rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.6; }
+    .pub-meta strong { color: var(--text); font-weight: 600; }
+    .pub-abstract { font-size: 0.85rem; color: var(--text); line-height: 1.75; border-left: 3px solid var(--gold); padding-left: 14px; margin-top: 12px; }  
+    /* ── Dark Mode ───────────────────────────────── */
+    [data-theme="dark"] {
+      --white:      #1e1a16;
+      --off-white:  #141210;
+      --text:       #e0d8ce;
+      --text-light: #9a8e82;
+      --border:     #3a3028;
+    }
+    [data-theme="dark"] .sidebar        { background: #0f0d0b; }
+    [data-theme="dark"] .skill-tag      { background: #2a2420; color: var(--text); border-color: var(--border); }
+    [data-theme="dark"] .lang-card,
+    [data-theme="dark"] .interest-card,
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .cert-card,
+    [data-theme="dark"] .pub-card,
+    [data-theme="dark"] .watch-card,
+    [data-theme="dark"] .book-card,
+    [data-theme="dark"] .activity-card,
+    [data-theme="dark"] .currently-card,
+    [data-theme="dark"] .empty-state    { background: var(--white); border-color: var(--border); }
+    [data-theme="dark"] .section-title  { color: var(--text); }
+    [data-theme="dark"] .card-title,
+    [data-theme="dark"] .cert-name,
+    [data-theme="dark"] .pub-title,
+    [data-theme="dark"] .watch-name,
+    [data-theme="dark"] .book-title,
+    [data-theme="dark"] .activity-title,
+    [data-theme="dark"] .currently-value { color: var(--text); }
+
+    /* Dark mode toggle button */
+    .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
+      color: rgba(255,255,255,0.55); font-size: 1rem; cursor: pointer; padding: 6px 10px;
+      margin-top: 12px; width: 100%; transition: all 0.2s; display: flex; align-items: center;
+      justify-content: center; gap: 8px; font-family: inherit; font-size: 0.78rem; font-weight: 500; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.07); color: var(--gold); border-color: var(--gold); }
+
+    /* ── Scroll Progress Bar ─────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gold); z-index: 9999; transition: width 0.08s linear; }
+
+    /* ── Print Stylesheet ────────────────────────── */
+    @media print {
+      #scroll-progress, .hamburger, .overlay, .theme-toggle { display: none !important; }
+      .sidebar { position: relative !important; width: 100% !important; height: auto !important;
+        flex-direction: row !important; padding: 16px 24px !important; left: 0 !important;
+        page-break-after: avoid; }
+      .sidebar-contact, nav, .open-to-work, .sidebar-divider { display: none !important; }
+      .sidebar-profile { display: flex; align-items: center; gap: 16px; text-align: left; }
+      .avatar { width: 56px !important; height: 56px !important; margin: 0 !important; }
+      .sidebar h1 { font-size: 1.2rem !important; }
+      .sidebar .title { font-size: 0.75rem !important; }
+      .main { margin-left: 0 !important; padding: 16px 24px !important; }
+      body { display: block !important; }
+      .card, .cert-card, .pub-card { box-shadow: none !important; break-inside: avoid; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
+      .contact-btn::after { display: none; }
+    }
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CWSFJ02YDR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CWSFJ02YDR');
-</script>
 </head>
 <body>
-<button class="hamburger" id="hamburger" aria-label="Menu">
-  <span></span><span></span><span></span>
-</button>
-<div class="overlay" id="overlay"></div>
-<aside class="sidebar">
-  <div class="sidebar-profile">
-    <img src="pfp.jpg" class="avatar" alt="Anindya Mutsuddy"/>
-    <h1>Anindya Mutsuddy</h1>
-    <p class="title">Investment Analyst<br/>Corporate Finance Analyst</p>
-  </div>
-  <hr class="sidebar-divider"/>
-  <nav>
-    <p class="nav-label">Pages</p>
-    <ul>
-      <li><a href="index.html#about">&#128100; About</a></li>
-      <li><a href="certifications.html">&#127942; Certifications</a></li>
-      <li><a href="blog.html">&#9997;&#65039; Blog</a></li>
-      <li><a href="portfolio.html">&#128188; Portfolio</a></li>
-      <li><a href="publications.html" class="active">&#128196; Publications</a></li>
-    </ul>
-  </nav>
-  <div class="sidebar-contact">
-    <p>Contact</p>
-    <a href="mailto:anindya.mutsuddy@gmail.com" class="contact-btn">&#128231; Email Me</a>
-    <a href="https://linkedin.com/in/anindyamutsuddy" target="_blank" class="contact-btn">&#128279; LinkedIn</a>
-    <a href="https://maps.google.com/?q=Antwerp,Belgium" target="_blank" class="contact-btn contact-btn-ghost">&#128205; Antwerp, Belgium</a>
-  </div>
-</aside>
-<main class="main">
-  <section>
-    <div class="section-label">Research</div>
-    <h2 class="section-title">Publications</h2>
-    <div class="timeline">
 
-      <div class="pub-card">
-        <span class="pub-type thesis">&#127891; MBA Thesis</span>
-        <div class="pub-title">Long-run Performance Effects of Joint Ventures: European M&amp;A in the Chemical and Pharmaceutical Sectors</div>
-        <div class="pub-meta">
-          <strong>Anindya Mutsuddy</strong> &nbsp;&middot;&nbsp; KU Leuven &nbsp;&middot;&nbsp; 2025<br/>
-          Master of Business Administration   Corporate Finance Track &nbsp;&middot;&nbsp; Graduated <strong>Cum Laude</strong>
-        </div>
-        <div class="pub-abstract">
-          This study examines whether European parent firms engaging in joint ventures (chemical vs. pharmaceutical; 1998 to 2019) generate long-term abnormal returns. 36-month BHARs were computed for 102 firms and regression analysis was applied to test the role of profitability (ROA) and R&amp;D intensity.
-          <br/><br/>
-          Results show chemicals outperform over three years while pharma does not (difference not significant), and a skewness-adjusted test confirms no significant abnormal returns overall. ROA predicts BHAR in pharma (not chemicals), while R&amp;D shows a weak negative relationship in pharma, suggesting investors may prioritize operational efficiency over R&amp;D spend in that sector.
-        </div>
-      </div>
-
-      <div class="pub-card">
-        <span class="pub-type journal">&#128196; Research Paper</span>
-        <div class="pub-title">Factors Affecting the Success of Female Business Entrepreneurs in Bangladesh</div>
-        <div class="pub-meta">
-          <strong>Anindya Mutsuddy</strong> &nbsp;&middot;&nbsp; SSRN &nbsp;&middot;&nbsp; December 2019 <em>(posted March 2023)</em><br/>
-          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4381557" target="_blank" style="color:var(--navy);font-weight:600;font-size:0.8rem;">&#128279; View on SSRN &rarr;</a>
-        </div>
-        <div class="pub-abstract">
-          This study examines the factors driving the success of female entrepreneurs in Bangladesh, drawing on survey data from 177 business owners. Using factor analysis and multivariate regression, it identifies key success drivers including efficiency in handling unexpected events, family support, technical skills, and leadership style. This paper represents my foundational exposure to independent research   applying quantitative methods to a real-world economic question before formal postgraduate training.
-        </div>
-      </div>
-
-    </div>
-  </section>
-</main>
-
+<div id="scroll-progress"></div>
 <script>
-  // Page fade-out on navigation
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('http') && !href.startsWith('https')) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const main = document.querySelector('.main');
-        if (main) { main.style.animation = 'fadeOut 0.25s ease forwards'; }
-        setTimeout(() => { window.location.href = href; }, 260);
+  // ── Dark mode ──
+  const root    = document.documentElement;
+  const saved   = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+
+  function updateToggleLabel() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    const dark = root.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '☀️ Light mode' : '🌙 Dark mode';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateToggleLabel();
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateToggleLabel();
       });
     }
   });
 
-  // Mobile hamburger
-  const hamburger = document.getElementById('hamburger');
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.getElementById('overlay');
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('active');
-    });
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
-    });
-    // Close sidebar on nav link click (mobile)
-    document.querySelectorAll('nav a').forEach(a => {
-      a.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-      });
-    });
+  // ── Scroll progress bar ──
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total    = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }, { passive: true });
   }
 </script>
+<div id="sidebar-root"></div>
+<script src="sidebar.js"></script>
+<main class="main">
+  <section>
+    <div class="section-label">&#128196; Research</div>
+    <h2 class="section-title">Publications</h2>
+    <div id="pub-container"></div>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script>
+  const pub = siteData.publications;
+  const container = document.getElementById('pub-container');
+
+  // Thesis
+  container.innerHTML += `
+    <div class="pub-card">
+      <span class="pub-type thesis">🎓 MBA Thesis</span>
+      <div class="pub-title">${pub.thesis.title}</div>
+      <div class="pub-meta">
+        <strong>Anindya Mutsuddy</strong> &nbsp;&middot;&nbsp; ${pub.thesis.institution} &nbsp;&middot;&nbsp; ${pub.thesis.year}<br/>
+        ${pub.thesis.degree} &nbsp;&middot;&nbsp; Graduated <strong>${pub.thesis.honour}</strong>
+      </div>
+      <div class="pub-abstract">${pub.thesis.abstract}</div>
+    </div>`;
+
+  // Papers
+  pub.papers.forEach(p => {
+    container.innerHTML += `
+      <div class="pub-card">
+        <span class="pub-type journal">📄 Research Paper</span>
+        <div class="pub-title">${p.title}</div>
+        <div class="pub-meta">
+          <strong>${p.authors}</strong> &nbsp;&middot;&nbsp; ${p.venue} &nbsp;&middot;&nbsp; ${p.date}<br/>
+          <a href="${p.url}" target="_blank" style="color:var(--navy);font-weight:600;font-size:0.8rem;">🔗 View on SSRN &rarr;</a>
+        </div>
+        <div class="pub-abstract">${p.abstract}</div>
+      </div>`;
+  });
+</script>
+
 </body>
 </html>

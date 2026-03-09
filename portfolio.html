@@ -4,6 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio &mdash; Anindya Mutsuddy</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e1814'/><text y='70' x='50' text-anchor='middle' font-size='48' font-family='Inter,sans-serif' font-weight='800' fill='%23c9a84c'>AM</text></svg>"/>
+  <meta name="description" content="Deal work and financial models by Anindya Mutsuddy — anonymised transaction portfolio from ZA Capital Advisory."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -60,9 +62,10 @@
     }
     .skill-tag[data-tooltip]:hover::after, .skill-tag[data-tooltip]:hover::before { opacity: 1; }
     .hamburger { display: none; position: fixed; top: 16px; left: 16px; z-index: 200;
-      background: var(--navy); border: none; border-radius: 10px; padding: 10px 12px;
-      cursor: pointer; flex-direction: column; gap: 5px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 2px; transition: all 0.3s; }
+      background: var(--gold); border: none; border-radius: 10px; padding: 10px 12px;
+      cursor: pointer; flex-direction: column; gap: 5px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
     .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
     .overlay.active { display: block; }
     @media (max-width: 768px) {
@@ -80,6 +83,73 @@
       .card { padding: 20px 20px; }
       .section-title { font-size: 1.5rem; }
     }
+  
+    .avatar-initials { width: 100px; height: 100px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800; color: var(--navy);
+      margin: 0 auto 16px; border: 3px solid var(--gold); }
+  
+    .open-to-work { display: inline-flex; align-items: center; gap: 6px; background: rgba(72,187,120,0.12); color: #48bb78; font-size: 0.68rem; font-weight: 700; padding: 5px 11px; border-radius: 20px; margin-top: 10px; letter-spacing: 0.02em; }
+    .otw-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; flex-shrink:0; animation: otw-pulse 2s infinite; }
+    @keyframes otw-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(72,187,120,0.5); } 60% { box-shadow: 0 0 0 5px rgba(72,187,120,0); } }
+  
+    /* ── Dark Mode ───────────────────────────────── */
+    [data-theme="dark"] {
+      --white:      #1e1a16;
+      --off-white:  #141210;
+      --text:       #e0d8ce;
+      --text-light: #9a8e82;
+      --border:     #3a3028;
+    }
+    [data-theme="dark"] .sidebar        { background: #0f0d0b; }
+    [data-theme="dark"] .skill-tag      { background: #2a2420; color: var(--text); border-color: var(--border); }
+    [data-theme="dark"] .lang-card,
+    [data-theme="dark"] .interest-card,
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .cert-card,
+    [data-theme="dark"] .pub-card,
+    [data-theme="dark"] .watch-card,
+    [data-theme="dark"] .book-card,
+    [data-theme="dark"] .activity-card,
+    [data-theme="dark"] .currently-card,
+    [data-theme="dark"] .empty-state    { background: var(--white); border-color: var(--border); }
+    [data-theme="dark"] .section-title  { color: var(--text); }
+    [data-theme="dark"] .card-title,
+    [data-theme="dark"] .cert-name,
+    [data-theme="dark"] .pub-title,
+    [data-theme="dark"] .watch-name,
+    [data-theme="dark"] .book-title,
+    [data-theme="dark"] .activity-title,
+    [data-theme="dark"] .currently-value { color: var(--text); }
+
+    /* Dark mode toggle button */
+    .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
+      color: rgba(255,255,255,0.55); font-size: 1rem; cursor: pointer; padding: 6px 10px;
+      margin-top: 12px; width: 100%; transition: all 0.2s; display: flex; align-items: center;
+      justify-content: center; gap: 8px; font-family: inherit; font-size: 0.78rem; font-weight: 500; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.07); color: var(--gold); border-color: var(--gold); }
+
+    /* ── Scroll Progress Bar ─────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gold); z-index: 9999; transition: width 0.08s linear; }
+
+    /* ── Print Stylesheet ────────────────────────── */
+    @media print {
+      #scroll-progress, .hamburger, .overlay, .theme-toggle { display: none !important; }
+      .sidebar { position: relative !important; width: 100% !important; height: auto !important;
+        flex-direction: row !important; padding: 16px 24px !important; left: 0 !important;
+        page-break-after: avoid; }
+      .sidebar-contact, nav, .open-to-work, .sidebar-divider { display: none !important; }
+      .sidebar-profile { display: flex; align-items: center; gap: 16px; text-align: left; }
+      .avatar { width: 56px !important; height: 56px !important; margin: 0 !important; }
+      .sidebar h1 { font-size: 1.2rem !important; }
+      .sidebar .title { font-size: 0.75rem !important; }
+      .main { margin-left: 0 !important; padding: 16px 24px !important; }
+      body { display: block !important; }
+      .card, .cert-card, .pub-card { box-shadow: none !important; break-inside: avoid; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
+      .contact-btn::after { display: none; }
+    }
   </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWSFJ02YDR"></script>
@@ -91,28 +161,46 @@
 </script>
 </head>
 <body>
-<button class="hamburger" id="hamburger" aria-label="Menu">
-  <span></span><span></span><span></span>
-</button>
-<div class="overlay" id="overlay"></div>
-<aside class="sidebar">
-  <div class="sidebar-profile">
-    <img src="pfp.jpg" class="avatar" alt="Anindya Mutsuddy"/>
-    <h1>Anindya Mutsuddy</h1>
-    <p class="title">Investment Analyst<br/>Corporate Finance Analyst</p>
-  </div>
-  <hr class="sidebar-divider"/>
-  <nav>
-    <p class="nav-label">Pages</p>
-    <ul><li><a href="index.html#about">&#128100; About</a></li><li><a href="certifications.html">&#127942; Certifications</a></li><li><a href="blog.html">&#9997;&#65039; Blog</a></li><li><a href="portfolio.html" class="active">&#128188; Portfolio</a></li><li><a href="publications.html">&#128196; Publications</a></li></ul>
-  </nav>
-  <div class="sidebar-contact">
-    <p>Contact</p>
-    <a href="mailto:anindya.mutsuddy@gmail.com" class="contact-btn">&#128231; Email Me</a>
-    <a href="https://linkedin.com/in/anindyamutsuddy" target="_blank" class="contact-btn">&#128279; LinkedIn</a>
-    <a href="https://maps.google.com/?q=Antwerp,Belgium" target="_blank" class="contact-btn contact-btn-ghost">&#128205; Antwerp, Belgium</a>
-  </div>
-</aside>
+
+<div id="scroll-progress"></div>
+<script>
+  // ── Dark mode ──
+  const root    = document.documentElement;
+  const saved   = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+
+  function updateToggleLabel() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    const dark = root.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '☀️ Light mode' : '🌙 Dark mode';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateToggleLabel();
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateToggleLabel();
+      });
+    }
+  });
+
+  // ── Scroll progress bar ──
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total    = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }, { passive: true });
+  }
+</script>
+<div id="sidebar-root"></div>
+<script src="sidebar.js"></script>
 <main class="main">
   <section>
     <div class="section-label">Deal Work</div>
@@ -127,6 +215,24 @@
 </main>
 
 <script>
+
+  // Improved scroll spy
+  const allSections = document.querySelectorAll('section[id]');
+  const allNavLinks = document.querySelectorAll('nav a[href^="#"]');
+  if (allSections.length && allNavLinks.length) {
+    const scrollSpy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          allNavLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) link.classList.add('active');
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    allSections.forEach(s => scrollSpy.observe(s));
+  }
+
   // Page fade-out on navigation
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
@@ -140,26 +246,22 @@
     }
   });
 
-  // Mobile hamburger
-  const hamburger = document.getElementById('hamburger');
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.getElementById('overlay');
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('active');
-    });
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
-    });
-    // Close sidebar on nav link click (mobile)
-    document.querySelectorAll('nav a').forEach(a => {
-      a.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-      });
-    });
+
+  // Photo fallback: try jpg, then png, then initials
+  const pfp = document.querySelector('img.avatar');
+  if (pfp) {
+    pfp.onerror = function() {
+      if (this.src.endsWith('.jpg')) {
+        this.src = 'pfp.png';
+      } else {
+        // Both failed — replace with initials div
+        const div = document.createElement('div');
+        div.className = 'avatar avatar-initials';
+        div.textContent = 'AM';
+        this.parentNode.replaceChild(div, this);
+      }
+    };
+  });
   }
 </script>
 </body>

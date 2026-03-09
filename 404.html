@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Not Found &mdash; Anindya Mutsuddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e1814'/><text y='70' x='50' text-anchor='middle' font-size='48' font-family='Inter,sans-serif' font-weight='800' fill='%23c9a84c'>AM</text></svg>"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #1e1814; --gold: #c9a84c; --white: #ffffff; --off-white: #f9f7f4; --text: #2d2825; --text-light: #718096; --border: #e2e8f0; }
+    body { font-family: 'Inter', sans-serif; background: var(--off-white); display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 32px; }
+    .container { text-align: center; max-width: 480px; }
+    .code { font-size: 7rem; font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -4px; }
+    .code span { color: var(--gold); }
+    h1 { font-size: 1.4rem; font-weight: 700; color: var(--navy); margin: 16px 0 10px; }
+    p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; margin-bottom: 32px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 0.85rem; font-weight: 700; padding: 12px 24px; border-radius: 10px; transition: all 0.2s; }
+    .btn:hover { background: #d4b86a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201,168,76,0.35); }
+  
+    /* ── Dark Mode ───────────────────────────────── */
+    [data-theme="dark"] {
+      --white:      #1e1a16;
+      --off-white:  #141210;
+      --text:       #e0d8ce;
+      --text-light: #9a8e82;
+      --border:     #3a3028;
+    }
+    [data-theme="dark"] .sidebar        { background: #0f0d0b; }
+    [data-theme="dark"] .skill-tag      { background: #2a2420; color: var(--text); border-color: var(--border); }
+    [data-theme="dark"] .lang-card,
+    [data-theme="dark"] .interest-card,
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .cert-card,
+    [data-theme="dark"] .pub-card,
+    [data-theme="dark"] .watch-card,
+    [data-theme="dark"] .book-card,
+    [data-theme="dark"] .activity-card,
+    [data-theme="dark"] .currently-card,
+    [data-theme="dark"] .empty-state    { background: var(--white); border-color: var(--border); }
+    [data-theme="dark"] .section-title  { color: var(--text); }
+    [data-theme="dark"] .card-title,
+    [data-theme="dark"] .cert-name,
+    [data-theme="dark"] .pub-title,
+    [data-theme="dark"] .watch-name,
+    [data-theme="dark"] .book-title,
+    [data-theme="dark"] .activity-title,
+    [data-theme="dark"] .currently-value { color: var(--text); }
+
+    /* Dark mode toggle button */
+    .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
+      color: rgba(255,255,255,0.55); font-size: 1rem; cursor: pointer; padding: 6px 10px;
+      margin-top: 12px; width: 100%; transition: all 0.2s; display: flex; align-items: center;
+      justify-content: center; gap: 8px; font-family: inherit; font-size: 0.78rem; font-weight: 500; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.07); color: var(--gold); border-color: var(--gold); }
+
+    /* ── Scroll Progress Bar ─────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gold); z-index: 9999; transition: width 0.08s linear; }
+
+    /* ── Print Stylesheet ────────────────────────── */
+    @media print {
+      #scroll-progress, .hamburger, .overlay, .theme-toggle { display: none !important; }
+      .sidebar { position: relative !important; width: 100% !important; height: auto !important;
+        flex-direction: row !important; padding: 16px 24px !important; left: 0 !important;
+        page-break-after: avoid; }
+      .sidebar-contact, nav, .open-to-work, .sidebar-divider { display: none !important; }
+      .sidebar-profile { display: flex; align-items: center; gap: 16px; text-align: left; }
+      .avatar { width: 56px !important; height: 56px !important; margin: 0 !important; }
+      .sidebar h1 { font-size: 1.2rem !important; }
+      .sidebar .title { font-size: 0.75rem !important; }
+      .main { margin-left: 0 !important; padding: 16px 24px !important; }
+      body { display: block !important; }
+      .card, .cert-card, .pub-card { box-shadow: none !important; break-inside: avoid; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
+      .contact-btn::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<script>
+  // ── Dark mode ──
+  const root    = document.documentElement;
+  const saved   = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+
+  function updateToggleLabel() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    const dark = root.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '☀️ Light mode' : '🌙 Dark mode';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateToggleLabel();
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateToggleLabel();
+      });
+    }
+  });
+
+  // ── Scroll progress bar ──
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total    = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }, { passive: true });
+  }
+</script>
+  <div class="container">
+    <div class="code">4<span>0</span>4</div>
+    <h1>Page not found</h1>
+    <p>The page you're looking for doesn't exist or may have been moved. Let's get you back on track.</p>
+    <a href="/" class="btn">&#127968; Back to Home</a>
+  </div>
+</body>
+</html>

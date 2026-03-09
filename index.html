@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home — Anindya Mutsuddy</title>
+  <title>Anindya Mutsuddy</title>
+  <meta name="description" content="Anindya Mutsuddy — Investment &amp; Corporate Finance Analyst based in Antwerp, Belgium. MBA graduate (Cum Laude, KU Leuven), open to analyst roles in corporate finance and investment banking across the Benelux region."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e1814'/><text y='70' x='50' text-anchor='middle' font-size='48' font-family='Inter,sans-serif' font-weight='800' fill='%23c9a84c'>AM</text></svg>"/>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CWSFJ02YDR"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --navy: #1e1814; --gold: #c9a84c; --white: #ffffff; --off-white: #f9f7f4; --text: #2d3748; --text-light: #718096; --border: #e2e8f0; --sidebar-width: 300px; }
@@ -137,9 +141,10 @@
     }
     .skill-tag[data-tooltip]:hover::after, .skill-tag[data-tooltip]:hover::before { opacity: 1; }
     .hamburger { display: none; position: fixed; top: 16px; left: 16px; z-index: 200;
-      background: var(--navy); border: none; border-radius: 10px; padding: 10px 12px;
-      cursor: pointer; flex-direction: column; gap: 5px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 2px; transition: all 0.3s; }
+      background: var(--gold); border: none; border-radius: 10px; padding: 10px 12px;
+      cursor: pointer; flex-direction: column; gap: 5px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
     .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
     .overlay.active { display: block; }
     @media (max-width: 768px) {
@@ -157,185 +162,268 @@
       .card { padding: 20px 20px; }
       .section-title { font-size: 1.5rem; }
     }
-  </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CWSFJ02YDR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CWSFJ02YDR');
-</script>
-</head>
-<body><aside class="sidebar">
-  <div class="sidebar-profile">
-    <img src="pfp.jpg" class="avatar" alt="Anindya Mutsuddy"/>
-    <h1>Anindya Mutsuddy</h1>
-    <p class="title">Investment Analyst<br/>Corporate Finance Analyst</p>
-  </div>
-  <hr class="sidebar-divider"/>
-  <nav><p class="nav-label">Sections</p><ul><li><a href="#about" class="active">&#128100; About</a></li><li><a href="#experience">&#128188; Experience</a></li><li><a href="#education">&#127891; Education</a></li><li><a href="#skills">&#128295; Skills</a></li><li><a href="#languages">&#127758; Languages</a></li><li><a href="#interests">&#10024; Interests</a></li></ul><hr class="sidebar-divider"/><p class="nav-label">Pages</p><ul><li><a href="certifications.html">&#127942; Certifications</a></li><li><a href="blog.html">&#9997;&#65039; Blog</a></li><li><a href="portfolio.html">&#128188; Portfolio</a></li><li><a href="publications.html">&#128196; Publications</a></li></ul>
-  </nav>
-  <div class="sidebar-contact">
-    <p>Contact</p>
-    <a href="mailto:anindya.mutsuddy@gmail.com" class="contact-btn">&#128231; Email Me</a>
-    <a href="https://linkedin.com/in/anindyamutsuddy" target="_blank" class="contact-btn">&#128279; LinkedIn</a>
-    <a href="https://maps.google.com/?q=Antwerp,Belgium" target="_blank" class="contact-btn contact-btn-ghost">&#128205; Antwerp, Belgium</a>
-  </div>
-</aside>
-<main class="main">
-  <section id="about">
-    <div class="section-label">Hello there</div>
-    <h2 class="section-title">About Me</h2>
-    <p class="about-text">As an <strong>MBA graduate (Cum Laude, KU Leuven)</strong>, I chose corporate finance because numbers directly shape how businesses grow, raise capital and create value &mdash; and I want to contribute to that process with rigour and real commercial intent.<br/><br/>Relocated to Belgium to build a career in corporate finance, I bring <strong>advisory exposure and live deal experience</strong>, and I want to work for organisations where financial analysis drives meaningful decisions.<br/><br/>Currently on a <strong>zoekjaar permit</strong>, actively seeking an analyst role in corporate finance, investment banking or commercial lending in the <strong>Benelux region</strong>.</p>
-    <div class="about-tags">
-      <span class="tag gold">&#128205; Antwerp, Belgium</span>
-      <span class="tag">Corporate Finance</span>
-      <span class="tag">Investment Banking</span>
-      <span class="tag">DCF &amp; Valuation</span>
-      <span class="tag">Benelux</span>
-    </div>
-  </section>
-  <section id="experience">
-    <div class="section-label">Work</div>
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="timeline">
-      <div class="card">
-        <div class="card-header"><span class="card-title">Investment Analyst / Corporate Finance Analyst</span><span class="card-date">Apr 2022 &ndash; Dec 2023</span></div>
-        <p class="card-subtitle"><strong>ZA Capital Advisory</strong> &middot; Boutique Investment Bank &middot; Dhaka, Bangladesh</p>
-        <ul>
-          <li>Managed client mandates across real estate, energy, manufacturing and technology &mdash; from early-stage start-ups to international conglomerates</li>
-          <li>Built DCF valuations, sensitivity analyses and feasibility models across a wide range of financing decisions, from runway and treasury planning to syndicated credit facilities</li>
-          <li>Coordinated multidisciplinary deal teams to structure transactions, ensuring full regulatory and documentation compliance</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-header"><span class="card-title">Research Trainee (Internship)</span><span class="card-date">Jan 2022 &ndash; Apr 2022</span></div>
-        <p class="card-subtitle"><strong>CandleStone Investment Partners Limited</strong> &middot; Asset Management &middot; Dhaka, Bangladesh</p>
-        <ul>
-          <li>Executed intra-day trades for a BDT 1B (~$10M) mutual fund</li>
-          <li>Supported institutional client reporting and custom index construction for 5+ institutional investors</li>
-          <li>Foundational exposure to equity research and risk monitoring processes</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="education">
-    <div class="section-label">Academic</div>
-    <h2 class="section-title">Education</h2>
-    <div class="timeline">
-      <div class="card">
-        <div class="card-header"><span class="card-title">Master of Business Administration &mdash; Corporate Finance Track</span><span class="card-date">2025</span></div>
-        <p class="card-subtitle"><strong>KU Leuven</strong> &middot; Antwerp, Belgium</p>
-        <ul>
-          <li>Graduated <strong>Cum Laude</strong></li>
-          <li>Thesis: Long-run performance effects of joint ventures &mdash; European M&amp;A in chemical and pharmaceutical sectors (event study)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-header"><span class="card-title">Bachelor of Business Administration &mdash; Finance &amp; Banking</span><span class="card-date">2021</span></div>
-        <p class="card-subtitle"><strong>Bangladesh University of Professionals</strong> &middot; Dhaka, Bangladesh</p>
-        <ul><li>Cumulative GPA: <strong>3.52 / 4.0</strong></li></ul>
-      </div>
-    </div>
-  </section>
-  <section id="skills">
-    <div class="section-label">Toolkit</div>
-    <h2 class="section-title">Skills &amp; Tools</h2>
-    <div class="skills-grid">
-      <div class="skill-group"><h3>Technical Skills</h3><div class="skill-tags"><span class="skill-tag" data-tooltip="Core skill across all deal work, from startup runway to large-scale syndications">Financial Modelling</span><span class="skill-tag" data-tooltip="Applied in feasibility studies and capital raising mandates">DCF Analysis</span><span class="skill-tag" data-tooltip="3-scenario models used in live financing decisions">Sensitivity Analysis</span><span class="skill-tag" data-tooltip="Delivered across real estate, energy, tech and manufacturing">Valuation</span><span class="skill-tag" data-tooltip="Assessed debt capacity and risk for institutional financing">Credit Analysis</span><span class="skill-tag" data-tooltip="Conducted across multiple business units for growth equity mandates">Due Diligence</span><span class="skill-tag" data-tooltip="Structured instruments from syndicated debt to private placements">Debt &amp; Equity Financing</span><span class="skill-tag" data-tooltip="Supported equity offload to institutional investors">Private Placements</span></div></div>
-      <div class="skill-group"><h3>Tools &amp; Software</h3>
-        <div class="skill-tags" style="margin-bottom:16px;"><span class="skill-tag" data-tooltip="Primary modelling tool across all deal work">Excel (Advanced)</span><span class="skill-tag" data-tooltip="Built investor decks and client-facing presentations">PowerPoint (Advanced)</span><span class="skill-tag">IFRS &#8599;</span></div>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
-              <span style="font-size:0.8rem;font-weight:600;color:var(--navy);">Power BI</span>
-              <span style="font-size:0.7rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">Developing &#8599;</span>
-            </div>
-            <div style="height:6px;border-radius:6px;background:var(--border);overflow:hidden;"><div style="width:30%;height:100%;background:var(--gold);border-radius:6px;"></div></div>
-          </div>
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
-              <span style="font-size:0.8rem;font-weight:600;color:var(--navy);">SAP S/4HANA</span>
-              <span style="font-size:0.7rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">Developing &#8599;</span>
-            </div>
-            <div style="height:6px;border-radius:6px;background:var(--border);overflow:hidden;"><div style="width:20%;height:100%;background:var(--gold);border-radius:6px;"></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="skill-group"><h3>Soft Skills</h3><div class="skill-tags"><span class="skill-tag" data-tooltip="Managed relationships across clients, regulators and deal teams">Stakeholder Management</span><span class="skill-tag" data-tooltip="Full client lifecycle management from mandate to disbursement">Client Relationships</span><span class="skill-tag" data-tooltip="Coordinated legal, financial and operational teams on transactions">Cross-functional Collaboration</span><span class="skill-tag" data-tooltip="Delivered board-level and investor-facing output">Presentation &amp; Reporting</span></div></div>
-    </div>
-    <p style="font-size:0.75rem;color:var(--text-light);margin-top:14px;">&#8599; Actively developing</p>
-  </section>
-  <section id="languages">
-    <div class="section-label">Languages</div>
-    <h2 class="section-title">Languages</h2>
-    <div class="lang-grid">
-      <div class="lang-card"><span class="lang-name">English</span><span class="lang-level">C2 &middot; Proficient</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
-      <div class="lang-card"><span class="lang-name">Bangla</span><span class="lang-level">Native</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
-      <div class="lang-card"><span class="lang-name">Dutch</span><span class="lang-level">A1 &middot; Learning</span><div class="lang-bar"><div class="lang-bar-fill" style="width:15%"></div></div></div>
-      <div class="lang-card"><span class="lang-name">French</span><span class="lang-level">A1 &middot; Beginner</span><div class="lang-bar"><div class="lang-bar-fill" style="width:10%"></div></div></div>
-    </div>
-  </section>
-  <section id="interests">
-    <div class="section-label">Beyond Work</div>
-    <h2 class="section-title">Interests</h2>
-    <div class="interests-grid">
-      <div class="interest-card"><div class="interest-emoji">&#129462;</div><div class="interest-name">Hiking</div><div class="interest-desc">Exploring trails and new landscapes on foot</div></div>
-      <div class="interest-card"><div class="interest-emoji">&#128218;</div><div class="interest-name">Reading</div><div class="interest-desc">Curious reader across finance, history and fiction</div></div>
-      <div class="interest-card"><div class="interest-emoji">&#8987;</div><div class="interest-name">Watch Collecting</div><div class="interest-desc">Appreciating the craft of mechanical horology</div></div>
-    </div>
-  </section>
   
-</main><script>
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + entry.target.id) link.classList.add('active');
-        });
-      }
-    });
-  }, { threshold: 0.35 });
-  sections.forEach(s => observer.observe(s));
-</script>
+    .avatar-initials { width: 100px; height: 100px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800; color: var(--navy);
+      margin: 0 auto 16px; border: 3px solid var(--gold); }
+  
+    .open-to-work { display: inline-flex; align-items: center; gap: 6px; background: rgba(72,187,120,0.12); color: #48bb78; font-size: 0.68rem; font-weight: 700; padding: 5px 11px; border-radius: 20px; margin-top: 10px; letter-spacing: 0.02em; }
+    .otw-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; flex-shrink:0; animation: otw-pulse 2s infinite; }
+    @keyframes otw-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(72,187,120,0.5); } 60% { box-shadow: 0 0 0 5px rgba(72,187,120,0); } }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+    /* ── Dark Mode ───────────────────────────────── */
+    [data-theme="dark"] {
+      --white:      #1e1a16;
+      --off-white:  #141210;
+      --text:       #e0d8ce;
+      --text-light: #9a8e82;
+      --border:     #3a3028;
+    }
+    [data-theme="dark"] .sidebar        { background: #0f0d0b; }
+    [data-theme="dark"] .skill-tag      { background: #2a2420; color: var(--text); border-color: var(--border); }
+    [data-theme="dark"] .lang-card,
+    [data-theme="dark"] .interest-card,
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .cert-card,
+    [data-theme="dark"] .pub-card,
+    [data-theme="dark"] .watch-card,
+    [data-theme="dark"] .book-card,
+    [data-theme="dark"] .activity-card,
+    [data-theme="dark"] .currently-card,
+    [data-theme="dark"] .empty-state    { background: var(--white); border-color: var(--border); }
+    [data-theme="dark"] .section-title  { color: var(--text); }
+    [data-theme="dark"] .card-title,
+    [data-theme="dark"] .cert-name,
+    [data-theme="dark"] .pub-title,
+    [data-theme="dark"] .watch-name,
+    [data-theme="dark"] .book-title,
+    [data-theme="dark"] .activity-title,
+    [data-theme="dark"] .currently-value { color: var(--text); }
+
+    /* Dark mode toggle button */
+    .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
+      color: rgba(255,255,255,0.55); font-size: 1rem; cursor: pointer; padding: 6px 10px;
+      margin-top: 12px; width: 100%; transition: all 0.2s; display: flex; align-items: center;
+      justify-content: center; gap: 8px; font-family: inherit; font-size: 0.78rem; font-weight: 500; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.07); color: var(--gold); border-color: var(--gold); }
+
+    /* ── Scroll Progress Bar ─────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gold); z-index: 9999; transition: width 0.08s linear; }
+
+    /* ── Print Stylesheet ────────────────────────── */
+    @media print {
+      #scroll-progress, .hamburger, .overlay, .theme-toggle { display: none !important; }
+      .sidebar { position: relative !important; width: 100% !important; height: auto !important;
+        flex-direction: row !important; padding: 16px 24px !important; left: 0 !important;
+        page-break-after: avoid; }
+      .sidebar-contact, nav, .open-to-work, .sidebar-divider { display: none !important; }
+      .sidebar-profile { display: flex; align-items: center; gap: 16px; text-align: left; }
+      .avatar { width: 56px !important; height: 56px !important; margin: 0 !important; }
+      .sidebar h1 { font-size: 1.2rem !important; }
+      .sidebar .title { font-size: 0.75rem !important; }
+      .main { margin-left: 0 !important; padding: 16px 24px !important; }
+      body { display: block !important; }
+      .card, .cert-card, .pub-card { box-shadow: none !important; break-inside: avoid; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
+      .contact-btn::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
 <script>
-  // Page fade-out on navigation
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && !href.startsWith('#') && !href.startsWith('mailto') && !href.startsWith('http') && !href.startsWith('https')) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const main = document.querySelector('.main');
-        if (main) { main.style.animation = 'fadeOut 0.25s ease forwards'; }
-        setTimeout(() => { window.location.href = href; }, 260);
+  // ── Dark mode ──
+  const root    = document.documentElement;
+  const saved   = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+
+  function updateToggleLabel() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    const dark = root.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '☀️ Light mode' : '🌙 Dark mode';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateToggleLabel();
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateToggleLabel();
       });
     }
   });
 
-  // Mobile hamburger
-  const hamburger = document.getElementById('hamburger');
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.getElementById('overlay');
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('active');
-    });
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
-    });
-    // Close sidebar on nav link click (mobile)
-    document.querySelectorAll('nav a').forEach(a => {
-      a.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-      });
-    });
+  // ── Scroll progress bar ──
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total    = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }, { passive: true });
   }
 </script>
-</body></html>
+<div id="sidebar-root"></div>
+<script src="sidebar.js"></script>
+<main class="main">
+
+  <section id="about">
+    <div class="section-label">Hello there</div>
+    <h2 class="section-title">About Me</h2>
+    <div id="about-paragraphs"></div>
+    <div class="about-tags" id="about-tags"></div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-top:20px;" id="last-updated"></p>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="timeline" id="experience-cards"></div>
+  </section>
+
+  <section id="education">
+    <div class="section-label">Academic</div>
+    <h2 class="section-title">Education</h2>
+    <div class="timeline" id="education-cards"></div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label">Toolkit</div>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-group"><h3>Technical Skills</h3><div class="skill-tags" id="skills-technical"></div></div>
+      <div class="skill-group"><h3>Tools &amp; Software</h3><div id="skills-tools"></div></div>
+      <div class="skill-group"><h3>Soft Skills</h3><div class="skill-tags" id="skills-soft"></div></div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-top:14px;">&#8599; Actively developing</p>
+  </section>
+
+  <section id="languages">
+    <div class="section-label">Languages</div>
+    <h2 class="section-title">Languages</h2>
+    <div class="lang-grid" id="lang-grid"></div>
+  </section>
+
+  <section id="interests">
+    <div class="section-label">Beyond Work</div>
+    <h2 class="section-title">Interests</h2>
+    <div class="interests-grid" id="interests-grid"></div>
+    <a href="beyond.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more &#8594;</a>
+  </section>
+
+</main>
+
+<script src="data.js"></script>
+<script>
+const d = siteData;
+
+// ── ABOUT ──
+const aboutParas = document.getElementById('about-paragraphs');
+aboutParas.innerHTML = d.about.paragraphs.map(p => `<p class="about-text">${p}</p>`).join('');
+const aboutTags = document.getElementById('about-tags');
+aboutTags.innerHTML = d.about.tags.map(t => `<span class="tag${t.gold?' gold':''}">${t.label}</span>`).join('');
+const _now = new Date();
+const _months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+document.getElementById('last-updated').innerHTML = `Last updated: <strong style="color:var(--navy);">${_months[_now.getMonth()]} ${_now.getFullYear()}</strong>`;
+
+// ── EXPERIENCE ──
+const expContainer = document.getElementById('experience-cards');
+d.experience.forEach(e => {
+  expContainer.innerHTML += `<div class="card">
+    <div class="card-header"><span class="card-title">${e.title}</span><span class="card-date">${e.dates}</span></div>
+    <p class="card-subtitle"><strong>${e.company}</strong> &middot; ${e.subtitle}</p>
+    <ul>${e.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+  </div>`;
+});
+
+// ── EDUCATION ──
+const eduContainer = document.getElementById('education-cards');
+d.education.forEach(e => {
+  eduContainer.innerHTML += `<div class="card">
+    <div class="card-header"><span class="card-title">${e.degree}</span><span class="card-date">${e.year}</span></div>
+    <p class="card-subtitle"><strong>${e.school}</strong> &middot; ${e.location}</p>
+    <ul>${e.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+  </div>`;
+});
+
+// ── SKILLS ──
+const techTags = document.getElementById('skills-technical');
+d.skills.technical.forEach(s => {
+  techTags.innerHTML += `<span class="skill-tag"${s.tooltip?` data-tooltip="${s.tooltip}"`:''}>${s.label}</span>`;
+});
+const toolsContainer = document.getElementById('skills-tools');
+const tagItems = d.skills.tools.filter(s => s.type === 'tag');
+const barItems = d.skills.tools.filter(s => s.type === 'bar');
+const tagHTML = tagItems.map(s => `<span class="skill-tag"${s.tooltip?` data-tooltip="${s.tooltip}"`:''}>${s.label}</span>`).join('');
+toolsContainer.innerHTML = `<div class="skill-tags" style="margin-bottom:16px;">${tagHTML}</div>`;
+const barsHTML = barItems.map(s => `<div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+    <span style="font-size:0.8rem;font-weight:600;color:var(--navy);">${s.label}</span>
+    <span style="font-size:0.7rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">Developing &#8599;</span>
+  </div>
+  <div style="height:6px;border-radius:6px;background:var(--border);overflow:hidden;"><div class="tool-bar-fill" data-pct="${s.pct}" style="width:0%;height:100%;background:var(--gold);border-radius:6px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1);"></div></div>
+</div>`).join('');
+toolsContainer.innerHTML += `<div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">${barsHTML}</div>`;
+const softTags = document.getElementById('skills-soft');
+d.skills.soft.forEach(s => {
+  softTags.innerHTML += `<span class="skill-tag"${s.tooltip?` data-tooltip="${s.tooltip}"`:''}>${s.label}</span>`;
+});
+
+// ── LANGUAGES ──
+const langGrid = document.getElementById('lang-grid');
+d.languages.forEach(l => {
+  langGrid.innerHTML += `<div class="lang-card"><span class="lang-name">${l.name}</span><span class="lang-level">${l.level}</span><div class="lang-bar"><div class="lang-bar-fill" data-pct="${l.pct}" style="width:0%"></div></div></div>`;
+});
+
+// ── INTERESTS ──
+const interestsGrid = document.getElementById('interests-grid');
+d.interests.forEach(i => {
+  interestsGrid.innerHTML += `<div class="interest-card"><div class="interest-emoji">${i.emoji}</div><div class="interest-name">${i.name}</div><div class="interest-desc">${i.desc}</div></div>`;
+});
+</script>
+
+
+<script>
+  // Animate lang + tool bars on scroll into view
+  function animateBars() {
+    document.querySelectorAll('.lang-bar-fill[data-pct], .tool-bar-fill[data-pct]').forEach(el => {
+      el.style.width = '0%';
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.lang-bar-fill[data-pct], .tool-bar-fill[data-pct]').forEach(el => {
+            el.style.transition = 'width 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            el.style.width = el.getAttribute('data-pct') + '%';
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('#languages, #skills').forEach(s => observer.observe(s));
+  }
+  document.addEventListener('DOMContentLoaded', animateBars);
+</script>
+</body>
+</html>
