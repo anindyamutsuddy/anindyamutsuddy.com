@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anindya Mutsuddy</title>
+  <meta name="description" content="Corporate Finance Analyst · Investment Banking · Antwerp, Belgium"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #1e1814; --gold: #c9a84c; --white: #ffffff; --off-white: #f9f7f4; --text: #2d3748; --text-light: #718096; --border: #e2e8f0; --sidebar-width: 300px; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--off-white); color: var(--text); display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-width); background: var(--navy); position: fixed; top: 0; left: 0; height: 100vh; display: flex; flex-direction: column; padding: 48px 32px; overflow-y: auto; z-index: 100; }
+    .sidebar-profile { text-align: center; margin-bottom: 32px; }
+    .avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--gold); margin: 0 auto 16px; display: block; }
+    .sidebar h1 { color: var(--white); font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+    .sidebar .title { color: var(--gold); font-size: 0.76rem; font-weight: 500; margin-top: 6px; line-height: 1.4; }
+    .sidebar-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 18px 0; }
+    .nav-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.3); padding: 0 14px; margin-bottom: 6px; margin-top: 4px; }
+    nav ul { list-style: none; }
+    nav ul li { margin-bottom: 2px; }
+    nav ul li a { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.83rem; font-weight: 500; padding: 8px 14px; border-radius: 8px; transition: all 0.2s; }
+    nav ul li a:hover, nav ul li a.active { background: rgba(201,168,76,0.12); color: var(--gold); }
+    .sidebar-contact { margin-top: auto; padding-top: 24px; }
+    .sidebar-contact p { font-size: 0.65rem; color: rgba(255,255,255,0.3); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.contact-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--gold); color: var(--navy);
+      text-decoration: none; font-size: 0.8rem; font-weight: 700;
+      padding: 9px 16px; border-radius: 10px;
+      margin-bottom: 8px; transition: all 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .contact-btn:hover { background: #d4b86a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(201,168,76,0.35); }
+    .contact-btn-ghost {
+      background: transparent; color: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.15);
+      font-weight: 500;
+    }
+    .contact-btn-ghost:hover { background: rgba(255,255,255,0.07); color: var(--white); transform: translateY(-1px); box-shadow: none; }
+    .main { margin-left: var(--sidebar-width); flex: 1; padding: 60px 56px; max-width: 920px; }
+    section { margin-bottom: 72px; scroll-margin-top: 40px; }
+    .section-label { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+    .section-title { font-size: 1.85rem; font-weight: 800; color: var(--navy); margin-bottom: 28px; line-height: 1.2; }
+    .about-text { font-size: 1rem; line-height: 1.85; color: var(--text); max-width: 640px; }
+    .about-text strong { color: var(--navy); }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .tag { background: var(--navy); color: var(--white); font-size: 0.78rem; font-weight: 500; padding: 6px 14px; border-radius: 20px; }
+    .tag.gold { background: var(--gold); color: var(--navy); }
+    .timeline { display: flex; flex-direction: column; gap: 24px; }
+    .card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; }
+    .card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+    .card-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+    .card-date { font-size: 0.73rem; font-weight: 600; background: rgba(201,168,76,0.15); color: #7a5c00; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .card-subtitle { font-size: 0.84rem; color: var(--text-light); margin-bottom: 14px; font-style: italic; }
+    .card-subtitle strong { color: var(--navy); font-style: normal; }
+    .card ul { padding-left: 18px; }
+    .card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
+    .card ul li::marker { color: var(--gold); }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .skill-group { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); }
+    .skill-group h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { background: var(--off-white); border: 1px solid var(--border); color: var(--text); font-size: 0.77rem; font-weight: 500; padding: 5px 12px; border-radius: 8px; transition: all 0.2s; }
+    .skill-tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .lang-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+    .lang-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 16px 22px; display: flex; flex-direction: column; gap: 4px; min-width: 130px; }
+    .lang-card:hover { box-shadow: 0 4px 16px rgba(26,39,68,0.08); }
+    .lang-name { font-weight: 700; font-size: 0.93rem; color: var(--navy); }
+    .lang-level { font-size: 0.7rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+    .lang-bar { height: 4px; border-radius: 4px; background: var(--border); margin-top: 6px; overflow: hidden; }
+    .lang-bar-fill { height: 100%; background: var(--gold); border-radius: 4px; }
+    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
+    .interest-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
+    .interest-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,76,0.15); transform: translateY(-3px); }
+    .interest-emoji { font-size: 1.9rem; margin-bottom: 10px; }
+    .interest-name { font-size: 0.87rem; font-weight: 600; color: var(--navy); }
+    .interest-desc { font-size: 0.74rem; color: var(--text-light); margin-top: 4px; line-height: 1.4; }
+    footer { text-align: center; padding: 32px 0 0; font-size: 0.8rem; color: var(--text-light); border-top: 1px solid var(--border); }
+    footer span { color: var(--gold); }
+    .empty-state { text-align: center; padding: 72px 32px; background: var(--white); border-radius: 16px; border: 2px dashed var(--border); }
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+    .empty-state h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .empty-state p { font-size: 0.88rem; color: var(--text-light); max-width: 360px; margin: 0 auto; line-height: 1.6; }
+    .blog-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; display: block; color: inherit; }
+    .blog-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .blog-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .blog-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(201,168,76,0.15); color: #7a5c00; padding: 3px 10px; border-radius: 20px; }
+    .blog-date { font-size: 0.75rem; color: var(--text-light); }
+    .blog-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .blog-excerpt { font-size: 0.87rem; color: var(--text-light); line-height: 1.6; }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .cert-card { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); transition: all 0.2s; display: flex; flex-direction: column; gap: 6px; }
+    .cert-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); border-color: var(--gold); }
+    .cert-icon { font-size: 1.8rem; margin-bottom: 4px; }
+    .cert-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+    .cert-issuer { font-size: 0.8rem; color: var(--text-light); }
+    .cert-status { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 20px; margin-top: 4px; }
+    .cert-status.planned { background: rgba(113,128,150,0.12); color: var(--text-light); }
+    .cert-status.inprogress { background: rgba(201,168,76,0.15); color: #7a5c00; }
+    .cert-status.earned { background: rgba(72,187,120,0.15); color: #276749; }
+    .portfolio-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; }
+    .portfolio-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); }
+    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .portfolio-title { font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+    .portfolio-size { font-size: 0.73rem; font-weight: 700; background: var(--navy); color: var(--gold); padding: 4px 12px; border-radius: 20px; }
+    .portfolio-sector { font-size: 0.8rem; color: var(--text-light); margin-bottom: 12px; font-style: italic; }
+    .portfolio-card ul { padding-left: 18px; }
+    .portfolio-card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
+    .portfolio-card ul li::marker { color: var(--gold); }
+    @media (max-width: 768px) {
+      .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; }
+      .main { margin-left: 0; padding: 32px 24px; }
+      body { flex-direction: column; }
+      .skills-grid, .cert-grid { grid-template-columns: 1fr; }
+    }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-6px); } }
+    .main { animation: fadeIn 0.35s ease; }
+    .skill-tag { position: relative; }
+    .skill-tag[data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+      background: var(--navy); color: var(--white);
+      font-size: 0.7rem; font-weight: 500; line-height: 1.4;
+      padding: 6px 10px; border-radius: 7px;
+      white-space: nowrap; max-width: 220px; white-space: normal; text-align: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+      z-index: 999; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .skill-tag[data-tooltip]::before {
+      content: ''; position: absolute; bottom: calc(100% + 2px); left: 50%; transform: translateX(-50%);
+      border: 5px solid transparent; border-top-color: var(--navy);
+      opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 999;
+    }
+    .skill-tag[data-tooltip]:hover::after, .skill-tag[data-tooltip]:hover::before { opacity: 1; }
+    .hamburger { display: none; position: fixed; top: 16px; left: 16px; z-index: 200;
+      background: var(--gold); border: none; border-radius: 10px; padding: 10px 12px;
+      cursor: pointer; flex-direction: column; gap: 5px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
+    .overlay.active { display: block; }
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      .hamburger { display: flex; }
+      .sidebar { position: fixed; left: -320px; top: 0; width: 280px; height: 100vh;
+        transition: left 0.3s ease; z-index: 150; padding: 40px 28px; }
+      .sidebar.open { left: 0; }
+      .main { margin-left: 0; padding: 72px 20px 40px; max-width: 100%; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .lang-grid { gap: 10px; }
+      .lang-card { min-width: 110px; padding: 12px 16px; }
+      .interests-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .card { padding: 20px 20px; }
+      .section-title { font-size: 1.5rem; }
+    }
+  
+    .avatar-initials { width: 100px; height: 100px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800; color: var(--navy);
+      margin: 0 auto 16px; border: 3px solid var(--gold); }
+  
+    .open-to-work { display: inline-flex; align-items: center; gap: 6px; background: rgba(72,187,120,0.12); color: #48bb78; font-size: 0.68rem; font-weight: 700; padding: 5px 11px; border-radius: 20px; margin-top: 10px; letter-spacing: 0.02em; }
+    .otw-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; flex-shrink:0; animation: otw-pulse 2s infinite; }
+    @keyframes otw-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(72,187,120,0.5); } 60% { box-shadow: 0 0 0 5px rgba(72,187,120,0); } }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+    /* ── Dark Mode ───────────────────────────────── */
+    [data-theme="dark"] {
+      --white:      #1e1a16;
+      --off-white:  #141210;
+      --text:       #e0d8ce;
+      --text-light: #9a8e82;
+      --border:     #3a3028;
+    }
+    [data-theme="dark"] .sidebar        { background: #0f0d0b; }
+    [data-theme="dark"] .skill-tag      { background: #2a2420; color: var(--text); border-color: var(--border); }
+    [data-theme="dark"] .lang-card,
+    [data-theme="dark"] .interest-card,
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .cert-card,
+    [data-theme="dark"] .pub-card,
+    [data-theme="dark"] .watch-card,
+    [data-theme="dark"] .book-card,
+    [data-theme="dark"] .activity-card,
+    [data-theme="dark"] .currently-card,
+    [data-theme="dark"] .empty-state    { background: var(--white); border-color: var(--border); }
+    [data-theme="dark"] .section-title  { color: var(--text); }
+    [data-theme="dark"] .card-title,
+    [data-theme="dark"] .cert-name,
+    [data-theme="dark"] .pub-title,
+    [data-theme="dark"] .watch-name,
+    [data-theme="dark"] .book-title,
+    [data-theme="dark"] .activity-title,
+    [data-theme="dark"] .currently-value { color: var(--text); }
+
+    /* Dark mode toggle button */
+    .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
+      color: rgba(255,255,255,0.55); font-size: 1rem; cursor: pointer; padding: 6px 10px;
+      margin-top: 12px; width: 100%; transition: all 0.2s; display: flex; align-items: center;
+      justify-content: center; gap: 8px; font-family: inherit; font-size: 0.78rem; font-weight: 500; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.07); color: var(--gold); border-color: var(--gold); }
+
+    /* ── Scroll Progress Bar ─────────────────────── */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gold); z-index: 9999; transition: width 0.08s linear; }
+
+    /* ── Print Stylesheet ────────────────────────── */
+    @media print {
+      #scroll-progress, .hamburger, .overlay, .theme-toggle { display: none !important; }
+      .sidebar { position: relative !important; width: 100% !important; height: auto !important;
+        flex-direction: row !important; padding: 16px 24px !important; left: 0 !important;
+        page-break-after: avoid; }
+      .sidebar-contact, nav, .open-to-work, .sidebar-divider { display: none !important; }
+      .sidebar-profile { display: flex; align-items: center; gap: 16px; text-align: left; }
+      .avatar { width: 56px !important; height: 56px !important; margin: 0 !important; }
+      .sidebar h1 { font-size: 1.2rem !important; }
+      .sidebar .title { font-size: 0.75rem !important; }
+      .main { margin-left: 0 !important; padding: 16px 24px !important; }
+      body { display: block !important; }
+      .card, .cert-card, .pub-card { box-shadow: none !important; break-inside: avoid; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
+      .contact-btn::after { display: none; }
+    }
+  
+    /* ── Dark mode text & tag fixes ── */
+    [data-theme="dark"] .about-text          { color: var(--text); }
+    [data-theme="dark"] .about-text strong   { color: var(--gold); }
+    [data-theme="dark"] .tag                 { background: #2a2420; color: var(--text); border: 1px solid var(--border); }
+    [data-theme="dark"] .tag.gold            { background: rgba(201,168,76,0.18); color: var(--gold); border-color: rgba(201,168,76,0.3); }
+    [data-theme="dark"] #last-updated        { color: var(--text-light) !important; }
+    [data-theme="dark"] #last-updated strong { color: var(--text) !important; }
+    [data-theme="dark"] .card-title          { color: var(--text); }
+    [data-theme="dark"] .card-date           { color: var(--text-light); }
+    [data-theme="dark"] .card-subtitle       { color: var(--text-light); }
+    [data-theme="dark"] .card li             { color: var(--text); }
+    [data-theme="dark"] .skill-group h3      { color: var(--text); }
+    [data-theme="dark"] .empty-title         { color: var(--text); }
+    [data-theme="dark"] .empty-text          { color: var(--text-light); }
+    [data-theme="dark"] .section-label       { color: var(--navy); }
+    [data-theme="dark"] .pub-meta            { color: var(--text-light); }
+    [data-theme="dark"] .pub-meta strong     { color: var(--text); }
+    [data-theme="dark"] .book-note           { color: var(--text-light); }
+    [data-theme="dark"] .cert-issuer         { color: var(--text-light); }
+    [data-theme="dark"] .cert-list li        { color: var(--text); }
+    [data-theme="dark"] .activity-desc       { color: var(--text-light); }
+    [data-theme="dark"] .interest-desc       { color: var(--text-light); }
+    [data-theme="dark"] .interest-name       { color: var(--text); }
+    [data-theme="dark"] .lang-level          { color: var(--text-light); }
+    [data-theme="dark"] .lang-name           { color: var(--text); }
+  
+    [data-theme="dark"] .sidebar h1     { color: #f0ebe4 !important; }
+    [data-theme="dark"] .sidebar-profile .title { color: var(--gold) !important; }
+  
+    /* ── Extra page CSS ── */
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .cert-card { background: var(--white); border-radius: 16px; padding: 26px 28px; border: 1px solid var(--border); transition: all 0.2s; }
+    .cert-card:hover { box-shadow: 0 8px 32px rgba(26,24,20,0.08); transform: translateY(-2px); border-color: var(--gold); }
+    .cert-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .cert-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .cert-name { font-size: 0.97rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .cert-issuer { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
+    .cert-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .cert-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.83rem; line-height: 1.5; color: var(--text); }
+    .cert-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .cert-dot.done { background: rgba(72,187,120,0.15); color: #276749; }
+    .cert-dot.progress { background: rgba(201,168,76,0.2); color: #7a5c00; }
+    .cert-dot.planned { background: rgba(113,128,150,0.12); color: var(--text-light); }
+    .cert-item-text { flex: 1; }
+    .cert-item-date { font-size: 0.7rem; color: var(--text-light); margin-top: 1px; }
+    @media (max-width: 768px) { .cert-grid { grid-template-columns: 1fr; } }  
+    .empty-state { text-align: center; padding: 80px 32px; background: var(--white); border-radius: 20px; border: 2px dashed var(--border); }
+    .empty-icon { font-size: 3rem; margin-bottom: 18px; }
+    .empty-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .empty-text { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; max-width: 340px; margin: 0 auto; }
+    @media (max-width: 768px) { .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; } .main { margin-left: 0; padding: 32px 24px; } body { flex-direction: column; } }
+.contact-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 0.8rem; font-weight: 700; padding: 9px 16px; border-radius: 10px; margin-bottom: 8px; transition: all 0.2s; letter-spacing: 0.01em; }
+    .contact-btn-ghost { background: transparent; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.15); font-weight: 500; }
+    .pub-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; margin-bottom: 24px; }
+    .pub-card:hover { box-shadow: 0 8px 32px rgba(26,24,20,0.08); transform: translateY(-2px); }
+    .pub-type { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
+    .pub-type.thesis { background: rgba(201,168,76,0.15); color: #7a5c00; }
+    .pub-type.journal { background: rgba(72,187,120,0.15); color: #276749; }
+    .pub-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+    .pub-meta { font-size: 0.82rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.6; }
+    .pub-meta strong { color: var(--text); font-weight: 600; }
+    .pub-abstract { font-size: 0.85rem; color: var(--text); line-height: 1.75; border-left: 3px solid var(--gold); padding-left: 14px; margin-top: 12px; }  
+    .currently-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .currently-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.2s; }
+    .currently-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.12); transform: translateY(-2px); }
+    .currently-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .currently-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 4px; }
+    .currently-value { font-size: 0.9rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .currently-sub { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
+    .watch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 20px; }
+    .watch-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
+    .watch-card:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(201,168,76,0.15); transform: translateY(-3px); }
+    .watch-emoji { font-size: 2.2rem; margin-bottom: 10px; }
+    .watch-brand { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 4px; }
+    .watch-name { font-size: 0.92rem; font-weight: 700; color: var(--navy); }
+    .book-shelf { display: flex; flex-direction: column; gap: 14px; }
+    .book-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.2s; }
+    .book-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.12); }
+    .book-spine { width: 6px; border-radius: 3px; background: var(--gold); flex-shrink: 0; align-self: stretch; min-height: 40px; }
+    .book-spine.read { background: var(--navy); }
+    .book-spine.want { background: var(--border); }
+    .book-status { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+    .book-status.reading { color: #48bb78; }
+    .book-status.read { color: var(--text-light); }
+    .book-status.want { color: var(--gold); }
+    .book-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .book-author { font-size: 0.8rem; color: var(--text-light); }
+    .book-note { font-size: 0.78rem; color: var(--text); margin-top: 6px; font-style: italic; line-height: 1.5; }
+    .activity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .activity-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 0.2s; }
+    .activity-card:hover { box-shadow: 0 6px 24px rgba(26,24,20,0.07); transform: translateY(-2px); }
+    .activity-icon { font-size: 2rem; margin-bottom: 12px; }
+    .activity-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .activity-desc { font-size: 0.83rem; color: var(--text-light); line-height: 1.7; }
+    @media (max-width: 768px) { .currently-grid, .activity-grid { grid-template-columns: 1fr; } }  
+
+
+    /* ── SPA page visibility ── */
+    .page { display: none; }
+    .page.active { display: block; }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar-wrap"><div id="scroll-progress"></div></div>
+<div id="sidebar-root"></div>
+
+<div class="layout">
+  <main id="main-content">
+
+    <!-- ABOUT -->
+    <div class="page" id="page-about">
+<section id="about">
+    <div class="section-label">Hello there</div>
+    <h2 class="section-title">About Me</h2>
+    <div id="about-paragraphs"></div>
+    <div class="about-tags" id="about-tags"></div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-top:20px;" id="last-updated"></p>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="timeline" id="experience-cards"></div>
+  </section>
+
+  <section id="education">
+    <div class="section-label">Academic</div>
+    <h2 class="section-title">Education</h2>
+    <div class="timeline" id="education-cards"></div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label">Toolkit</div>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-group"><h3>Technical Skills</h3><div class="skill-tags" id="skills-technical"></div></div>
+      <div class="skill-group"><h3>Tools &amp; Software</h3><div id="skills-tools"></div></div>
+      <div class="skill-group"><h3>Soft Skills</h3><div class="skill-tags" id="skills-soft"></div></div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-light);margin-top:14px;">&#8599; Actively developing</p>
+  </section>
+
+  <section id="languages">
+    <div class="section-label">Languages</div>
+    <h2 class="section-title">Languages</h2>
+    <div class="lang-grid" id="lang-grid"></div>
+  </section>
+
+  <section id="interests">
+    <div class="section-label">Beyond Work</div>
+    <h2 class="section-title">Interests</h2>
+    <div class="interests-grid" id="interests-grid"></div>
+    <a href="beyond.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more &#8594;</a>
+  </section>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="page" id="page-certifications">
+<section>
+    <div class="section-label">&#127942; Credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-grid" id="cert-grid"></div>
+  </section>
+    </div>
+
+    <!-- BLOG -->
+    <div class="page" id="page-blog">
+<section>
+    <div class="section-label">Writing</div>
+    <h2 class="section-title">Blog</h2>
+    <div class="empty-state">
+      <div class="empty-icon">&#9997;&#65039;</div>
+      <div class="empty-title">No posts yet</div>
+      <p class="empty-text">Thoughts on finance, career, and whatever else is on my mind. First post coming soon.</p>
+    </div>
+  </section>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div class="page" id="page-portfolio">
+<section>
+    <div class="section-label">Deal Work</div>
+    <h2 class="section-title">Portfolio</h2>
+    <div class="empty-state">
+      <div class="empty-icon">&#128188;</div>
+      <div class="empty-title">Coming soon</div>
+      <p class="empty-text">A selection of anonymised deal work and financial models will be showcased here shortly.</p>
+    </div>
+  </section>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="page" id="page-publications">
+<section>
+    <div class="section-label">&#128196; Research</div>
+    <h2 class="section-title">Publications</h2>
+    <div id="pub-container"></div>
+  </section>
+    </div>
+
+    <!-- BEYOND WORK -->
+    <div class="page" id="page-beyond">
+<section id="currently">
+    <div class="section-label">&#127774; Right Now</div>
+    <h2 class="section-title">Beyond Work</h2>
+    <div class="currently-grid" id="currently-grid"></div>
+  </section>
+  <section id="watches">
+    <div class="section-label">&#8987; Horology</div>
+    <h2 class="section-title">Watch Collection</h2>
+    <div class="watch-grid" id="watch-grid"></div>
+  </section>
+  <section id="reading">
+    <div class="section-label">&#128218; Reading</div>
+    <h2 class="section-title">Reading List</h2>
+    <div class="book-shelf" id="book-shelf"></div>
+  </section>
+  <section id="life">
+    <div class="section-label">&#127758; Life</div>
+    <h2 class="section-title">Outside the Office</h2>
+    <div class="activity-grid" id="activity-grid"></div>
+  </section>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── INLINED DATA ── -->
+<script>
+// ============================================================
+//  SITE DATA · the only file you need to edit
+//  No HTML knowledge needed. Follow the patterns below.
+// ============================================================
+
+const siteData = {
+
+  // ── INDEX: ABOUT ───────────────────────────────────────────
+  // Edit the prose and tags shown on your About section
+  about: {
+    paragraphs: [
+      `As an <strong>MBA graduate (Cum Laude, KU Leuven)</strong>, I chose corporate finance because numbers directly shape how businesses grow, raise capital and create value · and I want to contribute to that process with rigour and real commercial intent.`,
+      `Relocated to Belgium to build a career in corporate finance, I bring <strong>advisory exposure and live deal experience</strong>, and I want to work for organisations where financial analysis drives meaningful decisions.`,
+      `Currently on a <strong>zoekjaar permit</strong>, actively seeking an analyst role in corporate finance, investment banking or commercial lending in the <strong>Benelux region</strong>.`
+    ],
+    tags: [
+      { label: "📍 Antwerp, Belgium", gold: true },
+      { label: "Corporate Finance",   gold: false },
+      { label: "Investment Banking",  gold: false },
+      { label: "DCF & Valuation",     gold: false },
+      { label: "Benelux",             gold: false }
+    ],
+    // lastUpdated is set automatically · no need to edit this
+  },
+
+  // ── INDEX: EXPERIENCE ──────────────────────────────────────
+  experience: [
+    {
+      title:    "Investment Analyst / Corporate Finance Analyst",
+      dates:    "Apr 2022 – Dec 2023",
+      company:  "ZA Capital Advisory",
+      subtitle: "Boutique Investment Bank · Dhaka, Bangladesh",
+      bullets: [
+        "Managed client mandates across real estate, energy, manufacturing and technology · from early-stage start-ups to international conglomerates",
+        "Built DCF valuations, sensitivity analyses and feasibility models across a wide range of financing decisions, from runway and treasury planning to syndicated credit facilities",
+        "Coordinated multidisciplinary deal teams to structure transactions, ensuring full regulatory and documentation compliance"
+      ]
+    },
+    {
+      title:    "Research Trainee (Internship)",
+      dates:    "Jan 2022 – Apr 2022",
+      company:  "CandleStone Investment Partners Limited",
+      subtitle: "Asset Management · Dhaka, Bangladesh",
+      bullets: [
+        "Executed intra-day trades for a BDT 1B (~$10M) mutual fund",
+        "Supported institutional client reporting and custom index construction for 5+ institutional investors",
+        "Foundational exposure to equity research and risk monitoring processes"
+      ]
+    }
+    // Add more: { title, dates, company, subtitle, bullets: [] }
+  ],
+
+  // ── INDEX: EDUCATION ───────────────────────────────────────
+  education: [
+    {
+      degree:   "Master of Business Administration · Corporate Finance Track",
+      year:     "2025",
+      school:   "KU Leuven",
+      location: "Antwerp, Belgium",
+      bullets: [
+        "Graduated <strong>Cum Laude</strong>",
+        "Thesis: Long-run performance effects of joint ventures · European M&A in chemical and pharmaceutical sectors (event study)"
+      ]
+    },
+    {
+      degree:   "Bachelor of Business Administration · Finance & Banking",
+      year:     "2021",
+      school:   "Bangladesh University of Professionals",
+      location: "Dhaka, Bangladesh",
+      bullets: [
+        "Cumulative GPA: <strong>3.52 / 4.0</strong>"
+      ]
+    }
+    // Add more: { degree, year, school, location, bullets: [] }
+  ],
+
+  // ── INDEX: SKILLS ──────────────────────────────────────────
+  skills: {
+    technical: [
+      { label: "Financial Modelling",    tooltip: "Core skill across all deal work, from startup runway to large-scale syndications" },
+      { label: "DCF Analysis",           tooltip: "Applied in feasibility studies and capital raising mandates" },
+      { label: "Sensitivity Analysis",   tooltip: "3-scenario models used in live financing decisions" },
+      { label: "Valuation",              tooltip: "Delivered across real estate, energy, tech and manufacturing" },
+      { label: "Credit Analysis",        tooltip: "Assessed debt capacity and risk for institutional financing" },
+      { label: "Due Diligence",          tooltip: "Conducted across multiple business units for growth equity mandates" },
+      { label: "Debt & Equity Financing",tooltip: "Structured instruments from syndicated debt to private placements" },
+      { label: "Private Placements",     tooltip: "Supported equity offload to institutional investors" }
+    ],
+    tools: [
+      { label: "Excel (Advanced)",      tooltip: "Primary modelling tool across all deal work",          type: "tag" },
+      { label: "PowerPoint (Advanced)", tooltip: "Built investor decks and client-facing presentations", type: "tag" },
+      { label: "IFRS ↗",               tooltip: "",                                                      type: "tag" },
+      { label: "Power BI",             tooltip: "",  type: "bar", pct: 30 },
+      { label: "SAP S/4HANA",          tooltip: "",  type: "bar", pct: 20 }
+      // type: "tag" = pill badge | type: "bar" = progress bar (pct: 0-100)
+    ],
+    soft: [
+      { label: "Stakeholder Management",        tooltip: "Managed relationships across clients, regulators and deal teams" },
+      { label: "Client Relationships",          tooltip: "Full client lifecycle management from mandate to disbursement" },
+      { label: "Cross-functional Collaboration",tooltip: "Coordinated legal, financial and operational teams on transactions" },
+      { label: "Presentation & Reporting",      tooltip: "Delivered board-level and investor-facing output" }
+    ]
+  },
+
+  // ── INDEX: LANGUAGES ───────────────────────────────────────
+  languages: [
+    { name: "English", level: "C2 · Proficient", pct: 100 },
+    { name: "Bangla",  level: "Native",           pct: 100 },
+    { name: "Dutch",   level: "A1 · Learning",    pct: 15  },
+    { name: "French",  level: "A1 · Beginner",    pct: 10  }
+    // Add more: { name, level, pct: 0-100 }
+  ],
+
+  // ── INDEX: INTERESTS ───────────────────────────────────────
+  interests: [
+    { emoji: "🦅", name: "Hiking",          desc: "Exploring trails and new landscapes on foot" },
+    { emoji: "📚", name: "Reading",         desc: "Curious reader across finance, history and fiction" },
+    { emoji: "⌛", name: "Watch Collecting",desc: "Appreciating the craft of mechanical horology" }
+    // Add more: { emoji, name, desc }
+  ],
+
+  // ── CERTIFICATIONS PAGE ────────────────────────────────────
+  certifications: [
+    {
+      icon: "🇳🇱",
+      name: "Dutch Language",
+      issuer: "CVO Encora · NT2 Programme",
+      items: [
+        { text: "NT2 1.1 · Certified",   sub: "CVO Encora",  status: "done"     },
+        { text: "NT2 1.2 · In Progress", sub: "CVO Encora",  status: "progress" }
+      ]
+    },
+    {
+      icon: "📊",
+      name: "Power BI",
+      issuer: "Pragmatic Works",
+      items: [
+        { text: "Beginner to Pro Workshop", sub: "Pragmatic Works · 03 Sep 2026", status: "done" }
+      ]
+    },
+    {
+      icon: "💻",
+      name: "SAP S/4HANA",
+      issuer: "SAP / Udemy",
+      items: [
+        { text: "SAP S/4HANA Fundamentals · In Progress", sub: "Udemy", status: "progress" }
+      ]
+    }
+    // status options: "done" | "progress" | "planned"
+  ],
+
+  // ── PUBLICATIONS PAGE ──────────────────────────────────────
+  publications: {
+    thesis: {
+      title:       "Long-run Performance Effects of Joint Ventures: European M&A in the Chemical and Pharmaceutical Sectors",
+      institution: "KU Leuven",
+      year:        "2025",
+      degree:      "Master of Business Administration · Corporate Finance Track",
+      honour:      "Cum Laude",
+      abstract:    "This study examines whether European parent firms engaging in joint ventures (chemical vs. pharmaceutical; 1998 to 2019) generate long-term abnormal returns. 36-month BHARs were computed for 102 firms and regression analysis was applied to test the role of profitability (ROA) and R&D intensity. Results show chemicals outperform over three years while pharma does not (difference not significant), and a skewness-adjusted test confirms no significant abnormal returns overall. ROA predicts BHAR in pharma (not chemicals), while R&D shows a weak negative relationship in pharma, suggesting investors may prioritize operational efficiency over R&D spend in that sector."
+    },
+    papers: [
+      {
+        title:    "Factors Affecting the Success of Female Business Entrepreneurs in Bangladesh",
+        authors:  "Anindya Mutsuddy",
+        venue:    "SSRN",
+        date:     "December 2019 (posted March 2023)",
+        url:      "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4381557",
+        abstract: "This study examines the factors driving the success of female entrepreneurs in Bangladesh, drawing on survey data from 177 business owners. Using factor analysis and multivariate regression, it identifies key success drivers including efficiency in handling unexpected events, family support, technical skills, and leadership style. This paper represents my foundational exposure to independent research · applying quantitative methods to a real-world economic question before formal postgraduate training."
+      }
+    ]
+  },
+
+  // ── BEYOND WORK PAGE ───────────────────────────────────────
+  beyond: {
+    currently: {
+      reading:  { title: "Snow Country", author: "Yasunari Kawabata" },
+      watching: null
+    },
+    watches: [
+      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", emoji: "⭐" },
+      { brand: "Seiko",          name: "Seiko 5",              emoji: "⌛" }
+    ],
+    books: [
+      { title: "Snow Country",    author: "Yasunari Kawabata", status: "reading", note: "A beautifully restrained Japanese novel about impermanence and longing." },
+      { title: "Add a past read", author: "Author name",       status: "read",    note: "" }
+    ],
+    activities: [
+      { emoji: "🦅", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
+      { emoji: "🤝", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
+    ]
+  },
+
+  // ── BLOG PAGE ──────────────────────────────────────────────
+  blog: [
+    // { title: "Post Title", date: "March 2026", excerpt: "A short summary...", url: "#" }
+  ],
+
+  // ── PORTFOLIO PAGE ─────────────────────────────────────────
+  portfolio: [
+    // { sector: "Real Estate", type: "Debt Advisory", desc: "..." }
+  ]
+
+};
+
+</script>
+
+<!-- ── INLINED SIDEBAR ── -->
+<script>
+(function () {
+  const NAME     = "Anindya Mutsuddy";
+  const TITLE    = "Investment Analyst<br/>Corporate Finance Analyst";
+  const EMAIL    = "anindya.mutsuddy@gmail.com";
+  const LINKEDIN = "https://linkedin.com/in/anindyamutsuddy";
+  const LOCATION = "Antwerp, Belgium";
+  const PHOTO    = "pfp.jpg";
+
+  const PAGES = [
+    { label: "&#127942; Certifications", hash: "certifications" },
+    { label: "&#9997;&#65039; Blog",     hash: "blog"           },
+    { label: "&#128188; Portfolio",      hash: "portfolio"      },
+    { label: "&#128196; Publications",   hash: "publications"   },
+    { label: "&#127774; Beyond Work",    hash: "beyond"         },
+  ];
+
+  function buildSidebar(activeHash) {
+    let navHTML = `<li><a href="#about" data-hash="about"${activeHash==='about'?' class="active"':''}>&#128100; About</a></li>`;
+    PAGES.forEach(p => {
+      navHTML += `<li><a href="#${p.hash}" data-hash="${p.hash}"${activeHash===p.hash?' class="active"':''}>${p.label}</a></li>`;
+    });
+    return `
+<button class="hamburger" id="hamburger" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="overlay" id="overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-profile">
+    <div style="position:relative;width:100px;height:100px;margin:0 auto 16px;">
+      <div class="avatar avatar-initials" style="position:absolute;inset:0;margin:0;">AM</div>
+      <img src="${PHOTO}" class="avatar" alt="${NAME}"
+           style="position:absolute;inset:0;margin:0;"
+           onerror="this.style.display='none'"/>
+    </div>
+    <h1>${NAME}</h1>
+    <p class="title">${TITLE}</p>
+    <div class="open-to-work"><span class="otw-dot"></span>Open to opportunities</div>
+  </div>
+  <hr class="sidebar-divider"/>
+  <nav>
+    <p class="nav-label">Pages</p>
+    <ul>${navHTML}</ul>
+  </nav>
+  <div class="sidebar-contact">
+    <p>Contact</p>
+    <a href="mailto:${EMAIL}" class="contact-btn">&#128231; Email Me</a>
+    <a href="${LINKEDIN}" target="_blank" class="contact-btn">&#128279; LinkedIn</a>
+    <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" class="contact-btn contact-btn-ghost">&#128205; ${LOCATION}</a>
+  </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙 Dark mode</button>
+</aside>`;
+  }
+
+  function getHash() {
+    const h = (window.location.hash || '#about').replace('#','').trim();
+    const valid = ['about','certifications','blog','portfolio','publications','beyond'];
+    return valid.includes(h) ? h : 'about';
+  }
+
+  function updateNav(activeHash) {
+    document.querySelectorAll('nav a[data-hash]').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('data-hash') === activeHash);
+    });
+  }
+
+  function showPage(hash) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + hash);
+    if (target) { target.classList.add('active'); window.scrollTo(0,0); }
+    updateNav(hash);
+    const titles = {
+      about: 'Anindya Mutsuddy',
+      certifications: 'Certifications · Anindya Mutsuddy',
+      blog: 'Blog · Anindya Mutsuddy',
+      portfolio: 'Portfolio · Anindya Mutsuddy',
+      publications: 'Publications · Anindya Mutsuddy',
+      beyond: 'Beyond Work · Anindya Mutsuddy',
+    };
+    document.title = titles[hash] || 'Anindya Mutsuddy';
+    // Close sidebar on mobile
+    const sb = document.querySelector('.sidebar');
+    const ov = document.getElementById('overlay');
+    if (sb) sb.classList.remove('open');
+    if (ov) ov.classList.remove('active');
+  }
+
+  // Initial render
+  const initHash = getHash();
+  const target = document.getElementById('sidebar-root');
+  if (target) target.innerHTML = buildSidebar(initHash);
+  else document.body.insertAdjacentHTML('afterbegin', buildSidebar(initHash));
+
+  showPage(initHash);
+
+  // Hash change router
+  window.addEventListener('hashchange', () => showPage(getHash()));
+
+  // Wire up hamburger + overlay
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const sidebar   = document.querySelector('.sidebar');
+    const overlay   = document.getElementById('overlay');
+    if (!hamburger) return;
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    });
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    });
+  });
+})();
+</script>
+
+<!-- ── MAIN APP SCRIPT ── -->
+<script>
+  // ── Dark mode ──
+  const root  = document.documentElement;
+  const saved = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+
+  function updateToggleLabel() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    btn.innerHTML = root.getAttribute('data-theme') === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+  }
+
+  // ── Scroll progress ──
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+    }, { passive: true });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    updateToggleLabel();
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.id === 'theme-toggle') {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateToggleLabel();
+      }
+    });
+
+    const d = siteData;
+
+    // ── ABOUT ──
+    const aboutParas = document.getElementById('about-paragraphs');
+    if (aboutParas) {
+      aboutParas.innerHTML = d.about.paragraphs.map(p => `<p class="about-text">${p}</p>`).join('');
+    }
+    const aboutTags = document.getElementById('about-tags');
+    if (aboutTags) {
+      aboutTags.innerHTML = d.about.tags.map(t => `<span class="tag${t.gold?' gold':''}">${t.label}</span>`).join('');
+    }
+    const lu = document.getElementById('last-updated');
+    if (lu) {
+      const now = new Date();
+      const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      lu.innerHTML = `Last updated: <strong style="color:var(--navy);">${months[now.getMonth()]} ${now.getFullYear()}</strong>`;
+    }
+
+    // ── EXPERIENCE ──
+    const expContainer = document.getElementById('experience-cards');
+    if (expContainer) {
+      d.experience.forEach(e => {
+        expContainer.innerHTML += `<div class="card">
+          <div class="card-header"><span class="card-title">${e.title}</span><span class="card-date">${e.dates}</span></div>
+          <p class="card-subtitle"><strong>${e.company}</strong> &middot; ${e.subtitle}</p>
+          <ul>${e.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+        </div>`;
+      });
+    }
+
+    // ── EDUCATION ──
+    const eduContainer = document.getElementById('education-cards');
+    if (eduContainer) {
+      d.education.forEach(e => {
+        eduContainer.innerHTML += `<div class="card">
+          <div class="card-header"><span class="card-title">${e.degree}</span><span class="card-date">${e.year}</span></div>
+          <p class="card-subtitle"><strong>${e.school}</strong> &middot; ${e.location}</p>
+          <ul>${e.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+        </div>`;
+      });
+    }
+
+    // ── SKILLS ──
+    const techTags = document.getElementById('skills-technical');
+    if (techTags) {
+      d.skills.technical.forEach(s => {
+        techTags.innerHTML += `<span class="skill-tag"${s.tooltip?` data-tooltip="${s.tooltip}"`:''}>  ${s.label}</span>`;
+      });
+    }
+    const toolsContainer = document.getElementById('skills-tools');
+    if (toolsContainer) {
+      const tagItems = d.skills.tools.filter(s => s.type === 'tag');
+      const barItems = d.skills.tools.filter(s => s.type === 'bar');
+      const tagHTML  = tagItems.map(s => `<span class="skill-tag"${s.tooltip?` data-tooltip="${s.tooltip}"`:''}>  ${s.label}</span>`).join('');
+      toolsContainer.innerHTML = `<div class="skill-tags" style="margin-bottom:16px;">${tagHTML}</div>`;
+      const barsHTML = barItems.map(s => `<div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+          <span style="font-size:0.8rem;font-weight:600;color:var(--navy);">${s.label}</span>
+          <span style="font-size:0.7rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">Developing &#8599;</span>
+        </div>
+        <div style="height:6px;border-radius:6px;background:var(--border);overflow:hidden;">
+          <div class="tool-bar-fill" data-pct="${s.pct}" style="width:0%;height:100%;background:var(--gold);border-radius:6px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1);"></div>
+        </div>
+      </div>`).join('');
+      toolsContainer.innerHTML += `<div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">${barsHTML}</div>`;
+    }
+    const softTags = document.getElementById('skills-soft');
+    if (softTags) {
+      d.skills.soft.forEach(s => {
+        softTags.innerHTML += `<span class="skill-tag"${s.tooltip?` data-tooltip="${s.tooltip}"`:''}>  ${s.label}</span>`;
+      });
+    }
+
+    // ── LANGUAGES ──
+    const langGrid = document.getElementById('lang-grid');
+    if (langGrid) {
+      d.languages.forEach(l => {
+        langGrid.innerHTML += `<div class="lang-card">
+          <span class="lang-name">${l.name}</span>
+          <span class="lang-level">${l.level}</span>
+          <div class="lang-bar"><div class="lang-bar-fill" data-pct="${l.pct}" style="width:0%"></div></div>
+        </div>`;
+      });
+    }
+
+    // ── INTERESTS ──
+    const interestsGrid = document.getElementById('interests-grid');
+    if (interestsGrid) {
+      d.interests.forEach(i => {
+        interestsGrid.innerHTML += `<div class="interest-card">
+          <div class="interest-emoji">${i.emoji}</div>
+          <div class="interest-name">${i.name}</div>
+          <div class="interest-desc">${i.desc}</div>
+        </div>`;
+      });
+    }
+
+    // ── CERTIFICATIONS ──
+    const certGrid = document.getElementById('cert-grid');
+    if (certGrid) {
+      const dotMap = { done: '✓', progress: '●', planned: '◌' };
+      d.certifications.forEach(cert => {
+        const items = cert.items.map(item => `
+          <li>
+            <div class="cert-dot ${item.status}">${dotMap[item.status] || '●'}</div>
+            <div><div class="cert-item-text">${item.text}</div><div class="cert-item-date">${item.sub}</div></div>
+          </li>`).join('');
+        certGrid.innerHTML += `<div class="cert-card">
+          <div class="cert-card-header">
+            <div class="cert-icon">${cert.icon}</div>
+            <div><div class="cert-name">${cert.name}</div><div class="cert-issuer">${cert.issuer}</div></div>
+          </div>
+          <ul class="cert-list">${items}</ul>
+        </div>`;
+      });
+    }
+
+    // ── PUBLICATIONS ──
+    const pubContainer = document.getElementById('pub-container');
+    if (pubContainer) {
+      const pub = d.publications;
+      pubContainer.innerHTML += `<div class="pub-card">
+        <span class="pub-type thesis">🎓 MBA Thesis</span>
+        <div class="pub-title">${pub.thesis.title}</div>
+        <div class="pub-meta">
+          <strong>Anindya Mutsuddy</strong> &nbsp;&middot;&nbsp; ${pub.thesis.institution} &nbsp;&middot;&nbsp; ${pub.thesis.year}<br/>
+          ${pub.thesis.degree} &nbsp;&middot;&nbsp; Graduated <strong>${pub.thesis.honour}</strong>
+        </div>
+        <div class="pub-abstract">${pub.thesis.abstract}</div>
+      </div>`;
+      pub.papers.forEach(p => {
+        pubContainer.innerHTML += `<div class="pub-card">
+          <span class="pub-type journal">📄 Research Paper</span>
+          <div class="pub-title">${p.title}</div>
+          <div class="pub-meta">
+            <strong>${p.authors}</strong> &nbsp;&middot;&nbsp; ${p.venue} &nbsp;&middot;&nbsp; ${p.date}<br/>
+            <a href="${p.url}" target="_blank" style="color:var(--navy);font-weight:600;font-size:0.8rem;">🔗 View on SSRN &rarr;</a>
+          </div>
+          <div class="pub-abstract">${p.abstract}</div>
+        </div>`;
+      });
+    }
+
+    // ── BEYOND WORK ──
+    const bd = d.beyond;
+    const cg = document.getElementById('currently-grid');
+    if (cg) {
+      if (bd.currently.reading)  cg.innerHTML += `<div class="currently-card"><div class="currently-icon">📖</div><div><div class="currently-label">Currently Reading</div><div class="currently-value">${bd.currently.reading.title}</div><div class="currently-sub">${bd.currently.reading.author}</div></div></div>`;
+      if (bd.currently.watching) cg.innerHTML += `<div class="currently-card"><div class="currently-icon">🎬</div><div><div class="currently-label">Currently Watching</div><div class="currently-value">${bd.currently.watching.title}</div><div class="currently-sub">${bd.currently.watching.platform}</div></div></div>`;
+      if (!bd.currently.watching && bd.watches.length) {
+        const w = bd.watches[0];
+        cg.innerHTML += `<div class="currently-card"><div class="currently-icon">${w.emoji}</div><div><div class="currently-label">Latest Acquisition</div><div class="currently-value">${w.name}</div><div class="currently-sub">${w.brand}</div></div></div>`;
+      }
+    }
+    const wg = document.getElementById('watch-grid');
+    if (wg) bd.watches.forEach(w => {
+      wg.innerHTML += `<div class="watch-card"><div class="watch-emoji">${w.emoji}</div><div class="watch-brand">${w.brand}</div><div class="watch-name">${w.name}</div></div>`;
+    });
+    const bs = document.getElementById('book-shelf');
+    if (bs) bd.books.forEach(b => {
+      const statusLabel = b.status==='reading'?'● Currently Reading':b.status==='want'?'◌ Want to Read':'✓ Read';
+      bs.innerHTML += `<div class="book-card"><div class="book-spine ${b.status}"></div><div><div class="book-status ${b.status}">${statusLabel}</div><div class="book-title">${b.title}</div><div class="book-author">${b.author}</div>${b.note?`<div class="book-note">${b.note}</div>`:''}</div></div>`;
+    });
+    const ag = document.getElementById('activity-grid');
+    if (ag) bd.activities.forEach(a => {
+      ag.innerHTML += `<div class="activity-card"><div class="activity-icon">${a.emoji}</div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
+    });
+
+    // ── Animate bars on section switch ──
+    function animateBarsInView() {
+      document.querySelectorAll('.lang-bar-fill[data-pct], .tool-bar-fill[data-pct]').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.style.transition = 'width 0.8s cubic-bezier(0.4,0,0.2,1)';
+          el.style.width = el.getAttribute('data-pct') + '%';
+        }
+      });
+    }
+    window.addEventListener('scroll', animateBarsInView, { passive: true });
+    window.addEventListener('hashchange', () => setTimeout(animateBarsInView, 100));
+    setTimeout(animateBarsInView, 200);
+  });
+</script>
+
+</body>
+</html>
