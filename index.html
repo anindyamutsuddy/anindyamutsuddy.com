@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%231e1814%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2221%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2213%22%20font-weight%3D%22700%22%20fill%3D%22%23c9a84c%22%20text-anchor%3D%22middle%22%3EAM%3C/text%3E%3C/svg%3E"/>
   <title>Anindya Mutsuddy</title>
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://anindyamutsuddy.github.io/"/>
+  <meta property="og:title"       content="Anindya Mutsuddy · Corporate Finance Analyst"/>
+  <meta property="og:description" content="MBA graduate (Cum Laude, KU Leuven). Seeking analyst roles in corporate finance, investment banking or commercial lending in the Benelux region."/>
+  <meta property="og:image"       content="https://anindyamutsuddy.github.io/pfp.jpg"/>
+  <meta name="twitter:card"       content="summary"/>
+  <meta name="twitter:title"      content="Anindya Mutsuddy · Corporate Finance Analyst"/>
+  <meta name="twitter:image"      content="https://anindyamutsuddy.github.io/pfp.jpg"/>
   <meta name="description" content="Corporate Finance Analyst · Investment Banking · Antwerp, Belgium"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -341,6 +350,77 @@
     @media (max-width: 768px) { .currently-grid, .activity-grid { grid-template-columns: 1fr; } }  
 
 
+
+    /* ── Scroll-spy sticky nav (About page) ── */
+    .scrollspy-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--off-white); border-bottom: 1px solid var(--border);
+      display: flex; gap: 0; margin: -20px -56px 40px; padding: 0 56px;
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .scrollspy-nav::-webkit-scrollbar { display: none; }
+    [data-theme="dark"] .scrollspy-nav { background: #1a1714; border-color: var(--border); }
+    .spy-link {
+      font-size: 0.78rem; font-weight: 600; color: var(--text-light);
+      padding: 12px 16px; text-decoration: none; white-space: nowrap;
+      border-bottom: 2px solid transparent; transition: all 0.2s;
+    }
+    .spy-link:hover { color: var(--navy); }
+    .spy-link.active { color: var(--navy); border-bottom-color: var(--gold); }
+    [data-theme="dark"] .spy-link:hover,
+    [data-theme="dark"] .spy-link.active { color: var(--gold); }
+
+    /* ── Back to top ── */
+    .back-to-top {
+      position: fixed; bottom: 32px; right: 32px; z-index: 300;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--navy); color: var(--gold);
+      border: none; cursor: pointer; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.3s, transform 0.3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--gold); color: var(--navy); }
+    [data-theme="dark"] .back-to-top { background: var(--gold); color: var(--navy); }
+    [data-theme="dark"] .back-to-top:hover { background: #e0bc6a; }
+
+    /* ── Page dot navigation ── */
+    .page-dots {
+      position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+      z-index: 200; display: flex; flex-direction: column; gap: 10px;
+    }
+    .page-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); border: none; cursor: pointer;
+      padding: 0; transition: all 0.2s;
+    }
+    .page-dot:hover { background: var(--text-light); transform: scale(1.3); }
+    .page-dot.active { background: var(--gold); transform: scale(1.3); }
+    @media (max-width: 768px) { .page-dots { display: none; } }
+
+    /* ── Staggered card animation ── */
+    @keyframes cardSlideUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card-animate {
+      animation: cardSlideUp 0.4s ease both;
+    }
+
+    /* ── CV request button ── */
+    .contact-btn-cv {
+      background: transparent !important;
+      border: 1.5px solid var(--gold) !important;
+      color: var(--gold) !important;
+    }
+    .contact-btn-cv:hover { background: rgba(201,168,76,0.12) !important; }
+
+    @media (max-width: 768px) {
+      .scrollspy-nav { margin: -20px -20px 32px; padding: 0 20px; }
+      .back-to-top   { bottom: 20px; right: 20px; width: 38px; height: 38px; }
+    }
     /* ── SPA page visibility ── */
     .page { display: none; }
     .page.active { display: block; animation: fadeIn 0.25s ease; }
@@ -356,6 +436,14 @@
 
     <!-- ABOUT -->
     <div class="page" id="page-about">
+<nav class="scrollspy-nav" id="scrollspy-nav">
+  <a href="#" class="spy-link active" data-spy="about">About</a>
+  <a href="#" class="spy-link" data-spy="experience">Experience</a>
+  <a href="#" class="spy-link" data-spy="education">Education</a>
+  <a href="#" class="spy-link" data-spy="skills">Skills</a>
+  <a href="#" class="spy-link" data-spy="languages">Languages</a>
+  <a href="#" class="spy-link" data-spy="interests">Interests</a>
+</nav>
 <section id="about">
         <h2 class="section-title">About Me</h2>
     <div id="about-paragraphs"></div>
@@ -396,7 +484,7 @@
     <div class="section-label">Beyond Work</div>
     <h2 class="section-title">Interests</h2>
     <div class="interests-grid" id="interests-grid"></div>
-    <a href="beyond.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more &#8594;</a>
+    <a href="#beyond" onclick="event.preventDefault();window.location.hash='beyond'" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more &#8594;</a>
   </section>
     </div>
 
@@ -470,6 +558,20 @@
 
   </main>
 </div>
+
+
+<!-- Back to top -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- Page dot nav -->
+<nav class="page-dots" id="page-dots" aria-label="Page navigation">
+  <button class="page-dot active" data-hash="about"         title="About"></button>
+  <button class="page-dot"        data-hash="certifications" title="Certifications"></button>
+  <button class="page-dot"        data-hash="blog"           title="Blog"></button>
+  <button class="page-dot"        data-hash="portfolio"      title="Portfolio"></button>
+  <button class="page-dot"        data-hash="publications"   title="Publications"></button>
+  <button class="page-dot"        data-hash="beyond"         title="Beyond Work"></button>
+</nav>
 
 <!-- ── INLINED DATA ── -->
 <script>
@@ -727,6 +829,7 @@ const siteData = {
   </nav>
   <div class="sidebar-contact">
     <p>Contact</p>
+    <a href="mailto:${EMAIL}?subject=CV%20Request%20%E2%80%93%20Anindya%20Mutsuddy&body=Hi%20Anindya%2C%0A%0AI%20came%20across%20your%20profile%20and%20would%20love%20to%20receive%20your%20CV.%0A%0ABest%20regards%2C" class="contact-btn contact-btn-cv">&#128196; Request CV</a>
     <a href="mailto:${EMAIL}" class="contact-btn">&#128231; Email Me</a>
     <a href="${LINKEDIN}" target="_blank" class="contact-btn">&#128279; LinkedIn</a>
     <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" class="contact-btn contact-btn-ghost">&#128205; ${LOCATION}</a>
@@ -752,6 +855,9 @@ const siteData = {
     const target = document.getElementById('page-' + hash);
     if (target) { target.classList.add('active'); window.scrollTo(0,0); }
     updateNav(hash);
+    // Sync page dots
+    document.querySelectorAll('.page-dot').forEach(d =>
+      d.classList.toggle('active', d.getAttribute('data-hash') === hash));
     const titles = {
       about: 'Anindya Mutsuddy',
       certifications: 'Certifications · Anindya Mutsuddy',
@@ -761,7 +867,15 @@ const siteData = {
       beyond: 'Beyond Work · Anindya Mutsuddy',
     };
     document.title = titles[hash] || 'Anindya Mutsuddy';
-    // Close sidebar on mobile
+    // Staggered card animation
+    setTimeout(() => {
+      document.querySelectorAll('#page-' + hash + ' .card, #page-' + hash + ' .cert-card, #page-' + hash + ' .pub-card, #page-' + hash + ' .book-card, #page-' + hash + ' .watch-card, #page-' + hash + ' .activity-card').forEach((card, i) => {
+        card.classList.remove('card-animate');
+        void card.offsetWidth;
+        card.style.animationDelay = (i * 60) + 'ms';
+        card.classList.add('card-animate');
+      });
+    }, 10);
     const sb = document.querySelector('.sidebar');
     const ov = document.getElementById('overlay');
     if (sb) sb.classList.remove('open');
@@ -1011,6 +1125,51 @@ const siteData = {
     window.addEventListener('scroll', animateBarsInView, { passive: true });
     window.addEventListener('hashchange', () => setTimeout(animateBarsInView, 100));
     setTimeout(animateBarsInView, 200);
+
+    // ── Back to top ──
+    const bttBtn = document.getElementById('back-to-top');
+    if (bttBtn) {
+      window.addEventListener('scroll', () => {
+        bttBtn.classList.toggle('visible', window.scrollY > 300);
+      }, { passive: true });
+      bttBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // ── Page dot click navigation ──
+    document.querySelectorAll('.page-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        window.location.hash = dot.getAttribute('data-hash');
+      });
+    });
+
+    // ── Scroll-spy for About page sections ──
+    const spySections = ['about','experience','education','skills','languages','interests'];
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          document.querySelectorAll('.spy-link').forEach(a => {
+            a.classList.toggle('active', a.getAttribute('data-spy') === id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    spySections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) spyObserver.observe(el);
+    });
+
+    // Spy-link click: smooth scroll to section
+    document.querySelectorAll('.spy-link').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = a.getAttribute('data-spy');
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
   });
 </script>
 
