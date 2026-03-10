@@ -135,7 +135,7 @@ const siteData = {
       name: "Power BI",
       issuer: "Microsoft · Pragmatic Works",
       items: [
-        { text: "Beginner to Pro Workshop",                   sub: "Pragmatic Works · Feb 2026",        status: "done"     },
+        { text: "Beginner to Pro Workshop",                   sub: "Pragmatic Works · Sep 2024",        status: "done"     },
         { text: "PL-300: Power BI Data Analyst (In Progress)", sub: "Microsoft Learn · est. 2026",       status: "progress" }
       ]
     },
@@ -199,33 +199,34 @@ const siteData = {
 
   // ── PORTFOLIO PAGE ─────────────────────────────────────────
   portfolio: {
-    // ── Work projects (client / professional context) ──────────
-    // Anonymise client names if needed. Focus on: what you did, what the output was.
+
+    // ── CLIENT / PROFESSIONAL WORK ──────────────────────────────
+    // Anonymise client names. Focus on: what you did, what the output was.
+    // Fields: sector, type, tags[], desc, status ("done"|"ongoing")
     client: [
       // {
-      //   sector:  "Real Estate",
-      //   type:    "Feasibility Study",
-      //   tags:    ["Financial Modelling", "DCF", "Land Development"],
-      //   desc:    "Built a full feasibility model for a mixed-use land development project...",
-      //   status:  "done"   // "done" | "ongoing"
-      // },
-      // {
-      //   sector:  "Technology",
-      //   type:    "Financial Modelling",
-      //   tags:    ["Startup Finance", "Runway Analysis", "Scenario Modelling"],
-      //   desc:    "Developed a 3-scenario financial model for a tech startup...",
-      //   status:  "done"
+      //   sector: "Real Estate",
+      //   type:   "Feasibility Study",
+      //   tags:   ["Financial Modelling", "DCF", "Land Development"],
+      //   desc:   "Built a full feasibility model for a mixed-use land development...",
+      //   status: "done"
       // }
     ],
 
-    // ── Personal / self-initiated projects ─────────────────────
+    // ── PERSONAL / SELF-INITIATED PROJECTS ─────────────────────
+    // embed: paste your Power BI "Publish to Web" URL here when ready.
+    //        Set to null to show a placeholder instead.
+    // Fields: title, tags[], desc, status, embed (URL string or null)
     personal: [
-      // {
-      //   title:   "M&A Dataset Analysis",
-      //   tags:    ["Power BI", "M&A", "Data Visualisation"],
-      //   desc:    "Visualising the European M&A dataset from my MBA thesis using Power BI...",
-      //   status:  "ongoing"
-      // }
+      {
+        title:  "European M&A — Visual Analysis",
+        tags:   ["Power BI", "M&A", "Data Visualisation", "Event Study"],
+        desc:   "An interactive breakdown of the European M&A dataset underlying my MBA thesis — deal volume, sector distribution, geographic spread and cumulative abnormal returns across the chemical and pharmaceutical industries.",
+        status: "ongoing",
+        embed:  null
+        // embed: "https://app.powerbi.com/view?r=YOUR_TOKEN_HERE"
+        // Get this from Power BI Desktop → File → Publish to Web → Embed URL
+      }
     ]
   },
 
