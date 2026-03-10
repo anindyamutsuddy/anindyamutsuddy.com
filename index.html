@@ -508,6 +508,73 @@
     nav li a svg.lucide { margin-right:6px; }
     .contact-btn svg.lucide { flex-shrink:0; }
     .theme-toggle svg.lucide { margin-right:4px; }
+
+    /* ── Blog page ── */
+    .blog-section-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-light);
+      margin: 40px 0 20px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .blog-section-label span { flex: 1; }
+    .blog-section-label::after {
+      content: ''; display: block; height: 1px;
+    }
+    /* My Writing — coming soon state */
+    .writing-soon {
+      padding: 32px 0 8px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+    /* Pinned Reads list */
+    .reads-list { display: flex; flex-direction: column; gap: 0; }
+    .read-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 12px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+    .read-item:last-child { border-bottom: none; }
+    .read-item:hover .read-title { color: var(--gold); }
+    .read-meta {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-light);
+      margin-bottom: 5px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .read-source-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--gold); display: inline-block;
+    }
+    .read-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--navy); line-height: 1.35;
+      margin-bottom: 6px;
+      transition: color 0.15s;
+    }
+    .read-note {
+      font-size: 0.85rem; color: var(--text-light);
+      line-height: 1.65; font-style: italic;
+    }
+    .read-arrow {
+      color: var(--text-light); font-size: 0.8rem;
+      padding-top: 4px; flex-shrink: 0;
+      transition: color 0.15s, transform 0.15s;
+    }
+    .read-item:hover .read-arrow {
+      color: var(--gold); transform: translateX(3px);
+    }
+    [data-theme="dark"] .read-title  { color: var(--text); }
+    [data-theme="dark"] .blog-section-label { color: var(--text-light); }
+    [data-theme="dark"] .read-note   { color: var(--text-light); }
     /* ── SPA page visibility ── */
     .page { display: none; }
     .page.active { display: block; }
@@ -1213,6 +1280,26 @@ const siteData = {
     if (ag) bd.activities.forEach(a => {
       ag.innerHTML += `<div class="activity-card"><div class="activity-icon"><i data-lucide="${a.icon}" style="width:24px;height:24px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
     });
+
+
+    // ── PINNED READS ──
+    const readsList = document.getElementById('reads-list');
+    if (readsList && d.reads) {
+      d.reads.forEach(r => {
+        readsList.innerHTML += `
+          <a class="read-item" href="${r.url}" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="read-meta">
+                <span class="read-source-dot"></span>
+                ${r.source} &nbsp;&middot;&nbsp; ${r.tag} &nbsp;&middot;&nbsp; ${r.date}
+              </div>
+              <div class="read-title">${r.title}</div>
+              <div class="read-note">${r.note}</div>
+            </div>
+            <div class="read-arrow">&#8599;</div>
+          </a>`;
+      });
+    }
 
     // ── Animate bars on section switch ──
     function animateBarsInView() {
