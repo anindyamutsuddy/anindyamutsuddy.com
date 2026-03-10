@@ -219,9 +219,9 @@ const siteData = {
     // Fields: title, tags[], desc, status, embed (URL string or null)
     personal: [
       {
-        title:  "European M&A — Visual Analysis",
-        tags:   ["Power BI", "M&A", "Data Visualisation", "Event Study"],
-        desc:   "An interactive breakdown of the European M&A dataset underlying my MBA thesis — deal volume, sector distribution, geographic spread and cumulative abnormal returns across the chemical and pharmaceutical industries.",
+        title:  "European M&A: Chemical and Pharmaceutical Sectors (1998-2019)",
+        tags:   ["Power BI", "M&A", "Event Study", "BHAR", "Data Visualisation"],
+        desc:   "Interactive visualisation of the dataset underlying my MBA thesis. Covers 102 European parent firms engaged in joint ventures across the chemical and pharmaceutical sectors over a 21-year period. Explores deal distribution, sector breakdown, 36-month buy-and-hold abnormal returns (BHARs), and the role of ROA and R&D intensity as performance predictors.",
         status: "ongoing",
         embed:  "https://app.powerbi.com/view?r=eyJrIjoiNjRkYjhmNmUtMzI3Mi00OTg5LWI0MDAtMDhmODNlZmFhMWUzIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
         // embed: "https://app.powerbi.com/view?r=YOUR_TOKEN_HERE"
