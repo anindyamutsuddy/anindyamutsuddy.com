@@ -199,7 +199,7 @@ const siteData = {
   // ── PORTFOLIO PAGE ─────────────────────────────────────────
   portfolio: [
     // { sector: "Real Estate", type: "Debt Advisory", desc: "..." }
-  ]
+  ],
 
 
   // ── BLOG: PINNED READS ─────────────────────────────────────
