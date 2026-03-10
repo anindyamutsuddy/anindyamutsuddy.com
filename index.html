@@ -6,23 +6,23 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%231e1814%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2221%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2213%22%20font-weight%3D%22700%22%20fill%3D%22%23c9a84c%22%20text-anchor%3D%22middle%22%3EAM%3C/text%3E%3C/svg%3E"/>
   <title>Anindya Mutsuddy</title>
   <meta property="og:type"        content="website"/>
-  <meta property="og:url"         content="https://anindyamutsuddy.github.io/"/>
+  <meta property="og:url"         content="https://anindyamutsuddy.com/"/>
   <meta property="og:title"       content="Anindya Mutsuddy · Corporate Finance Analyst"/>
   <meta property="og:description" content="MBA graduate (Cum Laude, KU Leuven). Seeking analyst roles in corporate finance, investment banking or commercial lending in the Benelux region."/>
-  <meta property="og:image"       content="https://anindyamutsuddy.github.io/pfp.jpg"/>
+  <meta property="og:image"       content="https://anindyamutsuddy.com/og-image.png"/>
   <meta name="twitter:card"       content="summary"/>
   <meta name="twitter:title"      content="Anindya Mutsuddy · Corporate Finance Analyst"/>
-  <meta name="twitter:image"      content="https://anindyamutsuddy.github.io/pfp.jpg"/>
+  <meta name="twitter:image"      content="https://anindyamutsuddy.com/og-image.png"/>
   <meta name="description" content="Corporate Finance Analyst · Investment Banking · Antwerp, Belgium"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --navy: #1e1814; --gold: #c9a84c; --white: #ffffff; --off-white: #f9f7f4; --text: #2d3748; --text-light: #718096; --border: #e2e8f0; --sidebar-width: 300px; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--off-white); color: var(--text); display: flex; min-height: 100vh; }
+    body { font-family: 'IBM Plex Sans', sans-serif; background: var(--off-white); color: var(--text); display: flex; min-height: 100vh; }
     .sidebar { width: var(--sidebar-width); background: var(--navy); position: fixed; top: 0; left: 0; height: 100vh; display: flex; flex-direction: column; padding: 48px 32px; overflow-y: auto; z-index: 100; }
     .sidebar-profile { text-align: center; margin-bottom: 32px; }
     .avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--gold); margin: 0 auto 16px; display: block; }
@@ -421,10 +421,105 @@
       .scrollspy-nav { margin: -20px -20px 32px; padding: 0 20px; }
       .back-to-top   { bottom: 20px; right: 20px; width: 38px; height: 38px; }
     }
+
+    /* ══════════════════════════════════
+       PRINT STYLESHEET
+       Ctrl+P prints a clean one-pager
+       ══════════════════════════════════ */
+    @media print {
+      /* Force light mode regardless of user preference */
+      :root {
+        --navy: #1e1814 !important; --gold: #c9a84c !important;
+        --white: #ffffff !important; --off-white: #ffffff !important;
+        --text: #1a1a1a !important; --text-light: #555 !important;
+        --border: #ddd !important;
+      }
+
+      /* Hide everything non-essential */
+      .sidebar, .hamburger, .overlay,
+      .back-to-top, .page-dots, .scrollspy-nav,
+      #progress-bar-wrap, .about-tags, #last-updated,
+      .open-to-work, .theme-toggle,
+      .lang-bar, .tool-bar-fill { display: none !important; }
+
+      /* Reset body layout */
+      body { display: block !important; background: #fff !important; }
+      .layout, .main { margin-left: 0 !important; padding: 0 !important; max-width: 100% !important; }
+
+      /* Show only the about page, print-friendly */
+      .page { display: none !important; }
+      #page-about { display: block !important; }
+
+      /* Print header — name + title at top */
+      #page-about::before {
+        content: "Anindya Mutsuddy";
+        display: block;
+        font-family: 'DM Serif Display', Georgia, serif;
+        font-size: 22pt;
+        color: #1e1814;
+        margin-bottom: 2pt;
+      }
+      #page-about::after {
+        content: "Investment Analyst  ·  Corporate Finance Analyst  ·  Antwerp, Belgium";
+        display: block;
+        font-size: 10pt;
+        color: #555;
+        border-bottom: 1pt solid #c9a84c;
+        padding-bottom: 8pt;
+        margin-bottom: 16pt;
+      }
+
+      /* Section titles */
+      .section-title { font-size: 13pt; margin: 14pt 0 6pt; color: #1e1814; }
+      .section-label { font-size: 7pt; letter-spacing: 0.1em; color: #888; text-transform: uppercase; margin-bottom: 3pt; }
+
+      /* Cards — no hover effects, compact */
+      .card {
+        border: 0.5pt solid #ddd !important;
+        border-radius: 6pt !important;
+        padding: 10pt 12pt !important;
+        margin-bottom: 8pt !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+      }
+      .card-title { font-size: 10pt; font-weight: 700; }
+      .card-date  { font-size: 8pt; background: none !important; color: #888 !important; padding: 0 !important; }
+      .card-subtitle { font-size: 8.5pt; margin-bottom: 6pt; }
+      .card ul li { font-size: 8.5pt; line-height: 1.5; }
+
+      /* Skills — inline */
+      .skill-tag { font-size: 8pt; padding: 2pt 7pt; border: 0.5pt solid #ccc; }
+      .skills-grid { grid-template-columns: 1fr 1fr !important; gap: 10pt; }
+
+      /* Lang cards */
+      .lang-card { padding: 6pt 10pt !important; }
+      .lang-name  { font-size: 9pt; }
+      .lang-level { font-size: 8pt; }
+
+      /* Page setup */
+      @page { margin: 14mm 16mm; size: A4; }
+      section { page-break-inside: avoid; margin-bottom: 12pt; }
+    }
+
+    /* ── Lucide icon alignment ── */
+    [data-lucide], i[data-lucide] {
+      display: inline-block; vertical-align: middle;
+      stroke: currentColor; stroke-width: 1.75;
+      fill: none; stroke-linecap: round; stroke-linejoin: round;
+    }
+    nav li a [data-lucide] { margin-right: 4px; }
+    .contact-btn [data-lucide] { flex-shrink: 0; }
     /* ── SPA page visibility ── */
     .page { display: none; }
-    .page.active { display: block; animation: fadeIn 0.25s ease; }
+    .page.active { display: block; }
+    /* ── Page transition ── */
+    .page.active { animation: pageIn 0.18s ease both; }
+    @keyframes pageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
   </style>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -484,14 +579,14 @@
     <div class="section-label">Beyond Work</div>
     <h2 class="section-title">Interests</h2>
     <div class="interests-grid" id="interests-grid"></div>
-    <a href="#beyond" onclick="event.preventDefault();window.location.hash='beyond'" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more &#8594;</a>
+    <a href="#beyond" onclick="event.preventDefault();window.location.hash='beyond'" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more →</a>
   </section>
     </div>
 
     <!-- CERTIFICATIONS -->
     <div class="page" id="page-certifications">
 <section>
-    <div class="section-label">&#127942; Credentials</div>
+    <div class="section-label">Credentials</div>
     <h2 class="section-title">Certifications</h2>
     <div class="cert-grid" id="cert-grid"></div>
   </section>
@@ -526,7 +621,7 @@
     <!-- PUBLICATIONS -->
     <div class="page" id="page-publications">
 <section>
-    <div class="section-label">&#128196; Research</div>
+    <div class="section-label">Research</div>
     <h2 class="section-title">Publications</h2>
     <div id="pub-container"></div>
   </section>
@@ -535,17 +630,17 @@
     <!-- BEYOND WORK -->
     <div class="page" id="page-beyond">
 <section id="currently">
-    <div class="section-label">&#127774; Right Now</div>
+    <div class="section-label">Right Now</div>
     <h2 class="section-title">Beyond Work</h2>
     <div class="currently-grid" id="currently-grid"></div>
   </section>
   <section id="watches">
-    <div class="section-label">&#8987; Horology</div>
+    <div class="section-label">Horology</div>
     <h2 class="section-title">Watch Collection</h2>
     <div class="watch-grid" id="watch-grid"></div>
   </section>
   <section id="reading">
-    <div class="section-label">&#128218; Reading</div>
+    <div class="section-label">Reading</div>
     <h2 class="section-title">Reading List</h2>
     <div class="book-shelf" id="book-shelf"></div>
   </section>
@@ -793,15 +888,15 @@ const siteData = {
   const PHOTO    = "pfp.jpg";
 
   const PAGES = [
-    { label: "&#127942; Certifications", hash: "certifications" },
-    { label: "&#9997;&#65039; Blog",     hash: "blog"           },
-    { label: "&#128188; Portfolio",      hash: "portfolio"      },
-    { label: "&#128196; Publications",   hash: "publications"   },
-    { label: "&#127774; Beyond Work",    hash: "beyond"         },
+    { label: "<i data-lucide="award" style="width:15px;height:15px;"></i> Certifications", hash: "certifications" },
+    { label: "<i data-lucide="pen-line" style="width:15px;height:15px;"></i> Blog",     hash: "blog"           },
+    { label: "<i data-lucide="briefcase" style="width:15px;height:15px;"></i> Portfolio",      hash: "portfolio"      },
+    { label: "<i data-lucide="book-open" style="width:15px;height:15px;"></i> Publications",   hash: "publications"   },
+    { label: "<i data-lucide="compass" style="width:15px;height:15px;"></i> Beyond Work",    hash: "beyond"         },
   ];
 
   function buildSidebar(activeHash) {
-    let navHTML = `<li><a href="#about" data-hash="about"${activeHash==='about'?' class="active"':''}>&#128100; About</a></li>`;
+    let navHTML = `<li><a href="#about" data-hash="about"${activeHash==='about'?' class="active"':''}><i data-lucide="user" style="width:15px;height:15px;"></i> About</a></li>`;
     PAGES.forEach(p => {
       navHTML += `<li><a href="#${p.hash}" data-hash="${p.hash}"${activeHash===p.hash?' class="active"':''}>${p.label}</a></li>`;
     });
@@ -829,10 +924,10 @@ const siteData = {
   </nav>
   <div class="sidebar-contact">
     <p>Contact</p>
-    <a href="mailto:${EMAIL}?subject=CV%20Request%20%E2%80%93%20Anindya%20Mutsuddy&body=Hi%20Anindya%2C%0A%0AI%20came%20across%20your%20profile%20and%20would%20love%20to%20receive%20your%20CV.%0A%0ABest%20regards%2C" class="contact-btn contact-btn-cv">&#128196; Request CV</a>
-    <a href="mailto:${EMAIL}" class="contact-btn">&#128231; Email Me</a>
-    <a href="${LINKEDIN}" target="_blank" class="contact-btn">&#128279; LinkedIn</a>
-    <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" class="contact-btn contact-btn-ghost">&#128205; ${LOCATION}</a>
+    <a href="mailto:${EMAIL}?subject=CV%20Request%20%E2%80%93%20Anindya%20Mutsuddy&body=Hi%20Anindya%2C%0A%0AI%20came%20across%20your%20profile%20and%20would%20love%20to%20receive%20your%20CV.%0A%0ABest%20regards%2C" class="contact-btn contact-btn-cv"><i data-lucide="file-down" style="width:14px;height:14px;"></i> Request CV</a>
+    <a href="mailto:${EMAIL}" class="contact-btn"><i data-lucide="mail" style="width:14px;height:14px;"></i> Email Me</a>
+    <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer" class="contact-btn"><i data-lucide="linkedin" style="width:14px;height:14px;"></i> LinkedIn</a>
+    <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ghost"><i data-lucide="map-pin" style="width:14px;height:14px;"></i> ${LOCATION}</a>
   </div>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙 Dark mode</button>
 </aside>`;
@@ -851,9 +946,17 @@ const siteData = {
   }
 
   function showPage(hash) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const target = document.getElementById('page-' + hash);
-    if (target) { target.classList.add('active'); window.scrollTo(0,0); }
+    const current = document.querySelector('.page.active');
+    const doSwitch = () => {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById('page-' + hash);
+      if (target) { target.classList.add('active'); window.scrollTo(0,0); }
+    };
+    if (current && !current.id.endsWith(hash)) {
+      current.style.transition = 'opacity 0.15s ease';
+      current.style.opacity = '0';
+      setTimeout(() => { current.style.transition = ''; current.style.opacity = ''; doSwitch(); }, 150);
+    } else { doSwitch(); }
     updateNav(hash);
     // Sync page dots
     document.querySelectorAll('.page-dot').forEach(d =>
@@ -876,6 +979,7 @@ const siteData = {
         card.classList.add('card-animate');
       });
     }, 10);
+    setTimeout(() => lucide.createIcons(), 20);
     const sb = document.querySelector('.sidebar');
     const ov = document.getElementById('overlay');
     if (sb) sb.classList.remove('open');
@@ -921,7 +1025,7 @@ const siteData = {
   function updateToggleLabel() {
     const btn = document.getElementById('theme-toggle');
     if (!btn) return;
-    btn.innerHTML = root.getAttribute('data-theme') === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+    btn.innerHTML = root.getAttribute('data-theme') === 'dark' ? '<i data-lucide="sun" style="width:13px;height:13px;"></i> Light mode' : '<i data-lucide="moon" style="width:13px;height:13px;"></i> Dark mode'; lucide.createIcons();
   }
 
   // ── Scroll progress ──
@@ -1080,7 +1184,7 @@ const siteData = {
           <div class="pub-title">${p.title}</div>
           <div class="pub-meta">
             <strong>${p.authors}</strong> &nbsp;&middot;&nbsp; ${p.venue} &nbsp;&middot;&nbsp; ${p.date}<br/>
-            <a href="${p.url}" target="_blank" style="color:var(--navy);font-weight:600;font-size:0.8rem;">🔗 View on SSRN &rarr;</a>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" style="color:var(--navy);font-weight:600;font-size:0.8rem;">🔗 View on SSRN &rarr;</a>
           </div>
           <div class="pub-abstract">${p.abstract}</div>
         </div>`;
@@ -1091,8 +1195,8 @@ const siteData = {
     const bd = d.beyond;
     const cg = document.getElementById('currently-grid');
     if (cg) {
-      if (bd.currently.reading)  cg.innerHTML += `<div class="currently-card"><div class="currently-icon">📖</div><div><div class="currently-label">Currently Reading</div><div class="currently-value">${bd.currently.reading.title}</div><div class="currently-sub">${bd.currently.reading.author}</div></div></div>`;
-      if (bd.currently.watching) cg.innerHTML += `<div class="currently-card"><div class="currently-icon">🎬</div><div><div class="currently-label">Currently Watching</div><div class="currently-value">${bd.currently.watching.title}</div><div class="currently-sub">${bd.currently.watching.platform}</div></div></div>`;
+      if (bd.currently.reading)  cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="book-open" style="width:20px;height:20px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Reading</div><div class="currently-value">${bd.currently.reading.title}</div><div class="currently-sub">${bd.currently.reading.author}</div></div></div>`;
+      if (bd.currently.watching) cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="film" style="width:20px;height:20px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Watching</div><div class="currently-value">${bd.currently.watching.title}</div><div class="currently-sub">${bd.currently.watching.platform}</div></div></div>`;
       if (!bd.currently.watching && bd.watches.length) {
         const w = bd.watches[0];
         cg.innerHTML += `<div class="currently-card"><div class="currently-icon">${w.emoji}</div><div><div class="currently-label">Latest Acquisition</div><div class="currently-value">${w.name}</div><div class="currently-sub">${w.brand}</div></div></div>`;
@@ -1139,6 +1243,10 @@ const siteData = {
     document.querySelectorAll('.page-dot').forEach(dot => {
       dot.addEventListener('click', () => {
         window.location.hash = dot.getAttribute('data-hash');
+        const sb = document.querySelector('.sidebar');
+        const ov = document.getElementById('overlay');
+        if (sb) sb.classList.remove('open');
+        if (ov) ov.classList.remove('active');
       });
     });
 
@@ -1160,13 +1268,18 @@ const siteData = {
       if (el) spyObserver.observe(el);
     });
 
-    // Spy-link click: smooth scroll to section
+    // Spy-link click: smooth scroll to section + close mobile sidebar
     document.querySelectorAll('.spy-link').forEach(a => {
       a.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = a.getAttribute('data-spy');
         const el = document.getElementById(targetId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
+        // Close mobile sidebar
+        const sb = document.querySelector('.sidebar');
+        const ov = document.getElementById('overlay');
+        if (sb) sb.classList.remove('open');
+        if (ov) ov.classList.remove('active');
       });
     });
 

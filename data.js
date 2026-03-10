@@ -131,7 +131,7 @@ const siteData = {
       ]
     },
     {
-      icon: "📊",
+      icon: "",
       name: "Power BI",
       issuer: "Pragmatic Works",
       items: [
@@ -139,7 +139,7 @@ const siteData = {
       ]
     },
     {
-      icon: "💻",
+      icon: "",
       name: "SAP S/4HANA",
       issuer: "SAP / Udemy",
       items: [
