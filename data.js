@@ -9,7 +9,7 @@ const siteData = {
   // Edit the prose and tags shown on your About section
   about: {
     paragraphs: [
-      `As an <strong>MBA graduate (Cum Laude, KU Leuven)</strong>, I chose corporate finance because numbers directly shape how businesses grow, raise capital and create value · and I want to contribute to that process with rigour and real commercial intent.`,
+      `As an <strong>MBA graduate (Cum Laude, KU Leuven)</strong>, I chose corporate finance because numbers directly shape how businesses grow, raise capital and create value, and I want to contribute to that process with rigour and real commercial intent.`,
       `Relocated to Belgium to build a career in corporate finance, I bring <strong>advisory exposure and live deal experience</strong>, and I want to work for organisations where financial analysis drives meaningful decisions.`,
       `Currently on a <strong>zoekjaar permit</strong>, actively seeking an analyst role in corporate finance, investment banking or commercial lending in the <strong>Benelux region</strong>.`
     ],
@@ -31,7 +31,7 @@ const siteData = {
       company:  "ZA Capital Advisory",
       subtitle: "Boutique Investment Bank · Dhaka, Bangladesh",
       bullets: [
-        "Managed client mandates across real estate, energy, manufacturing and technology · from early-stage start-ups to international conglomerates",
+        "Managed client mandates across real estate, energy, manufacturing and technology, spanning early-stage start-ups to international conglomerates",
         "Built DCF valuations, sensitivity analyses and feasibility models across a wide range of financing decisions, from runway and treasury planning to syndicated credit facilities",
         "Coordinated multidisciplinary deal teams to structure transactions, ensuring full regulatory and documentation compliance"
       ]
@@ -53,17 +53,17 @@ const siteData = {
   // ── INDEX: EDUCATION ───────────────────────────────────────
   education: [
     {
-      degree:   "Master of Business Administration · Corporate Finance Track",
+      degree:   "Master of Business Administration, Corporate Finance Track",
       year:     "2025",
       school:   "KU Leuven",
       location: "Antwerp, Belgium",
       bullets: [
         "Graduated <strong>Cum Laude</strong>",
-        "Thesis: Long-run performance effects of joint ventures · European M&A in chemical and pharmaceutical sectors (event study)"
+        "Thesis: Long-run performance effects of joint ventures in European M&A across the chemical and pharmaceutical sectors (event study)"
       ]
     },
     {
-      degree:   "Bachelor of Business Administration · Finance & Banking",
+      degree:   "Bachelor of Business Administration, Finance & Banking",
       year:     "2021",
       school:   "Bangladesh University of Professionals",
       location: "Dhaka, Bangladesh",
@@ -126,8 +126,8 @@ const siteData = {
       name: "Dutch Language",
       issuer: "CVO Encora · NT2 Programme",
       items: [
-        { text: "NT2 1.1 · Certified",   sub: "CVO Encora",  status: "done"     },
-        { text: "NT2 1.2 · In Progress", sub: "CVO Encora",  status: "progress" }
+        { text: "NT2 1.1 (Certified)",   sub: "CVO Encora",  status: "done"     },
+        { text: "NT2 1.2 (In Progress)", sub: "CVO Encora",  status: "progress" }
       ]
     },
     {
@@ -143,7 +143,7 @@ const siteData = {
       name: "SAP S/4HANA",
       issuer: "SAP / Udemy",
       items: [
-        { text: "SAP S/4HANA Fundamentals · In Progress", sub: "Udemy", status: "progress" }
+        { text: "SAP S/4HANA Fundamentals (In Progress)", sub: "Udemy", status: "progress" }
       ]
     }
     // status options: "done" | "progress" | "planned"
@@ -155,7 +155,7 @@ const siteData = {
       title:       "Long-run Performance Effects of Joint Ventures: European M&A in the Chemical and Pharmaceutical Sectors",
       institution: "KU Leuven",
       year:        "2025",
-      degree:      "Master of Business Administration · Corporate Finance Track",
+      degree:      "Master of Business Administration, Corporate Finance Track",
       honour:      "Cum Laude",
       abstract:    "This study examines whether European parent firms engaging in joint ventures (chemical vs. pharmaceutical; 1998 to 2019) generate long-term abnormal returns. 36-month BHARs were computed for 102 firms and regression analysis was applied to test the role of profitability (ROA) and R&D intensity. Results show chemicals outperform over three years while pharma does not (difference not significant), and a skewness-adjusted test confirms no significant abnormal returns overall. ROA predicts BHAR in pharma (not chemicals), while R&D shows a weak negative relationship in pharma, suggesting investors may prioritize operational efficiency over R&D spend in that sector."
     },
@@ -166,7 +166,7 @@ const siteData = {
         venue:    "SSRN",
         date:     "December 2019 (posted March 2023)",
         url:      "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4381557",
-        abstract: "This study examines the factors driving the success of female entrepreneurs in Bangladesh, drawing on survey data from 177 business owners. Using factor analysis and multivariate regression, it identifies key success drivers including efficiency in handling unexpected events, family support, technical skills, and leadership style. This paper represents my foundational exposure to independent research · applying quantitative methods to a real-world economic question before formal postgraduate training."
+        abstract: "This study examines the factors driving the success of female entrepreneurs in Bangladesh, drawing on survey data from 177 business owners. Using factor analysis and multivariate regression, it identifies key success drivers including efficiency in handling unexpected events, family support, technical skills, and leadership style. This paper represents my foundational exposure to independent research, applying quantitative methods to a real-world economic question before formal postgraduate training."
       }
     ]
   },
