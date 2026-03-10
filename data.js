@@ -135,7 +135,7 @@ const siteData = {
       name: "Power BI",
       issuer: "Microsoft · Pragmatic Works",
       items: [
-        { text: "Beginner to Pro Workshop",                   sub: "Pragmatic Works · Sep 2024",        status: "done"     },
+        { text: "Beginner to Pro Workshop",                   sub: "Pragmatic Works · Feb 2026",        status: "done"     },
         { text: "PL-300: Power BI Data Analyst (In Progress)", sub: "Microsoft Learn · est. 2026",       status: "progress" }
       ]
     },
