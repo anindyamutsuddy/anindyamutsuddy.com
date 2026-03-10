@@ -1323,26 +1323,6 @@ const siteData = {
       });
     }
 
-
-    // ── PINNED READS ──
-    const readsList = document.getElementById('reads-list');
-    if (readsList && d.reads) {
-      d.reads.forEach(r => {
-        readsList.innerHTML += `
-          <a class="read-item" href="${r.url}" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="read-meta">
-                <span class="read-source-dot"></span>
-                ${r.source} &nbsp;&middot;&nbsp; ${r.tag} &nbsp;&middot;&nbsp; ${r.date}
-              </div>
-              <div class="read-title">${r.title}</div>
-              <div class="read-note">${r.note}</div>
-            </div>
-            <div class="read-arrow">&#8599;</div>
-          </a>`;
-      });
-    }
-
     // ── Animate bars on section switch ──
     function animateBarsInView() {
       document.querySelectorAll('.lang-bar-fill[data-pct], .tool-bar-fill[data-pct]').forEach(el => {
