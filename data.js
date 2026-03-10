@@ -223,7 +223,7 @@ const siteData = {
         tags:   ["Power BI", "M&A", "Data Visualisation", "Event Study"],
         desc:   "An interactive breakdown of the European M&A dataset underlying my MBA thesis — deal volume, sector distribution, geographic spread and cumulative abnormal returns across the chemical and pharmaceutical industries.",
         status: "ongoing",
-        embed:  null
+        embed:  "https://app.powerbi.com/view?r=eyJrIjoiNjRkYjhmNmUtMzI3Mi00OTg5LWI0MDAtMDhmODNlZmFhMWUzIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
         // embed: "https://app.powerbi.com/view?r=YOUR_TOKEN_HERE"
         // Get this from Power BI Desktop → File → Publish to Web → Embed URL
       }
