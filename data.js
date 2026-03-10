@@ -212,7 +212,7 @@ const siteData = {
       url:    "https://www.generalist.com/p/hummingbird",
       tag:    "Venture Capital",
       date:   "Dec 2023",
-      note:   "A profile of Hummingbird Ventures — a firm that built a remarkable track record investing in emerging markets while staying almost entirely out of the limelight. A good reminder that conviction and discipline compound quietly."
+      note:   "A good reminder that conviction and discipline compound quietly."
     },
     {
       title:  "AI and The Burden of Knowledge",
@@ -220,7 +220,7 @@ const siteData = {
       url:    "https://www.generalist.com/p/ai-and-the-burden-of-knowledge",
       tag:    "AI · Markets",
       date:   "Jun 2023",
-      note:   "Mario Gabriele on how AI sidesteps the knowledge burden that slows human progress — each generation of people needs longer to reach the frontier, but AI does not age or forget. Relevant framing for thinking about what skills stay valuable."
+      note:   "What skills truly remain valuable? For AI does not age or forget."
     }
   ],
 
