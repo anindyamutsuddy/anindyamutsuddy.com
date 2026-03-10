@@ -501,14 +501,13 @@
       section { page-break-inside: avoid; margin-bottom: 12pt; }
     }
 
-    /* ── Lucide icon alignment ── */
-    [data-lucide], i[data-lucide] {
-      display: inline-block; vertical-align: middle;
-      stroke: currentColor; stroke-width: 1.75;
-      fill: none; stroke-linecap: round; stroke-linejoin: round;
-    }
-    nav li a [data-lucide] { margin-right: 4px; }
-    .contact-btn [data-lucide] { flex-shrink: 0; }
+    /* ── Lucide icons ── */
+    svg.lucide { display:inline-block; vertical-align:middle;
+                 stroke:currentColor; fill:none;
+                 stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; }
+    nav li a svg.lucide { margin-right:6px; }
+    .contact-btn svg.lucide { flex-shrink:0; }
+    .theme-toggle svg.lucide { margin-right:4px; }
     /* ── SPA page visibility ── */
     .page { display: none; }
     .page.active { display: block; }
@@ -519,7 +518,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
   </style>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -579,7 +577,7 @@
     <div class="section-label">Beyond Work</div>
     <h2 class="section-title">Interests</h2>
     <div class="interests-grid" id="interests-grid"></div>
-    <a href="#beyond" onclick="event.preventDefault();window.location.hash='beyond'" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more →</a>
+    <a href="#beyond" onclick="event.preventDefault();window.location.hash='beyond'" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more &#8594;</a>
   </section>
     </div>
 
@@ -888,17 +886,17 @@ const siteData = {
   const PHOTO    = "pfp.jpg";
 
   const PAGES = [
-    { label: "<i data-lucide="award" style="width:15px;height:15px;"></i> Certifications", hash: "certifications" },
-    { label: "<i data-lucide="pen-line" style="width:15px;height:15px;"></i> Blog",     hash: "blog"           },
-    { label: "<i data-lucide="briefcase" style="width:15px;height:15px;"></i> Portfolio",      hash: "portfolio"      },
-    { label: "<i data-lucide="book-open" style="width:15px;height:15px;"></i> Publications",   hash: "publications"   },
-    { label: "<i data-lucide="compass" style="width:15px;height:15px;"></i> Beyond Work",    hash: "beyond"         },
+    { icon: "award",     label: "Certifications", hash: "certifications" },
+    { icon: "pen-line",  label: "Blog",           hash: "blog"           },
+    { icon: "briefcase", label: "Portfolio",       hash: "portfolio"      },
+    { icon: "book-open", label: "Publications",    hash: "publications"   },
+    { icon: "compass",   label: "Beyond Work",     hash: "beyond"         },
   ];
 
   function buildSidebar(activeHash) {
-    let navHTML = `<li><a href="#about" data-hash="about"${activeHash==='about'?' class="active"':''}><i data-lucide="user" style="width:15px;height:15px;"></i> About</a></li>`;
+    let navHTML = `<li><a href="#about" data-hash="about"${activeHash==='about'?' class="active"':''}><i data-lucide="user"></i> About</a></li>`;
     PAGES.forEach(p => {
-      navHTML += `<li><a href="#${p.hash}" data-hash="${p.hash}"${activeHash===p.hash?' class="active"':''}>${p.label}</a></li>`;
+      navHTML += `<li><a href="#${p.hash}" data-hash="${p.hash}"${activeHash===p.hash?' class="active"':''}><i data-lucide="${p.icon}"></i> ${p.label}</a></li>`;
     });
     return `
 <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -924,10 +922,10 @@ const siteData = {
   </nav>
   <div class="sidebar-contact">
     <p>Contact</p>
-    <a href="mailto:${EMAIL}?subject=CV%20Request%20%E2%80%93%20Anindya%20Mutsuddy&body=Hi%20Anindya%2C%0A%0AI%20came%20across%20your%20profile%20and%20would%20love%20to%20receive%20your%20CV.%0A%0ABest%20regards%2C" class="contact-btn contact-btn-cv"><i data-lucide="file-down" style="width:14px;height:14px;"></i> Request CV</a>
-    <a href="mailto:${EMAIL}" class="contact-btn"><i data-lucide="mail" style="width:14px;height:14px;"></i> Email Me</a>
-    <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer" class="contact-btn"><i data-lucide="linkedin" style="width:14px;height:14px;"></i> LinkedIn</a>
-    <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ghost"><i data-lucide="map-pin" style="width:14px;height:14px;"></i> ${LOCATION}</a>
+    <a href="mailto:${EMAIL}?subject=CV%20Request%20%E2%80%93%20Anindya%20Mutsuddy&body=Hi%20Anindya%2C%0A%0AI%20came%20across%20your%20profile%20and%20would%20love%20to%20receive%20your%20CV.%0A%0ABest%20regards%2C" class="contact-btn contact-btn-cv"><i data-lucide="file-down"></i> Request CV</a>
+    <a href="mailto:${EMAIL}" class="contact-btn"><i data-lucide="mail"></i> Email Me</a>
+    <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer" class="contact-btn"><i data-lucide="linkedin"></i> LinkedIn</a>
+    <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ghost"><i data-lucide="map-pin"></i> ${LOCATION}</a>
   </div>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙 Dark mode</button>
 </aside>`;
@@ -979,7 +977,6 @@ const siteData = {
         card.classList.add('card-animate');
       });
     }, 10);
-    setTimeout(() => lucide.createIcons(), 20);
     const sb = document.querySelector('.sidebar');
     const ov = document.getElementById('overlay');
     if (sb) sb.classList.remove('open');
@@ -1025,7 +1022,8 @@ const siteData = {
   function updateToggleLabel() {
     const btn = document.getElementById('theme-toggle');
     if (!btn) return;
-    btn.innerHTML = root.getAttribute('data-theme') === 'dark' ? '<i data-lucide="sun" style="width:13px;height:13px;"></i> Light mode' : '<i data-lucide="moon" style="width:13px;height:13px;"></i> Dark mode'; lucide.createIcons();
+    btn.innerHTML = root.getAttribute('data-theme') === 'dark' ? '<i data-lucide="sun"></i> Light mode' : '<i data-lucide="moon"></i> Dark mode';
+    if (typeof lucide !== 'undefined') lucide.createIcons();
   }
 
   // ── Scroll progress ──
@@ -1195,8 +1193,8 @@ const siteData = {
     const bd = d.beyond;
     const cg = document.getElementById('currently-grid');
     if (cg) {
-      if (bd.currently.reading)  cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="book-open" style="width:20px;height:20px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Reading</div><div class="currently-value">${bd.currently.reading.title}</div><div class="currently-sub">${bd.currently.reading.author}</div></div></div>`;
-      if (bd.currently.watching) cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="film" style="width:20px;height:20px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Watching</div><div class="currently-value">${bd.currently.watching.title}</div><div class="currently-sub">${bd.currently.watching.platform}</div></div></div>`;
+      if (bd.currently.reading)  cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="book-open" style="width:22px;height:22px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Reading</div><div class="currently-value">${bd.currently.reading.title}</div><div class="currently-sub">${bd.currently.reading.author}</div></div></div>`;
+      if (bd.currently.watching) cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="film" style="width:22px;height:22px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Watching</div><div class="currently-value">${bd.currently.watching.title}</div><div class="currently-sub">${bd.currently.watching.platform}</div></div></div>`;
       if (!bd.currently.watching && bd.watches.length) {
         const w = bd.watches[0];
         cg.innerHTML += `<div class="currently-card"><div class="currently-icon">${w.emoji}</div><div><div class="currently-label">Latest Acquisition</div><div class="currently-value">${w.name}</div><div class="currently-sub">${w.brand}</div></div></div>`;
@@ -1286,5 +1284,9 @@ const siteData = {
   });
 </script>
 
+
+<!-- Lucide icons — loaded non-blocking at end of body -->
+<script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"
+        onload="lucide.createIcons()"></script>
 </body>
 </html>
