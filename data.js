@@ -113,10 +113,10 @@ const siteData = {
 
   // ── INDEX: INTERESTS ───────────────────────────────────────
   interests: [
-    { emoji: "🦅", name: "Hiking",          desc: "Exploring trails and new landscapes on foot" },
+    { icon: "mountain", name: "Hiking",          desc: "Exploring trails and new landscapes on foot" },
     { icon: "book-open", name: "Reading",         desc: "Curious reader across finance, history and fiction" },
     { icon: "clock", name: "Watch Collecting",desc: "Appreciating the craft of mechanical horology" }
-    // Add more: { emoji, name, desc }
+    // Add more: { icon: "lucide-name", name, desc }
   ],
 
   // ── CERTIFICATIONS PAGE ────────────────────────────────────

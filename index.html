@@ -122,12 +122,7 @@
     .portfolio-card ul { padding-left: 18px; }
     .portfolio-card ul li { font-size: 0.87rem; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
     .portfolio-card ul li::marker { color: var(--gold); }
-    @media (max-width: 768px) {
-      .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; }
-      .main { margin-left: 0; padding: 32px 24px; }
-      body { flex-direction: column; }
-      .skills-grid, .cert-grid { grid-template-columns: 1fr; }
-    }
+
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-6px); } }
@@ -303,7 +298,7 @@
     .empty-icon { font-size: 3rem; margin-bottom: 18px; }
     .empty-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .empty-text { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; max-width: 340px; margin: 0 auto; }
-    @media (max-width: 768px) { .sidebar { position: relative; width: 100%; height: auto; padding: 32px 24px; } .main { margin-left: 0; padding: 32px 24px; } body { flex-direction: column; } }
+
 .contact-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 0.8rem; font-weight: 700; padding: 9px 16px; border-radius: 10px; margin-bottom: 8px; transition: all 0.2s; letter-spacing: 0.01em; }
     .contact-btn-ghost { background: transparent; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.15); font-weight: 500; }
     .pub-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; margin-bottom: 24px; }
@@ -729,12 +724,12 @@
 
 <!-- Page dot nav -->
 <nav class="page-dots" id="page-dots" aria-label="Page navigation">
-  <button class="page-dot active" data-hash="about"         title="About"></button>
-  <button class="page-dot"        data-hash="certifications" title="Certifications"></button>
-  <button class="page-dot"        data-hash="blog"           title="Blog"></button>
-  <button class="page-dot"        data-hash="portfolio"      title="Portfolio"></button>
-  <button class="page-dot"        data-hash="publications"   title="Publications"></button>
-  <button class="page-dot"        data-hash="beyond"         title="Beyond Work"></button>
+  <button class="page-dot active" data-hash="about"         title="About" aria-label="About"></button>
+  <button class="page-dot"        data-hash="certifications" title="Certifications" aria-label="Certifications"></button>
+  <button class="page-dot"        data-hash="blog"           title="Blog" aria-label="Blog"></button>
+  <button class="page-dot"        data-hash="portfolio"      title="Portfolio" aria-label="Portfolio"></button>
+  <button class="page-dot"        data-hash="publications"   title="Publications" aria-label="Publications"></button>
+  <button class="page-dot"        data-hash="beyond"         title="Beyond Work" aria-label="Beyond Work"></button>
 </nav>
 
 <!-- ── INLINED DATA ── -->
