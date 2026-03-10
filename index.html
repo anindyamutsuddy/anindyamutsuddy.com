@@ -662,12 +662,16 @@
 <section>
     <div class="section-label">Writing</div>
     <h2 class="section-title">Blog</h2>
-    <div class="empty-state">
-      <div class="empty-icon">&#9997;&#65039;</div>
-      <div class="empty-title">No posts yet</div>
-      <p class="empty-text">Thoughts on finance, career, and whatever else is on my mind. First post coming soon.</p>
-    </div>
-  </section>
+
+    <div class="blog-section-label"><span>My Writing</span></div>
+    <div class="writing-soon">First post coming soon. Thoughts on finance, markets and the occasional tangent.</div>
+
+    <div class="blog-section-label" style="margin-top:48px;"><span>Pinned Reads</span></div>
+    <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:24px;line-height:1.7;">
+      Articles, essays and Substacks I have read and found worth keeping. A short note on why each one stuck.
+    </p>
+    <div class="reads-list" id="reads-list"></div>
+</section>
     </div>
 
     <!-- PORTFOLIO -->
@@ -1280,6 +1284,26 @@ const siteData = {
     if (ag) bd.activities.forEach(a => {
       ag.innerHTML += `<div class="activity-card"><div class="activity-icon"><i data-lucide="${a.icon}" style="width:24px;height:24px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
     });
+
+
+    // ── PINNED READS ──
+    const readsList = document.getElementById('reads-list');
+    if (readsList && d.reads) {
+      d.reads.forEach(r => {
+        readsList.innerHTML += `
+          <a class="read-item" href="${r.url}" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="read-meta">
+                <span class="read-source-dot"></span>
+                ${r.source} &nbsp;&middot;&nbsp; ${r.tag} &nbsp;&middot;&nbsp; ${r.date}
+              </div>
+              <div class="read-title">${r.title}</div>
+              <div class="read-note">${r.note}</div>
+            </div>
+            <div class="read-arrow">&#8599;</div>
+          </a>`;
+      });
+    }
 
 
     // ── PINNED READS ──
