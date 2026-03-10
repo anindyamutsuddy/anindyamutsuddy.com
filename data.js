@@ -133,9 +133,10 @@ const siteData = {
     {
       icon: "bar-chart-2",
       name: "Power BI",
-      issuer: "Pragmatic Works",
+      issuer: "Microsoft · Pragmatic Works",
       items: [
-        { text: "Beginner to Pro Workshop", sub: "Pragmatic Works · 03 Sep 2026", status: "done" }
+        { text: "Beginner to Pro Workshop",                   sub: "Pragmatic Works · Sep 2024",        status: "done"     },
+        { text: "PL-300: Power BI Data Analyst (In Progress)", sub: "Microsoft Learn · est. 2026",       status: "progress" }
       ]
     },
     {
@@ -197,9 +198,36 @@ const siteData = {
   ],
 
   // ── PORTFOLIO PAGE ─────────────────────────────────────────
-  portfolio: [
-    // { sector: "Real Estate", type: "Debt Advisory", desc: "..." }
-  ],
+  portfolio: {
+    // ── Work projects (client / professional context) ──────────
+    // Anonymise client names if needed. Focus on: what you did, what the output was.
+    client: [
+      // {
+      //   sector:  "Real Estate",
+      //   type:    "Feasibility Study",
+      //   tags:    ["Financial Modelling", "DCF", "Land Development"],
+      //   desc:    "Built a full feasibility model for a mixed-use land development project...",
+      //   status:  "done"   // "done" | "ongoing"
+      // },
+      // {
+      //   sector:  "Technology",
+      //   type:    "Financial Modelling",
+      //   tags:    ["Startup Finance", "Runway Analysis", "Scenario Modelling"],
+      //   desc:    "Developed a 3-scenario financial model for a tech startup...",
+      //   status:  "done"
+      // }
+    ],
+
+    // ── Personal / self-initiated projects ─────────────────────
+    personal: [
+      // {
+      //   title:   "M&A Dataset Analysis",
+      //   tags:    ["Power BI", "M&A", "Data Visualisation"],
+      //   desc:    "Visualising the European M&A dataset from my MBA thesis using Power BI...",
+      //   status:  "ongoing"
+      // }
+    ]
+  },
 
 
   // ── BLOG: PINNED READS ─────────────────────────────────────
