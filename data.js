@@ -14,7 +14,7 @@ const siteData = {
       `Currently on a <strong>zoekjaar permit</strong>, actively seeking an analyst role in corporate finance, investment banking or commercial lending in the <strong>Benelux region</strong>.`
     ],
     tags: [
-      { label: "📍 Antwerp, Belgium", gold: true },
+      { label: "Antwerp, Belgium", gold: true },
       { label: "Corporate Finance",   gold: false },
       { label: "Investment Banking",  gold: false },
       { label: "DCF & Valuation",     gold: false },
@@ -114,8 +114,8 @@ const siteData = {
   // ── INDEX: INTERESTS ───────────────────────────────────────
   interests: [
     { emoji: "🦅", name: "Hiking",          desc: "Exploring trails and new landscapes on foot" },
-    { emoji: "📚", name: "Reading",         desc: "Curious reader across finance, history and fiction" },
-    { emoji: "⌛", name: "Watch Collecting",desc: "Appreciating the craft of mechanical horology" }
+    { icon: "book-open", name: "Reading",         desc: "Curious reader across finance, history and fiction" },
+    { icon: "clock", name: "Watch Collecting",desc: "Appreciating the craft of mechanical horology" }
     // Add more: { emoji, name, desc }
   ],
 
@@ -131,7 +131,7 @@ const siteData = {
       ]
     },
     {
-      icon: "",
+      icon: "bar-chart-2",
       name: "Power BI",
       issuer: "Pragmatic Works",
       items: [
@@ -139,7 +139,7 @@ const siteData = {
       ]
     },
     {
-      icon: "",
+      icon: "monitor",
       name: "SAP S/4HANA",
       issuer: "SAP / Udemy",
       items: [
@@ -178,16 +178,16 @@ const siteData = {
       watching: null
     },
     watches: [
-      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", emoji: "⭐" },
-      { brand: "Seiko",          name: "Seiko 5",              emoji: "⌛" }
+      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", icon: "clock" },
+      { brand: "Seiko",          name: "Seiko 5",              icon: "clock" }
     ],
     books: [
       { title: "Snow Country",    author: "Yasunari Kawabata", status: "reading", note: "A beautifully restrained Japanese novel about impermanence and longing." },
       { title: "Add a past read", author: "Author name",       status: "read",    note: "" }
     ],
     activities: [
-      { emoji: "🦅", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
-      { emoji: "🤝", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
+      { icon: "mountain", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
+      { icon: "users", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
     ]
   },
 

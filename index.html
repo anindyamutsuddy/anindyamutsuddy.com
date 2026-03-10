@@ -16,7 +16,7 @@
   <meta name="description" content="Corporate Finance Analyst · Investment Banking · Antwerp, Belgium"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -454,7 +454,7 @@
       #page-about::before {
         content: "Anindya Mutsuddy";
         display: block;
-        font-family: 'Playfair Display', Georgia, serif;
+        font-family: 'Cormorant Garamond', Georgia, serif;
         font-size: 22pt;
         color: #1e1814;
         margin-bottom: 2pt;
@@ -684,7 +684,7 @@ const siteData = {
       `Currently on a <strong>zoekjaar permit</strong>, actively seeking an analyst role in corporate finance, investment banking or commercial lending in the <strong>Benelux region</strong>.`
     ],
     tags: [
-      { label: "📍 Antwerp, Belgium", gold: true },
+      { label: "Antwerp, Belgium", gold: true },
       { label: "Corporate Finance",   gold: false },
       { label: "Investment Banking",  gold: false },
       { label: "DCF & Valuation",     gold: false },
@@ -783,9 +783,9 @@ const siteData = {
 
   // ── INDEX: INTERESTS ───────────────────────────────────────
   interests: [
-    { emoji: "🦅", name: "Hiking",          desc: "Exploring trails and new landscapes on foot" },
-    { emoji: "📚", name: "Reading",         desc: "Curious reader across finance, history and fiction" },
-    { emoji: "⌛", name: "Watch Collecting",desc: "Appreciating the craft of mechanical horology" }
+    { icon: "mountain", name: "Hiking",          desc: "Exploring trails and new landscapes on foot" },
+    { icon: "book-open", name: "Reading",         desc: "Curious reader across finance, history and fiction" },
+    { icon: "clock", name: "Watch Collecting",desc: "Appreciating the craft of mechanical horology" }
     // Add more: { emoji, name, desc }
   ],
 
@@ -801,7 +801,7 @@ const siteData = {
       ]
     },
     {
-      icon: "📊",
+      icon: "bar-chart-2",
       name: "Power BI",
       issuer: "Pragmatic Works",
       items: [
@@ -809,7 +809,7 @@ const siteData = {
       ]
     },
     {
-      icon: "💻",
+      icon: "monitor",
       name: "SAP S/4HANA",
       issuer: "SAP / Udemy",
       items: [
@@ -848,16 +848,16 @@ const siteData = {
       watching: null
     },
     watches: [
-      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", emoji: "⭐" },
-      { brand: "Seiko",          name: "Seiko 5",              emoji: "⌛" }
+      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", icon: "clock" },
+      { brand: "Seiko",          name: "Seiko 5",              icon: "clock" }
     ],
     books: [
       { title: "Snow Country",    author: "Yasunari Kawabata", status: "reading", note: "A beautifully restrained Japanese novel about impermanence and longing." },
       { title: "Add a past read", author: "Author name",       status: "read",    note: "" }
     ],
     activities: [
-      { emoji: "🦅", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
-      { emoji: "🤝", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
+      { icon: "mountain", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
+      { icon: "users", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
     ]
   },
 
@@ -927,7 +927,7 @@ const siteData = {
     <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer" class="contact-btn"><i data-lucide="linkedin"></i> LinkedIn</a>
     <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ghost"><i data-lucide="map-pin"></i> ${LOCATION}</a>
   </div>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙 Dark mode</button>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i> Dark mode</button>
 </aside>`;
   }
 
@@ -1155,7 +1155,7 @@ const siteData = {
           </li>`).join('');
         certGrid.innerHTML += `<div class="cert-card">
           <div class="cert-card-header">
-            <div class="cert-icon">${cert.icon}</div>
+            <div class="cert-icon">${/^[a-z-]+$/.test(cert.icon) ? '<i data-lucide="' + cert.icon + '" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i>' : cert.icon}</div>
             <div><div class="cert-name">${cert.name}</div><div class="cert-issuer">${cert.issuer}</div></div>
           </div>
           <ul class="cert-list">${items}</ul>
@@ -1168,7 +1168,7 @@ const siteData = {
     if (pubContainer) {
       const pub = d.publications;
       pubContainer.innerHTML += `<div class="pub-card">
-        <span class="pub-type thesis">🎓 MBA Thesis</span>
+        <span class="pub-type thesis">MBA Thesis</span>
         <div class="pub-title">${pub.thesis.title}</div>
         <div class="pub-meta">
           <strong>Anindya Mutsuddy</strong> &nbsp;&middot;&nbsp; ${pub.thesis.institution} &nbsp;&middot;&nbsp; ${pub.thesis.year}<br/>
@@ -1178,11 +1178,11 @@ const siteData = {
       </div>`;
       pub.papers.forEach(p => {
         pubContainer.innerHTML += `<div class="pub-card">
-          <span class="pub-type journal">📄 Research Paper</span>
+          <span class="pub-type journal">Research Paper</span>
           <div class="pub-title">${p.title}</div>
           <div class="pub-meta">
             <strong>${p.authors}</strong> &nbsp;&middot;&nbsp; ${p.venue} &nbsp;&middot;&nbsp; ${p.date}<br/>
-            <a href="${p.url}" target="_blank" rel="noopener noreferrer" style="color:var(--navy);font-weight:600;font-size:0.8rem;">🔗 View on SSRN &rarr;</a>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" style="color:var(--navy);font-weight:600;font-size:0.8rem;">View on SSRN &rarr;</a>
           </div>
           <div class="pub-abstract">${p.abstract}</div>
         </div>`;
@@ -1202,7 +1202,7 @@ const siteData = {
     }
     const wg = document.getElementById('watch-grid');
     if (wg) bd.watches.forEach(w => {
-      wg.innerHTML += `<div class="watch-card"><div class="watch-emoji">${w.emoji}</div><div class="watch-brand">${w.brand}</div><div class="watch-name">${w.name}</div></div>`;
+      wg.innerHTML += `<div class="watch-card"><div class="watch-emoji"><i data-lucide="${w.icon}" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="watch-brand">${w.brand}</div><div class="watch-name">${w.name}</div></div>`;
     });
     const bs = document.getElementById('book-shelf');
     if (bs) bd.books.forEach(b => {
@@ -1211,7 +1211,7 @@ const siteData = {
     });
     const ag = document.getElementById('activity-grid');
     if (ag) bd.activities.forEach(a => {
-      ag.innerHTML += `<div class="activity-card"><div class="activity-icon">${a.emoji}</div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
+      ag.innerHTML += `<div class="activity-card"><div class="activity-icon"><i data-lucide="${a.icon}" style="width:24px;height:24px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
     });
 
     // ── Animate bars on section switch ──
