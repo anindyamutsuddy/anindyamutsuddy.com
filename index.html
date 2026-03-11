@@ -852,7 +852,7 @@
   }
 
   function getHash() {
-    const h = (window.location.hash || '#about').replace('#','').trim();
+    const h = (window.location.hash || '#about').replace('#','').trim().split('/')[0];
     const valid = ['about','certifications','blog','portfolio','publications','beyond'];
     return valid.includes(h) ? h : 'about';
   }
@@ -912,7 +912,15 @@
   showPage(initHash);
 
   // Hash change router
-  window.addEventListener('hashchange', () => showPage(getHash()));
+  window.addEventListener('hashchange', () => {
+      const hash = getHash();
+      showPage(hash);
+      const full = (window.location.hash || '').replace('#','');
+      if (full.startsWith('blog/')) {
+        const slug = full.replace('blog/', '');
+        setTimeout(() => { if (typeof window._openPostBySlug === 'function') window._openPostBySlug(slug); }, 400);
+      }
+    });
 
   // Wire up hamburger + overlay
   document.addEventListener('DOMContentLoaded', function () {
@@ -1216,10 +1224,10 @@
         blogPostsEl.innerHTML = '<div class="writing-soon">First post coming soon.</div>';
       } else {
         posts.forEach((post, i) => {
-          const tagsHtml   = post.tags ? post.tags.map(t => `<span class="project-tag">${t}</span>`).join('') : '';
-          const postId     = 'post-' + i;
-          const slug       = post.slug || postId;
-          const shareUrl   = window.location.origin + window.location.pathname + '#blog/' + slug;
+          const tagsHtml = post.tags ? post.tags.map(t => `<span class="project-tag">${t}</span>`).join('') : '';
+          const postId   = 'post-' + i;
+          const slug     = post.slug || postId;
+          const shareUrl = window.location.origin + window.location.pathname + '#blog/' + slug;
           blogPostsEl.innerHTML += `
             <div class="blog-post-card" id="${postId}" data-slug="${slug}">
               <div class="blog-post-meta">${post.date}</div>
@@ -1238,6 +1246,20 @@
         });
       }
     }
+
+    // ── Expose openPostBySlug globally so hashchange handler can call it ──
+    window._openPostBySlug = function(slug) {
+      if (!slug) return;
+      const card = document.querySelector('[data-slug="' + slug + '"]');
+      if (!card) return;
+      const body = card.querySelector('.blog-post-body');
+      const btn  = card.querySelector('.blog-read-btn');
+      if (body && body.style.display === 'none') {
+        body.style.display = 'block';
+        if (btn) btn.textContent = 'Collapse ↑';
+      }
+      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+    };
 
     // ── Blog expand / collapse + share ──
     document.addEventListener('click', function(e) {
@@ -1267,30 +1289,11 @@
       }
     });
 
-    // ── Hash routing — open post directly from shared URL ──
-    function openPostBySlug(slug) {
-      if (!slug) return;
-      const card = document.querySelector('[data-slug="' + slug + '"]');
-      if (!card) return;
-      const body = card.querySelector('.blog-post-body');
-      const btn  = card.querySelector('.blog-read-btn');
-      if (body && body.style.display === 'none') {
-        body.style.display = 'block';
-        if (btn) btn.textContent = 'Collapse ↑';
-      }
-      setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
-    }
-
-    const initHash = window.location.hash;
-    if (initHash.startsWith('#blog/')) {
-      const slug = initHash.replace('#blog/', '');
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      const blogSection = document.getElementById('blog');
-      if (blogSection) blogSection.classList.add('active');
-      const blogNav = document.querySelector('[data-section="blog"]');
-      if (blogNav) blogNav.classList.add('active');
-      setTimeout(() => openPostBySlug(slug), 300);
+    // ── On load: if hash is #blog/slug, open that post (posts now in DOM) ──
+    const fullInitHash = (window.location.hash || '').replace('#', '');
+    if (fullInitHash.startsWith('blog/')) {
+      const slug = fullInitHash.replace('blog/', '');
+      setTimeout(() => window._openPostBySlug(slug), 100);
     }
 
     // ── Animate bars on section switch ──
