@@ -82,8 +82,6 @@
     .lang-card:hover { box-shadow: 0 4px 16px rgba(26,39,68,0.08); }
     .lang-name { font-weight: 700; font-size: 0.93rem; color: var(--navy); }
     .lang-level { font-size: 0.7rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
-    .lang-bar { height: 4px; border-radius: 4px; background: var(--border); margin-top: 6px; overflow: hidden; }
-    .lang-bar-fill { height: 100%; background: var(--gold); border-radius: 4px; }
     .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; }
     .interest-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
     .interest-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,76,0.15); transform: translateY(-3px); }
@@ -435,7 +433,6 @@
       .back-to-top, .page-dots, .scrollspy-nav,
       #progress-bar-wrap, .about-tags, #last-updated,
       .open-to-work, .theme-toggle,
-      .lang-bar, .tool-bar-fill { display: none !important; }
 
       /* Reset body layout */
       body { display: block !important; background: #fff !important; }
@@ -998,9 +995,6 @@
           <span style="font-size:0.8rem;font-weight:600;color:var(--navy);">${s.label}</span>
           <span style="font-size:0.7rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;">Developing &#8599;</span>
         </div>
-        <div style="height:6px;border-radius:6px;background:var(--border);overflow:hidden;">
-          <div class="tool-bar-fill" data-pct="${s.pct}" style="width:0%;height:100%;background:var(--gold);border-radius:6px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1);"></div>
-        </div>
       </div>`).join('');
       toolsContainer.innerHTML += `<div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">${barsHTML}</div>`;
     }
@@ -1018,7 +1012,6 @@
         langGrid.innerHTML += `<div class="lang-card">
           <span class="lang-name">${l.name}</span>
           <span class="lang-level">${l.level}</span>
-          <div class="lang-bar"><div class="lang-bar-fill" data-pct="${l.pct}" style="width:0%"></div></div>
         </div>`;
       });
     }
@@ -1132,7 +1125,7 @@
     if (clientEl) {
       const clientProjects = d.portfolio && d.portfolio.client ? d.portfolio.client : [];
       if (clientProjects.length === 0) {
-        clientEl.innerHTML = '<div class="writing-soon">Case work coming soon — real estate feasibility, startup modelling and more.</div>';
+        clientEl.innerHTML = '<div class="writing-soon">Case work coming soon: real estate feasibility, startup modelling and more.</div>';
       } else {
         clientProjects.forEach(p => {
           clientEl.innerHTML += `
@@ -1156,14 +1149,14 @@
     if (personalEl) {
       const personalProjects = d.portfolio && d.portfolio.personal ? d.portfolio.personal : [];
       if (personalProjects.length === 0) {
-        personalEl.innerHTML = '<div class="writing-soon">Self-initiated projects underway — including a Power BI deep-dive on European M&A data.</div>';
+        personalEl.innerHTML = '<div class="writing-soon">Self-initiated projects underway, including a Power BI deep-dive on European M&A data.</div>';
       } else {
         personalProjects.forEach(p => {
           const embedHtml = p.embed
             ? `<div class="embed-container"><iframe src="${p.embed}" allowFullScreen="true"></iframe></div>`
             : `<div class="embed-container"><div class="embed-placeholder">
                 <div class="embed-placeholder-icon"><i data-lucide="bar-chart-2" style="width:32px;height:32px;stroke:var(--gold);stroke-width:1.5"></i></div>
-                <div class="embed-placeholder-text">Interactive dashboard coming soon.<br>Built in Power BI — visualising ${p.title.toLowerCase()}.</div>
+                <div class="embed-placeholder-text">Interactive dashboard coming soon.<br>Built in Power BI, visualising ${p.title.toLowerCase()}.</div>
                </div></div>`;
           personalEl.innerHTML += `
             <div class="project-card">
@@ -1180,18 +1173,7 @@
     }
 
     // ── Animate bars on section switch ──
-    function animateBarsInView() {
-      document.querySelectorAll('.lang-bar-fill[data-pct], .tool-bar-fill[data-pct]').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          el.style.transition = 'width 0.8s cubic-bezier(0.4,0,0.2,1)';
-          el.style.width = el.getAttribute('data-pct') + '%';
-        }
-      });
-    }
-    window.addEventListener('scroll', animateBarsInView, { passive: true });
-    window.addEventListener('hashchange', () => setTimeout(animateBarsInView, 100));
-    setTimeout(animateBarsInView, 200);
+
 
     // ── Back to top ──
     const bttBtn = document.getElementById('back-to-top');
