@@ -197,6 +197,7 @@ const siteData = {
   blog: [
     {
       title:   "102 Firms, 21 Years, One Dashboard",
+      slug:    "102-firms-21-years-one-dashboard",
       date:    "March 2026",
       excerpt: "I spent a good portion of my MBA writing a thesis only corporate finance academicians and practitioners can understand. This is my attempt to present it to everyone else.",
       tags:    ["Power BI", "M&A", "Corporate Finance", "Event Study"],
@@ -266,6 +267,7 @@ const siteData = {
     },
     {
       title:   "Failed a Class, So That You Don't Have To. A Dial for Your Thoughts.",
+      slug:    "failed-a-class-so-that-you-dont-have-to",
       date:    "March 2026",
       excerpt: "Dr. Wouter passed me on the second attempt. I am still not sure he should have.",
       tags:    ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
@@ -311,6 +313,8 @@ const siteData = {
 <p>The goal is not to teach valuation. There are textbooks for that, and professors with considerably more patience than I had as a student. The goal is to make one thing viscerally clear: two analysts can read the same company filing and disagree about whether the business is profitable. Neither of them is necessarily wrong. They just moved the dial to different positions.</p>
 
 <p>This is the part of finance that does not get enough airtime outside of technical courses. A model is only as reliable as the accounting inputs feeding it. If you do not know how those inputs were constructed, you do not know what your model is actually measuring. I knew this from practice. What the exam taught me, rather painfully, is that knowing something and being able to reconstruct it from scratch under pressure are two entirely separate things. Dr. Wouter's exam is, in hindsight, a reasonable proxy for the latter.</p>
+
+<p>The same logic extends to intrinsic value. In a DCF, the terminal value depends on whether the firm earns above its cost of capital. R&amp;D capitalisation affects invested capital — the denominator of that calculation. Expense everything, and the asset base is understated. ROIC looks better than it is. The model flatters a business that may not deserve it. One dial. Different conclusions about whether the thing is worth buying at all.</p>
 
 <h3>An Acknowledgement</h3>
 
