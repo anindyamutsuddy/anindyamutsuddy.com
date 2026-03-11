@@ -1219,9 +1219,9 @@
     // ── BLOG: POSTS ──
     const blogPostsEl = document.getElementById('blog-posts-render');
     if (blogPostsEl) {
-      const posts = d.blog && d.blog.length > 0 ? d.blog : [];
+      const posts = (d.blog || []).filter(p => !p.hidden);
       if (posts.length === 0) {
-        blogPostsEl.innerHTML = '<div class="writing-soon">First post coming soon.</div>';
+        blogPostsEl.innerHTML = '<div class="writing-soon">First post coming soon. Thoughts on finance, markets and the occasional tangent.</div>';
       } else {
         posts.forEach((post, i) => {
           const tagsHtml = post.tags ? post.tags.map(t => `<span class="project-tag">${t}</span>`).join('') : '';
@@ -1247,7 +1247,7 @@
       }
     }
 
-    // ── Expose openPostBySlug globally so hashchange handler can call it ──
+    // ── openPostBySlug as global ──
     window._openPostBySlug = function(slug) {
       if (!slug) return;
       const card = document.querySelector('[data-slug="' + slug + '"]');
@@ -1289,7 +1289,7 @@
       }
     });
 
-    // ── On load: if hash is #blog/slug, open that post (posts now in DOM) ──
+    // ── Hash routing on load ──
     const fullInitHash = (window.location.hash || '').replace('#', '');
     if (fullInitHash.startsWith('blog/')) {
       const slug = fullInitHash.replace('blog/', '');

@@ -268,6 +268,7 @@ const siteData = {
     {
       title:   "Failed a Class, So That You Don't Have To. A Dial for Your Thoughts.",
       slug:    "failed-a-class-so-that-you-dont-have-to",
+      hidden:  true,
       date:    "March 2026",
       excerpt: "Dr. Wouter passed me on the second attempt. I am still not sure he should have.",
       tags:    ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
