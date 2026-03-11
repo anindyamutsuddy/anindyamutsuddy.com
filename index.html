@@ -586,23 +586,30 @@
     .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .project-tag { font-size: 0.68rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: var(--off-white); color: var(--text-light); border: 1px solid var(--border); letter-spacing: 0.04em; }
 
+    /* ── Publication links ── */
+    .pub-links { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
+    .pub-link-btn { font-size: 0.8rem; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    .pub-link-btn:hover { border-bottom-color: var(--gold); }
+
     /* ── Blog post cards ── */
     .blog-post-card { background: var(--white); border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
     .blog-post-meta { font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
     .blog-post-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
     .blog-post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
     .blog-post-excerpt { font-size: 0.95rem; color: var(--text-light); font-style: italic; margin-bottom: 20px; line-height: 1.7; border-left: 3px solid var(--gold); padding-left: 16px; }
-    .blog-post-body { font-size: 0.92rem; color: var(--text); line-height: 1.85; }
+    .blog-post-body { font-size: 0.92rem; color: var(--text); line-height: 1.85; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.07); }
     .blog-post-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); margin: 28px 0 10px; }
     .blog-post-body p { margin-bottom: 16px; }
     .blog-post-body strong { font-weight: 600; color: var(--navy); }
+    .blog-read-btn { margin-top: 20px; background: none; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; color: var(--gold); letter-spacing: 0.05em; text-transform: uppercase; padding: 0; transition: opacity 0.2s; }
+    .blog-read-btn:hover { opacity: 0.7; }
 
     /* ── Project blog link ── */
     .project-blog-link { margin-top: 16px; }
     .blog-link-btn { display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     .blog-link-btn:hover { border-bottom-color: var(--gold); }
 
-    /* ── Coming soon project badge ── */
+    /* ── Coming soon badge ── */
     .project-status-dot.coming-soon { background: rgba(201,168,76,0.12); color: var(--gold); }
 
     /* ── Power BI embed ── */
@@ -1080,6 +1087,10 @@
           ${pub.thesis.degree} &nbsp;&middot;&nbsp; Graduated <strong>${pub.thesis.honour}</strong>
         </div>
         <div class="pub-abstract">${pub.thesis.abstract}</div>
+        <div class="pub-links">
+          <a href="#projects" class="pub-link-btn" onclick="window.location.hash='projects'">View the dashboard &rarr;</a>
+          <a href="#blog" class="pub-link-btn" onclick="window.location.hash='blog'">Read the write-up &rarr;</a>
+        </div>
       </div>`;
       pub.papers.forEach(p => {
         pubContainer.innerHTML += `<div class="pub-card">
@@ -1182,7 +1193,7 @@
             <div class="project-card">
               <div class="project-header">
                 <div class="project-title">${p.title}</div>
-                <div class="project-status-dot ${p.status}">${p.status === 'done' ? 'Completed' : p.status === 'coming-soon' ? 'Coming Soon' : 'In Progress'}</div>
+                <div class="project-status-dot ${p.status}">${p.status === 'done' ? 'Completed' : 'In Progress'}</div>
               </div>
               <div class="project-desc">${p.desc}</div>
               <div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
@@ -1200,19 +1211,33 @@
       if (posts.length === 0) {
         blogPostsEl.innerHTML = '<div class="writing-soon">First post coming soon. Thoughts on finance, markets and the occasional tangent.</div>';
       } else {
-        posts.forEach(post => {
+        posts.forEach((post, i) => {
           const tagsHtml = post.tags ? post.tags.map(t => `<span class="project-tag">${t}</span>`).join('') : '';
+          const postId = 'post-' + i;
           blogPostsEl.innerHTML += `
-            <div class="blog-post-card">
+            <div class="blog-post-card" id="${postId}">
               <div class="blog-post-meta">${post.date}</div>
               <div class="blog-post-title">${post.title}</div>
               <div class="blog-post-tags">${tagsHtml}</div>
               <div class="blog-post-excerpt">${post.excerpt}</div>
-              <div class="blog-post-body">${post.body || ''}</div>
+              <div class="blog-post-body" id="${postId}-body" style="display:none;">${post.body || ''}</div>
+              <button class="blog-read-btn" data-target="${postId}-body">Read post &rarr;</button>
             </div>`;
         });
       }
     }
+
+    // ── Blog post expand/collapse ──
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.classList.contains('blog-read-btn')) {
+        const targetId = e.target.getAttribute('data-target');
+        const body = document.getElementById(targetId);
+        if (!body) return;
+        const isOpen = body.style.display !== 'none';
+        body.style.display = isOpen ? 'none' : 'block';
+        e.target.textContent = isOpen ? 'Read post →' : 'Collapse ↑';
+      }
+    });
 
     // ── Animate bars on section switch ──
 

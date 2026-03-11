@@ -227,6 +227,8 @@ const siteData = {
 
 <p>After completing my MBA, I started looking for analyst roles in corporate finance. Excel alone was not going to be enough. Power BI kept appearing in job descriptions, so I picked it up.</p>
 
+<p><a href="#projects" onclick="window.location.hash='projects'" style="color:var(--gold);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)">View the interactive dashboard &rarr;</a></p>
+
 <p>Practice datasets are fine for learning the tool. They are less useful for learning whether you actually understand what you are showing. Using my own thesis data solved that problem in both directions. I knew the content well enough to catch a misleading visual. And I cared about the output enough to keep iterating until it said what I meant.</p>
 
 <p>The goal was not to replicate the thesis in chart form. It was to ask: what is the minimum a non-finance reader needs to see in order to genuinely understand what this research found? That question turned out to be harder than the regression work.</p>
@@ -261,6 +263,65 @@ const siteData = {
 
 <p>The Power BI certification continues. So does the Dutch.</p>
       `
+    },
+    {
+      title:   "Failed a Class, So That You Don't Have To. A Dial for Your Thoughts.",
+      date:    "March 2026",
+      excerpt: "Dr. Wouter passed me on the second attempt. I am still not sure he should have.",
+      tags:    ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
+      body: `
+<p>Dr. Wouter passed me on the second attempt. I am still not sure he should have.</p>
+
+<p>He is a man I genuinely admire. His academic record is the kind that makes your own CV feel like a rough draft written in crayon. He also has, by observable evidence, exceptional taste in watches, which in my personal value system counts for a great deal. None of this helped me pass his class the first time around. Both of those things can be true simultaneously.</p>
+
+<h3>The Problem</h3>
+
+<p>The subject was valuation. Specifically, the part of valuation where accounting choices stop being abstract and start producing completely different numbers depending on which box someone ticked on a form years earlier.</p>
+
+<p>R&amp;D capitalisation is the canonical example of this. It sounds technical. It is, in fact, a simple idea dressed up in enough jargon to feel impossible until the moment it does not. Here is the plain version.</p>
+
+<p>When a firm spends money on research and development, onlookers, namely middlemen parading as analysts like myself, have two choices about how to treat that spending. We can leave it as an expense, meaning it hits the income statement immediately and reduces profit today. Or, for valuation purposes, we can treat it as an investment, meaning it goes on the balance sheet as an asset and gets amortised over time. The first approach is expensing. The second is capitalisation.</p>
+
+<p>Same cash left the building. Same people did the work. Completely different financial statements.</p>
+
+<p>Under full expensing: EBIT is lower. Net income is lower. ROA looks worse. The company might appear to be barely breaking even.</p>
+
+<p>Under full capitalisation: EBIT is higher. Net income is higher. Assets are larger. ROA changes. A different analyst, reading a different set of financials, might conclude this is a different company entirely.</p>
+
+<p>It is not a different company. It is the same company. One dial moved.</p>
+
+<h3>What I Could Do, and What I Could Not</h3>
+
+<p>I came to my MBA from industry. In practice, R&amp;D capitalisation is something I had encountered, understood, and applied. I have built financial models in Excel that adjusted for it. I have read the accounting policy footnotes of annual reports, noted the treatment, and rebuilt the income statement accordingly. I knew what it was. I knew why it mattered. I could do it.</p>
+
+<p>What I could not do, it turned out, was do it with a pen, paper, and a calculator while a clock ticked and a professor watched.</p>
+
+<p>Those are not the same skill. In Excel, the model checks itself. The cells either balance or they do not. You can see immediately when something is wrong. You fix it, move on, and the output updates automatically. On paper, there is no such feedback. Each step has to be right before the next step means anything. The intermediate workings have to be legible. The logic has to be shown. All of it has to happen faster than your anxiety about whether any of it is right.</p>
+
+<p>The first time I sat Dr. Wouter's exam, I understood the concept. I had applied it in real client work. I simply could not execute it in that format, at that speed, without a spreadsheet doing the arithmetic for me. Failed. Retook. Scraped through. Thank you for the grace, Dr. Wouter. I mean that without any irony whatsoever.</p>
+
+<h3>The Simulator</h3>
+
+<p>What I have built is something I would have found genuinely useful in that class. A single Power BI page with a slider. One end is zero percent capitalisation. The other end is one hundred percent. In between is every possible treatment.</p>
+
+<p>As you move the slider, every metric on the page updates live. EBIT. Net income. ROA. EV/EBITDA. The P/E ratio. You watch a pharmaceutical firm go from looking like a struggling business to looking like a compounding machine, without a single euro of actual cash changing hands. The same firm. The same year. The same people doing the same work.</p>
+
+<p>The data underneath it is real. It comes from the same dataset used in my MBA thesis, specifically the R&amp;D expenses and total assets of European pharmaceutical firms between 1998 and 2019. The firm I used for the simulation has figures dramatic enough to make the point without any editorial assistance.</p>
+
+<p>The goal is not to teach valuation. There are textbooks for that, and professors with considerably more patience than I had as a student. The goal is to make one thing viscerally clear: two analysts can read the same company filing and disagree about whether the business is profitable. Neither of them is necessarily wrong. They just moved the dial to different positions.</p>
+
+<p>This is the part of finance that does not get enough airtime outside of technical courses. A model is only as reliable as the accounting inputs feeding it. If you do not know how those inputs were constructed, you do not know what your model is actually measuring. I knew this from practice. What the exam taught me, rather painfully, is that knowing something and being able to reconstruct it from scratch under pressure are two entirely separate things. Dr. Wouter's exam is, in hindsight, a reasonable proxy for the latter.</p>
+
+<h3>An Acknowledgement</h3>
+
+<p>Dr. Wouter taught this material with rigour, good humour, and what I can only describe as the patient air of someone who has watched many students make exactly the same mistakes and has chosen, as a matter of professional dignity, to remain calm about it.</p>
+
+<p>I failed his class. I retook it. I barely passed. And then I went and built a dashboard about R&amp;D capitalisation for fun, after hours, of my own accord, using real data from my own research.</p>
+
+<p>I think that says something about the quality of his teaching. He would probably prefer I think it says something about my persistence. We can agree to disagree.</p>
+
+<p>The watch collection, for the record, remains an inspiration.</p>
+      `
     }
   ],
 
@@ -284,7 +345,7 @@ const siteData = {
     // embed: paste your Power BI "Publish to Web" URL here when ready.
     //        Set to null to show a placeholder instead.
     // Fields: title, tags[], desc, status, embed (URL string or null)
-personal: [
+    personal: [
       {
         title:     "102 Firms, 21 Years, One Dashboard",
         tags:      ["Power BI", "M&A", "Event Study", "BHAR", "Data Visualisation"],
@@ -299,6 +360,14 @@ personal: [
         desc:      "A deep look at European M&A activity built on 25 years of EU merger control data. The question: of the thousands of deals that crossed the European Commission's desk between 1990 and 2014, what actually got blocked, and why?",
         status:    "coming-soon",
         blogSlug:  null,
+        embed:     null
+      },
+      {
+        title:     "Failed a Class, So That You Don't Have To. A Dial for Your Thoughts.",
+        tags:      ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
+        desc:      "A single-page Power BI simulator with one slider: move it from zero to one hundred percent R&D capitalisation and watch EBIT, ROA, EV/EBITDA and net income update live, on real pharma data, without a single euro of cash changing hands. Built after failing Dr. Wouter's valuation class. Dedicated to him accordingly.",
+        status:    "coming-soon",
+        blogSlug:  "failed-a-class-so-that-you-dont-have-to",
         embed:     null
       }
     ]
