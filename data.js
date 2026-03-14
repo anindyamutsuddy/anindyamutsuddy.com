@@ -521,7 +521,7 @@ const siteData = {
       {
         title:     "Failed a Class, So That You Don't Have To. A Dial for Your Thoughts.",
         tags:      ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
-        desc:      "A single-page Power BI simulator with one slider: move it from zero to one hundred percent R&D capitalisation and watch EBIT, ROA, EV/EBITDA and net income update live, on real pharma data, without a single euro of cash changing hands. Built after failing Dr. Wouter's valuation class. Dedicated to him accordingly.",
+        desc:      "A Power BI simulator applying R&D capitalisation to a French biotech with a 3:1 R&D-to-revenue ratio. Same firm, same cash; adjust the amortisation life from three to twenty years and watch the company move from worthless to worth owning. Six KPIs updating live across eighteen scenarios. Built after failing Dr. Wouter's valuation class. Dedicated to him accordingly.",
         status:    "coming-soon",
         blogSlug:  "failed-a-class-so-that-you-dont-have-to",
         embed:     "https://app.powerbi.com/view?r=eyJrIjoiNzc0YjRlNTYtNThiNy00YTVkLWIyZjEtYjM1MWJhN2I2OTZiIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
