@@ -91,7 +91,7 @@ const siteData = {
       { label: "Excel (Advanced)",      tooltip: "Primary modelling tool across all deal work",          type: "tag" },
       { label: "PowerPoint (Advanced)", tooltip: "Built investor decks and client-facing presentations", type: "tag" },
       { label: "IFRS ↗",               tooltip: "",                                                      type: "tag" },
-      { label: "Power BI", tooltip: "Built 5-page event study dashboard from MBA thesis data, 102-firm dataset across chemicals and pharma",             tooltip: "",  type: "bar", pct: 30 },
+      { label: "Power BI", tooltip: "Built 5-page event study dashboard from MBA thesis data, 102-firm dataset across chemicals and pharma",  type: "bar", pct: 30 },
       { label: "SAP S/4HANA",          tooltip: "",  type: "bar", pct: 20 }
       // type: "tag" = pill badge | type: "bar" = progress bar (pct: 0-100)
     ],
@@ -184,8 +184,7 @@ const siteData = {
       { brand: "Seiko",          name: "Seiko 5",              icon: "clock" }
     ],
     books: [
-      { title: "Snow Country",    author: "Yasunari Kawabata", status: "reading", note: "A beautifully restrained Japanese novel about impermanence and longing." },
-      { title: "Add a past read", author: "Author name",       status: "read",    note: "" }
+      { title: "Snow Country",    author: "Yasunari Kawabata", status: "reading", note: "A beautifully restrained Japanese novel about impermanence and longing." }
     ],
     activities: [
       { icon: "mountain", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
@@ -268,64 +267,216 @@ const siteData = {
     {
       title:   "Failed a Class, So That You Don't Have To. A Dial for Your Thoughts.",
       slug:    "failed-a-class-so-that-you-dont-have-to",
-      hidden:  true,
       date:    "March 2026",
-      excerpt: "Dr. Wouter passed me on the second attempt. I am still not sure he should have.",
+      excerpt: "My professor passed me on the second attempt, and I am still not sure he should have.",
       tags:    ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
       body: `
-<p>Dr. Wouter passed me on the second attempt. I am still not sure he should have.</p>
+<p>My professor passed me on the second attempt, and I am still not sure he should have.</p>
 
-<p>He is a man I genuinely admire. His academic record is the kind that makes your own CV feel like a rough draft written in crayon. He also has, by observable evidence, exceptional taste in watches, which in my personal value system counts for a great deal. None of this helped me pass his class the first time around. Both of those things can be true simultaneously.</p>
+<p>He is a man I genuinely admire. His academic record is the kind that makes your own CV feel like a rough draft written in crayon. He also has, by observable evidence, exceptional taste in watches, which in my personal value system counts for a great deal. None of this helped me pass his class the first time around though. Both of those things can be true simultaneously.</p>
 
 <h3>The Problem</h3>
 
-<p>The subject was valuation. Specifically, the part of valuation where accounting choices stop being abstract and start producing completely different numbers depending on which box someone ticked on a form years earlier.</p>
+<p>The subject was valuation. Specifically, the part of valuation where accounting choices stop being abstract and start producing completely different numbers depending on which box someone ticked on a form years earlier. R&amp;D capitalisation is the canonical example of this. It sounds technical. It is, in fact, a simple idea dressed up in enough jargon to feel impossible until the moment it does not. In plainer terms, when a firm spends money on research and development, it has two options for how to report that spending. The first is expensing: the full cost hits the income statement immediately and reduces profit today. The second is capitalisation: the spending is treated as an investment, placed on the balance sheet as an asset, and written off gradually over its useful life.</p>
 
-<p>R&amp;D capitalisation is the canonical example of this. It sounds technical. It is, in fact, a simple idea dressed up in enough jargon to feel impossible until the moment it does not. Here is the plain version.</p>
+<p>Now, accountants do not capitalise R&amp;D. Under both IFRS and US GAAP, research and development costs are expensed as incurred, full stop. The standard allows capitalisation of development costs only once technical and commercial feasibility are established, and in practice, most pharmaceutical and biotech firms never clear that bar. The uncertainty is too high. The criteria are too strict. So it all goes straight through the income statement.</p>
 
-<p>When a firm spends money on research and development, onlookers, namely middlemen parading as analysts like myself, have two choices about how to treat that spending. We can leave it as an expense, meaning it hits the income statement immediately and reduces profit today. Or, for valuation purposes, we can treat it as an investment, meaning it goes on the balance sheet as an asset and gets amortised over time. The first approach is expensing. The second is capitalisation.</p>
-
-<p>Same cash left the building. Same people did the work. Completely different financial statements.</p>
-
-<p>Under full expensing: EBIT is lower. Net income is lower. ROA looks worse. The company might appear to be barely breaking even.</p>
-
-<p>Under full capitalisation: EBIT is higher. Net income is higher. Assets are larger. ROA changes. A different analyst, reading a different set of financials, might conclude this is a different company entirely.</p>
-
-<p>It is not a different company. It is the same company. One dial moved.</p>
+<p>Analysts, on the other hand, argue that this produces a fundamentally misleading picture of firms that compete on innovation. A drug that takes twelve years and two billion euros to develop is not a cost. It is an investment. Treating it as a cost makes a research-intensive firm look like a struggling business when it may be building one of the most valuable asset bases in its industry. In essence, same cash left the building, same people did the work. The translation, however, is different financial statements, depending entirely on which convention you are using.</p>
 
 <h3>What I Could Do, and What I Could Not</h3>
 
-<p>I came to my MBA from industry. In practice, R&amp;D capitalisation is something I had encountered, understood, and applied. I have built financial models in Excel that adjusted for it. I have read the accounting policy footnotes of annual reports, noted the treatment, and rebuilt the income statement accordingly. I knew what it was. I knew why it mattered. I could do it.</p>
-
-<p>What I could not do, it turned out, was do it with a pen, paper, and a calculator while a clock ticked and a professor watched.</p>
+<p>I came to my MBA from industry. In practice, R&amp;D capitalisation is something I had encountered, understood, and applied. I have built financial models in Excel that adjusted for it. I have read the accounting policy footnotes of annual reports, noted the treatment, and rebuilt the income statement accordingly. I knew what it was. I knew why it mattered. I could do it. What I could not do, it turned out, was do it with a pen, paper, and a calculator while a clock ticked and a professor watched.</p>
 
 <p>Those are not the same skill. In Excel, the model checks itself. The cells either balance or they do not. You can see immediately when something is wrong. You fix it, move on, and the output updates automatically. On paper, there is no such feedback. Each step has to be right before the next step means anything. The intermediate workings have to be legible. The logic has to be shown. All of it has to happen faster than your anxiety about whether any of it is right.</p>
 
-<p>The first time I sat Dr. Wouter's exam, I understood the concept. I had applied it in real client work. I simply could not execute it in that format, at that speed, without a spreadsheet doing the arithmetic for me. Failed. Retook. Scraped through. Thank you for the grace, Dr. Wouter. I mean that without any irony whatsoever.</p>
+<p>The first time I sat Dr. Wouter&#8217;s exam, I understood the concept. I had applied it in real client work. I simply could not execute it in that format, at that speed, without a spreadsheet doing the arithmetic for me. Failed. Retook. Scraped through. Thank you for the grace, Dr. Wouter. I mean that without any irony whatsoever.</p>
+
+<h3>The Firm</h3>
+
+<p>Transgene SA is a French biotech company. In 2013, it spent EUR 50.1 million on research and development. It generated EUR 15.7 million in revenue. The ratio of R&amp;D to revenue was approximately three to one, which is the kind of number that looks like a typo until you check the source and realise it is not.</p>
+
+<p>The reported EBIT was negative EUR 42.9 million. The firm held roughly EUR 75 million in cash, carried essentially no financial debt, and had approximately 26.5 million shares outstanding. On paper it was a company spending itself into oblivion. The cash buffer was the only reason it was still standing.</p>
+
+<p>There are funds that would completely disregard this company. The flipside being funds built specifically to sit with firms that look ugly on paper and ask what the business is actually worth. They do the work. They restate the financials. They look through the accounting. But they are the exception, and what interests me is what happens to everyone else. To the screen that runs at midnight and throws out every firm with a negative EBIT before a human being has looked at a single line of the annual report.</p>
+
+<p>A reasonable person might ask why Transgene specifically. The honest answer is that its R&amp;D-to-revenue ratio is extreme enough to make the accounting distortion impossible to ignore, and that extreme cases make for clearer illustrations. The less honest answer is that I needed a firm and this one had the right numbers, and I&#8217;ve known of its numbers from my thesis work.</p>
+
+<h3>The Numbers</h3>
+
+<p><em>Sources: Transgene SA official press releases and AMF filings. Balance sheet figures estimated from public summaries.</em></p>
+
+<p><strong>Transgene SA — Selected Financials (EUR thousands, base year 2013)</strong></p>
+
+<table style="width:100%;border-collapse:collapse;font-size:0.83rem;margin:16px 0 24px;">
+  <thead>
+    <tr style="background:var(--navy);color:var(--white);">
+      <th style="padding:9px 14px;text-align:left;font-weight:600;border-radius:6px 0 0 0;">Item</th>
+      <th style="padding:9px 14px;text-align:right;font-weight:600;border-radius:0 6px 0 0;">EUR thousands</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background:rgba(201,168,76,0.12);">
+      <td colspan="2" style="padding:7px 14px;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--gold);">Income Statement</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">Revenue</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">15,735</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">R&amp;D Expenses</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">50,063</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">EBIT (reported)</td>
+      <td style="padding:7px 14px;text-align:right;color:#e53e3e;font-weight:600;">(42,858)</td>
+    </tr>
+    <tr style="background:rgba(201,168,76,0.12);">
+      <td colspan="2" style="padding:7px 14px;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--gold);">Historical R&amp;D — Research Asset Inputs</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">2009</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">30,934</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">2010</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">40,181</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">2011</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">48,679</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">2012</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">48,700</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">2013</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">50,063</td>
+    </tr>
+    <tr style="background:rgba(201,168,76,0.12);">
+      <td colspan="2" style="padding:7px 14px;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--gold);">Balance Sheet (estimated)</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">Cash &amp; Equivalents</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">75,000</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">Financial Debt</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">0</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">Book Value of Equity</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">95,000</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">Shares Outstanding (thousands)</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">26,500</td>
+    </tr>
+    <tr style="background:rgba(201,168,76,0.12);">
+      <td colspan="2" style="padding:7px 14px;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--gold);">Operational Inputs</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">Reported Capex</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">2,500</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">Reported D&amp;A</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">1,200</td>
+    </tr>
+    <tr>
+      <td style="padding:7px 14px;color:var(--text);">Delta Non-cash NWC</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">500</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>WACC Assumptions (bottom-up, base year 2013)</strong></p>
+
+<table style="width:100%;border-collapse:collapse;font-size:0.83rem;margin:16px 0 24px;">
+  <thead>
+    <tr style="background:var(--navy);color:var(--white);">
+      <th style="padding:9px 14px;text-align:left;font-weight:600;border-radius:6px 0 0 0;">Input</th>
+      <th style="padding:9px 14px;text-align:right;font-weight:600;border-radius:0 6px 0 0;">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">Risk-free rate <span style="font-size:0.72rem;color:var(--text-light);">(French 10-yr OAT, 2013)</span></td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">3.0%</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">Unlevered beta <span style="font-size:0.72rem;color:var(--text-light);">(Damodaran biotech industry)</span></td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">1.41</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">Equity Risk Premium <span style="font-size:0.72rem;color:var(--text-light);">(Damodaran implied ERP, France 2013)</span></td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">5.5%</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">Tax rate <span style="font-size:0.72rem;color:var(--text-light);">(French marginal corporate rate)</span></td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">33.3%</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">WACC — high-growth period</td>
+      <td style="padding:7px 14px;text-align:right;font-weight:600;color:var(--navy);">10.7%</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
+      <td style="padding:7px 14px;color:var(--text);">WACC — stable period</td>
+      <td style="padding:7px 14px;text-align:right;font-weight:600;color:var(--navy);">8.5%</td>
+    </tr>
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:7px 14px;color:var(--text);">Terminal growth rate</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">3.0%</td>
+    </tr>
+    <tr>
+      <td style="padding:7px 14px;color:var(--text);">Stable after-tax ROIC</td>
+      <td style="padding:7px 14px;text-align:right;color:var(--text);">10.0%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>The Flip</h3>
+
+<p>In my model, the capitalisation rate is set to 100 percent and left there. The load-bearing assumption is the amortisation life: how many years does this year&#8217;s R&amp;D spending continue to generate returns?</p>
+
+<p>Three years of useful life produces equity value of negative EUR 11 per share. Nine years produces positive EUR 1.07 per share. Fifteen years produces EUR 3.05. The science did not change between these scenarios. The cash did not change. The number of employees and patents and grams of biological material in cold storage did not change. One number changed, and the firm moved from worthless to worth owning.</p>
+
+<p>The nine-year break-even sits within Damodaran&#8217;s stated credible range for pharmaceutical R&amp;D. It does not require an aggressive assumption to produce a positive valuation. It requires a reasonable one.</p>
+
+<p>It is worth being precise about what is happening below eleven years of amortisation life. At L&#8202;=&#8202;9 and L&#8202;=&#8202;10, equity value is positive because of the EUR 75 million cash buffer, not because operations themselves produce positive value. The value of operations remains negative until L equals eleven. The model discloses this. The dashboard discloses this. I am disclosing it here as well. The cash is real. The disclosure is the point.</p>
+
+<p>This is not investment advice. Transgene is being used as an illustration. The underlying science may or may not have produced returns. I genuinely do not know. I do know that the accounting convention made it look worse than any reasonable set of assumptions would suggest it actually was.</p>
 
 <h3>The Simulator</h3>
 
-<p>What I have built is something I would have found genuinely useful in that class. A single Power BI page with a slider. One end is zero percent capitalisation. The other end is one hundred percent. In between is every possible treatment.</p>
+<p><a href="#portfolio" onclick="event.preventDefault();window.location.hash='portfolio'" style="color:var(--gold);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)">View the simulator →</a></p>
 
-<p>As you move the slider, every metric on the page updates live. EBIT. Net income. ROA. EV/EBITDA. The P/E ratio. You watch a pharmaceutical firm go from looking like a struggling business to looking like a compounding machine, without a single euro of actual cash changing hands. The same firm. The same year. The same people doing the same work.</p>
+<p>What I built is a single-page Power BI dashboard with one slider. Set the amortisation life anywhere between three and twenty years and watch six KPI cards update simultaneously: amortisation charge, adjusted EBIT, ROIC, stage one growth rate, value of operations, and equity value per share. The equity value card is red when the number is negative and turns teal when it crosses zero. There is a line chart showing the full valuation curve across all eighteen assumptions at once, so the shape of the relationship is always visible regardless of where the slider sits. There is a bar chart comparing GAAP EBIT to adjusted EBIT side by side, the right bar climbing and changing colour as the slider moves.</p>
 
-<p>The data underneath it is real. It comes from the same dataset used in my MBA thesis, specifically the R&amp;D expenses and total assets of European pharmaceutical firms between 1998 and 2019. The firm I used for the simulation has figures dramatic enough to make the point without any editorial assistance.</p>
+<p>There was also meant to be a waterfall chart. A waterfall chart shows the bridge from GAAP EBIT through the R&amp;D add-back and the amortisation deduction to the adjusted EBIT result. It is a natural visual for this kind of analysis. Power BI&#8217;s waterfall chart, in its current form, does not agree with this assessment. After approximately two hours of discussion, I replaced it with a bar chart. The bar chart makes the same point. Some battles are not worth having.</p>
 
-<p>The goal is not to teach valuation. There are textbooks for that, and professors with considerably more patience than I had as a student. The goal is to make one thing viscerally clear: two analysts can read the same company filing and disagree about whether the business is profitable. Neither of them is necessarily wrong. They just moved the dial to different positions.</p>
+<p>Translating the model to a plain CSV was an interesting challenge. Hardcoding numbers is a cardinal sin for any analyst, and I&#8217;ve worn down some of my teeth while doing so. The model now lives in the CSV. Power BI is just the interface. This was an experiment of sorts, to see if I can translate my knowledge into an interactable visual.</p>
 
-<p>This is the part of finance that does not get enough airtime outside of technical courses. A model is only as reliable as the accounting inputs feeding it. If you do not know how those inputs were constructed, you do not know what your model is actually measuring. I knew this from practice. What the exam taught me, rather painfully, is that knowing something and being able to reconstruct it from scratch under pressure are two entirely separate things. Dr. Wouter's exam is, in hindsight, a reasonable proxy for the latter.</p>
+<h3>The Thing This Is Actually About</h3>
 
-<p>The same logic extends to intrinsic value. In a DCF, the terminal value depends on whether the firm earns above its cost of capital. R&amp;D capitalisation affects invested capital — the denominator of that calculation. Expense everything, and the asset base is understated. ROIC looks better than it is. The model flatters a business that may not deserve it. One dial. Different conclusions about whether the thing is worth buying at all.</p>
+<p>Financial statements are not a photograph of a business. They are a set of choices about how to represent a business, made by accountants operating under specific rules, in a specific regulatory environment, for a specific set of users.</p>
+
+<p>Analysts who use those statements as direct inputs to valuation models without interrogating the underlying choices are not doing valuation. They are doing arithmetic on numbers someone else selected using conventions someone else designed for purposes that may have nothing to do with estimating intrinsic value.</p>
+
+<p>R&amp;D capitalisation is the clearest illustration of this because the effect is so large, and the convention so blunt. Expense everything immediately and a pharmaceutical company looks like a machine that converts cash into losses. Capitalise the development investment and the same company, in the same year, with the same scientists working on the same drugs, looks like a business that may be building something genuinely valuable.</p>
+
+<p>Neither picture is the truth. Both are approximations. The question is which approximation is more useful for the decision you are trying to make.</p>
 
 <h3>An Acknowledgement</h3>
 
 <p>Dr. Wouter taught this material with rigour, good humour, and what I can only describe as the patient air of someone who has watched many students make exactly the same mistakes and has chosen, as a matter of professional dignity, to remain calm about it.</p>
 
-<p>I failed his class. I retook it. I barely passed. And then I went and built a dashboard about R&amp;D capitalisation for fun, after hours, of my own accord, using real data from my own research.</p>
+<p>I failed his class. I retook it. I barely passed. And then I went and built a dashboard about R&amp;D capitalisation for fun, after hours, of my own accord, using the exact methodology from his course material applied to a French biotech company&#8217;s published filings.</p>
 
 <p>I think that says something about the quality of his teaching. He would probably prefer I think it says something about my persistence. We can agree to disagree.</p>
 
 <p>The watch collection, for the record, remains an inspiration.</p>
+
       `
     }
   ],
@@ -373,7 +524,7 @@ const siteData = {
         desc:      "A single-page Power BI simulator with one slider: move it from zero to one hundred percent R&D capitalisation and watch EBIT, ROA, EV/EBITDA and net income update live, on real pharma data, without a single euro of cash changing hands. Built after failing Dr. Wouter's valuation class. Dedicated to him accordingly.",
         status:    "coming-soon",
         blogSlug:  "failed-a-class-so-that-you-dont-have-to",
-        embed:     null
+        embed:     "https://app.powerbi.com/view?r=eyJrIjoiNzc0YjRlNTYtNThiNy00YTVkLWIyZjEtYjM1MWJhN2I2OTZiIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
       }
     ]
   },

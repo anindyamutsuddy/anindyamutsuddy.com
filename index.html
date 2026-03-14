@@ -5,7 +5,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%231e1814%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2221%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2213%22%20font-weight%3D%22700%22%20fill%3D%22%23c9a84c%22%20text-anchor%3D%22middle%22%3EAM%3C/text%3E%3C/svg%3E"/>
-  <title>Anindya Mutsuddy</title>
+  <title>Anindya Mutsuddy · Corporate Finance Analyst</title>
   <meta property="og:type"        content="website"/>
   <meta property="og:url"         content="https://anindyamutsuddy.com/"/>
   <meta property="og:title"       content="Anindya Mutsuddy · Corporate Finance Analyst"/>
@@ -13,8 +13,10 @@
   <meta property="og:image"       content="https://anindyamutsuddy.com/og-image.png"/>
   <meta name="twitter:card"       content="summary"/>
   <meta name="twitter:title"      content="Anindya Mutsuddy · Corporate Finance Analyst"/>
+  <meta name="twitter:description" content="MBA graduate (Cum Laude, KU Leuven). Seeking analyst roles in corporate finance, investment banking or commercial lending in the Benelux region.">
   <meta name="twitter:image"      content="https://anindyamutsuddy.com/og-image.png"/>
   <meta name="description" content="Corporate Finance Analyst · Investment Banking · Antwerp, Belgium"/>
+  <link rel="canonical" href="https://anindyamutsuddy.com">
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -142,7 +144,7 @@
       border: 5px solid transparent; border-top-color: var(--navy);
       opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 999;
     }
-    .skill-tag[data-tooltip]:hover::after, .skill-tag[data-tooltip]:hover::before { opacity: 1; }
+    .skill-tag[data-tooltip]:hover::after, .skill-tag[data-tooltip]:focus::after, .skill-tag[data-tooltip]:hover::before, .skill-tag[data-tooltip]:focus::before { opacity: 1; }
     .hamburger { display: none; position: fixed; top: 16px; left: 16px; z-index: 200;
       background: var(--gold); border: none; border-radius: 10px; padding: 10px 12px;
       cursor: pointer; flex-direction: column; gap: 5px;
@@ -638,10 +640,30 @@
       from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-  </style>
+  
+  /* Skip to content (accessibility) */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 16px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    z-index: 9999;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 0; }
+</style>
+
+  <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 <div id="progress-bar-wrap"><div id="scroll-progress"></div></div>
 <div id="sidebar-root"></div>
 
@@ -651,12 +673,12 @@
     <!-- ABOUT -->
     <div class="page" id="page-about">
 <nav class="scrollspy-nav" id="scrollspy-nav">
-  <a href="#" class="spy-link active" data-spy="about">About</a>
-  <a href="#" class="spy-link" data-spy="experience">Experience</a>
-  <a href="#" class="spy-link" data-spy="education">Education</a>
-  <a href="#" class="spy-link" data-spy="skills">Skills</a>
-  <a href="#" class="spy-link" data-spy="languages">Languages</a>
-  <a href="#" class="spy-link" data-spy="interests">Interests</a>
+  <a href="#about" class="spy-link active" data-spy="about">About</a>
+  <a href="#experience" class="spy-link" data-spy="experience">Experience</a>
+  <a href="#education" class="spy-link" data-spy="education">Education</a>
+  <a href="#skills" class="spy-link" data-spy="skills">Skills</a>
+  <a href="#languages" class="spy-link" data-spy="languages">Languages</a>
+  <a href="#interests" class="spy-link" data-spy="interests">Interests</a>
 </nav>
 <section id="about">
         <h2 class="section-title">About Me</h2>
@@ -1357,7 +1379,7 @@
 
 
 <!-- Lucide icons — loaded non-blocking at end of body -->
-<script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"
+<script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
         onload="lucide.createIcons()"></script>
 </body>
 </html>
