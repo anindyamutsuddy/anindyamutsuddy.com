@@ -305,7 +305,7 @@ const siteData = {
 
 <p><em>Sources: Transgene SA official press releases and AMF filings. Balance sheet figures estimated from public summaries.</em></p>
 
-<p><strong>Transgene SA — Selected Financials (EUR thousands, base year 2013)</strong></p>
+<p><strong>Transgene SA: Selected Financials (EUR thousands, base year 2013)</strong></p>
 
 <table style="width:100%;border-collapse:collapse;font-size:0.83rem;margin:16px 0 24px;">
   <thead>
@@ -331,7 +331,7 @@ const siteData = {
       <td style="padding:7px 14px;text-align:right;color:#e53e3e;font-weight:600;">(42,858)</td>
     </tr>
     <tr style="background:rgba(201,168,76,0.12);">
-      <td colspan="2" style="padding:7px 14px;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--gold);">Historical R&amp;D — Research Asset Inputs</td>
+      <td colspan="2" style="padding:7px 14px;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--gold);">Historical R&amp;D: Research Asset Inputs</td>
     </tr>
     <tr style="border-bottom:1px solid var(--border);">
       <td style="padding:7px 14px;color:var(--text);">2009</td>
@@ -417,11 +417,11 @@ const siteData = {
       <td style="padding:7px 14px;text-align:right;color:var(--text);">33.3%</td>
     </tr>
     <tr style="border-bottom:1px solid var(--border);">
-      <td style="padding:7px 14px;color:var(--text);">WACC — high-growth period</td>
+      <td style="padding:7px 14px;color:var(--text);">WACC (high-growth period)</td>
       <td style="padding:7px 14px;text-align:right;font-weight:600;color:var(--navy);">10.7%</td>
     </tr>
     <tr style="border-bottom:1px solid var(--border);background:var(--off-white);">
-      <td style="padding:7px 14px;color:var(--text);">WACC — stable period</td>
+      <td style="padding:7px 14px;color:var(--text);">WACC (stable period)</td>
       <td style="padding:7px 14px;text-align:right;font-weight:600;color:var(--navy);">8.5%</td>
     </tr>
     <tr style="border-bottom:1px solid var(--border);">
@@ -532,25 +532,25 @@ const siteData = {
         <div class="ppk-section-heading">The Trade-Off in Full</div>
         <div class="ppk-bar-group">
           <div class="ppk-bar-row">
-            <span class="ppk-bar-label">Base Case — Net Surplus</span>
+            <span class="ppk-bar-label">Base Case: Net Surplus</span>
             <div class="ppk-bar-track">
               <div class="ppk-bar-fill ppk-bar-blue-dim" style="width:56%">€163M</div>
             </div>
           </div>
           <div class="ppk-bar-row">
-            <span class="ppk-bar-label">Sensitivity — Net Surplus</span>
+            <span class="ppk-bar-label">Sensitivity: Net Surplus</span>
             <div class="ppk-bar-track">
               <div class="ppk-bar-fill ppk-bar-blue-full" style="width:100%">€290M</div>
             </div>
           </div>
           <div class="ppk-bar-row">
-            <span class="ppk-bar-label">Base Case — Peak Financing</span>
+            <span class="ppk-bar-label">Base Case: Peak Financing</span>
             <div class="ppk-bar-track">
               <div class="ppk-bar-fill ppk-bar-red-dim" style="width:47%">€37M</div>
             </div>
           </div>
           <div class="ppk-bar-row">
-            <span class="ppk-bar-label">Sensitivity — Peak Financing</span>
+            <span class="ppk-bar-label">Sensitivity: Peak Financing</span>
             <div class="ppk-bar-track">
               <div class="ppk-bar-fill ppk-bar-red-full" style="width:60%">€78M</div>
             </div>
@@ -648,7 +648,7 @@ const siteData = {
 
       <!-- Verdict -->
       <div class="ppk-verdict">
-        Borrowing more, earlier, was the right call — provided the structure was right. A syndicated loan anchored by internal treasury kept the blended cost of funds below the hurdle rate at which the sensitivity scenario's incremental surplus justified the incremental debt.
+        Borrowing more, earlier, was the right call, provided the structure was right. A syndicated loan anchored by internal treasury kept the blended cost of funds below the hurdle rate at which the sensitivity scenario's incremental surplus justified the incremental debt.
         <br/><br/>
         The arithmetic, in the end, was the easy part.
       </div>
@@ -707,25 +707,25 @@ const siteData = {
         <div class="ssl-section-heading">Production Capacity at Full Build-Out</div>
         <div class="ssl-bar-group">
           <div class="ssl-bar-row">
-            <span class="ssl-bar-label">Green Precipitated Silica — Phase 1</span>
+            <span class="ssl-bar-label">Green Precipitated Silica: Phase 1</span>
             <div class="ssl-bar-track">
               <div class="ssl-bar-fill ssl-bar-green-phase1" style="width:32%">4,200 t/yr</div>
             </div>
           </div>
           <div class="ssl-bar-row">
-            <span class="ssl-bar-label">Green Precipitated Silica — Phase 1 + 2</span>
+            <span class="ssl-bar-label">Green Precipitated Silica: Phase 1 + 2</span>
             <div class="ssl-bar-track">
               <div class="ssl-bar-fill ssl-bar-green-phase2" style="width:100%">13,200 t/yr</div>
             </div>
           </div>
           <div class="ssl-bar-row">
-            <span class="ssl-bar-label">Activated Carbon — Phase 1</span>
+            <span class="ssl-bar-label">Activated Carbon: Phase 1</span>
             <div class="ssl-bar-track">
               <div class="ssl-bar-fill ssl-bar-teal-phase1" style="width:32%">1,200 t/yr</div>
             </div>
           </div>
           <div class="ssl-bar-row">
-            <span class="ssl-bar-label">Activated Carbon — Phase 1 + 2</span>
+            <span class="ssl-bar-label">Activated Carbon: Phase 1 + 2</span>
             <div class="ssl-bar-track">
               <div class="ssl-bar-fill ssl-bar-teal-phase2" style="width:28%">3,700 t/yr</div>
             </div>
@@ -741,7 +741,7 @@ const siteData = {
         <div class="ssl-section-heading">Facility Structure</div>
         <div class="ssl-phase-grid">
           <div class="ssl-phase-cell">
-            <div class="ssl-phase-label">Facility 1 — Phase 1</div>
+            <div class="ssl-phase-label">Facility 1: Phase 1</div>
             <div class="ssl-phase-item"><span>Amount</span><span>~&#8364;6.4M</span></div>
             <div class="ssl-phase-item"><span>Tenor</span><span>7 years</span></div>
             <div class="ssl-phase-item"><span>Grace Period</span><span>24 months</span></div>
@@ -750,7 +750,7 @@ const siteData = {
             <div class="ssl-phase-item"><span>Debt / Equity</span><span>70 / 30</span></div>
           </div>
           <div class="ssl-phase-cell">
-            <div class="ssl-phase-label">Facility 2 — Phase 2</div>
+            <div class="ssl-phase-label">Facility 2: Phase 2</div>
             <div class="ssl-phase-item"><span>Amount</span><span>~&#8364;7.0M</span></div>
             <div class="ssl-phase-item"><span>Tenor</span><span>7 years</span></div>
             <div class="ssl-phase-item"><span>Grace Period</span><span>18 months</span></div>
@@ -882,7 +882,7 @@ const siteData = {
             <div class="pdd-timeline-desc">The fund partner who led the deal began communicating with the founders outside official channels. He had identified the regulatory non-compliance in the flip structure and was using it, not to help fix it, but as leverage. His proposal: the founders sign over an additional 12% equity stake to a vehicle he controlled personally, outside the fund, or he would report the FERA violations to Bangladesh Bank and block any future investment round. The fund's investment committee was unaware any of this was happening.</div>
           </div>
           <div class="pdd-timeline-item pdd-red">
-            <div class="pdd-timeline-label">T = 0 — The Call</div>
+            <div class="pdd-timeline-label">T = 0: The Call</div>
             <div class="pdd-timeline-title">Privately Solicited</div>
             <div class="pdd-timeline-desc">The founders contacted me directly. They had no lawyer involved, no formal process, and no certainty about whether what was being done to them was even illegal. They needed someone to tell them what their actual position was before they made a decision they could not undo.</div>
           </div>
