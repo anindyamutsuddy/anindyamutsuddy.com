@@ -950,6 +950,656 @@
   
 .ppk-section-head { /* alias */ }
 
+
+    /* ── SSL Portfolio Card ──────────────────────────────────── */
+    .ssl-card { width: 100%; box-sizing: border-box;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .ssl-card details > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 2rem 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .ssl-card details > summary::-webkit-details-marker { display: none; }
+
+    .ssl-card-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .ssl-card-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      max-width: 620px;
+    }
+
+    .ssl-card-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      max-width: 580px;
+    }
+
+    .ssl-toggle-hint {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.4rem;
+      color: var(--text-light);
+      transition: color 0.2s;
+    }
+
+    .ssl-card details[open] > summary .ssl-toggle-hint { color: var(--text-light); }
+    .ssl-card details[open] > summary .ssl-toggle-hint::before { content: "−"; }
+    .ssl-card details:not([open]) > summary .ssl-toggle-hint::before { content: "+"; }
+
+    .ssl-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding-top: 0.5rem;
+    }
+
+    .ssl-tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+    }
+
+    .ssl-divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    .ssl-card-
+
+    .ssl-kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ssl-kpi {
+      background: var(--off-white);
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .ssl-kpi-number {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .ssl-kpi-label {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+    }
+
+    .ssl-section-heading {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #222;
+      margin-bottom: 1rem;
+    }
+
+    .ssl-bar-group { display: flex; flex-direction: column; gap: 0.6rem; }
+    .ssl-bar-row { display: flex; flex-direction: column; gap: 0.25rem; }
+    .ssl-bar-label { font-size: 0.8rem; color: var(--text-light); }
+
+    .ssl-bar-track {
+      background: var(--border);
+      border-radius: 4px;
+      height: 28px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .ssl-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .ssl-bar-green-phase1 { background: #3a7a50; }
+    .ssl-bar-green-phase2 { background: #4caf75; }
+    .ssl-bar-teal-phase1  { background: #2a6a6a; }
+    .ssl-bar-teal-phase2  { background: #3ab8b8; }
+
+    .ssl-phase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ssl-phase-cell {
+      background: var(--off-white);
+      padding: 1rem 1.1rem;
+    }
+
+    .ssl-phase-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .ssl-phase-item {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #222;
+      padding: 0.2rem 0;
+    }
+
+    .ssl-phase-item:last-child { border-bottom: none; }
+    .ssl-phase-item span:last-child {
+      color: var(--text);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .ssl-body-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .ssl-body-text p + p { margin-top: 0.85rem; }
+
+    .ssl-work-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .ssl-work-list li {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .ssl-work-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: rgba(113,128,150,0.45);
+    }
+
+    .ssl-highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .ssl-highlight-item {
+      background: var(--off-white);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--border);
+      font-size: 0.825rem;
+      line-height: 1.55;
+      color: var(--text-light);
+    }
+
+    .ssl-highlight-item.ssl-green { border-left-color: #4caf75; }
+    .ssl-highlight-item.ssl-teal  { border-left-color: #3ab8b8; }
+
+    .ssl-highlight-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .ssl-verdict {
+      border-left: 3px solid #4caf75;
+      padding: 1rem 1.25rem;
+      background: #101e14;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.925rem;
+      line-height: 1.7;
+      color: #b8d8c0;
+    }
+
+    .ssl-footnote {
+      font-size: 0.75rem;
+      color: rgba(113,128,150,0.45);
+      font-style: italic;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .ssl-card-body {
+      padding: 2rem 2.5rem !important;
+      display: flex !important;
+      flex-direction: column;
+      gap: 2rem;
+      box-sizing: border-box;
+    }
+    .ssl-card details > summary {
+      padding: 1.75rem 2.5rem !important;
+      display: flex; flex-direction: column;
+      gap: 0.5rem; position: relative;
+      list-style: none; cursor: pointer;
+    }
+    .ssl-card details > summary::-webkit-details-marker { display: none; }
+
+    /* ── PDD (DD Conflict) Portfolio Card ────────────────────── */
+    .pdd-card { width: 100%; box-sizing: border-box;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .pdd-card details > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 2rem 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .pdd-card details > summary::-webkit-details-marker { display: none; }
+
+    .pdd-card-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .pdd-card-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      max-width: 640px;
+    }
+
+    .pdd-card-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      max-width: 580px;
+    }
+
+    .pdd-toggle-hint {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.4rem;
+      color: var(--text-light);
+    }
+
+    .pdd-card details[open] > summary .pdd-toggle-hint::before { content: "−"; }
+    .pdd-card details:not([open]) > summary .pdd-toggle-hint::before { content: "+"; }
+
+    .pdd-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding-top: 0.5rem;
+    }
+
+    .pdd-tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+    }
+
+    .pdd-divider { height: 1px; background: var(--border); }
+
+    .pdd-card-
+
+    .pdd-kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .pdd-kpi {
+      background: var(--off-white);
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .pdd-kpi-number {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .pdd-kpi-label {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+    }
+
+    .pdd-section-heading {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #222;
+      margin-bottom: 1rem;
+    }
+
+    /* Timeline */
+    .pdd-timeline {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .pdd-timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.35rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .pdd-timeline-item {
+      position: relative;
+      padding: 0 0 1.25rem 1rem;
+    }
+
+    .pdd-timeline-item:last-child { padding-bottom: 0; }
+
+    .pdd-timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.15rem;
+      top: 0.45rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c8892a;
+      border: 2px solid var(--off-white);
+    }
+
+    .pdd-timeline-item.pdd-red::before    { background: #c84a2a; }
+    .pdd-timeline-item.pdd-green::before  { background: #4caf75; }
+    .pdd-timeline-item.pdd-dark::before   { background: #6a2a2a; }
+
+    .pdd-timeline-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .pdd-timeline-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .pdd-timeline-desc {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    .pdd-body-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .pdd-body-text p + p { margin-top: 0.85rem; }
+
+    .pdd-work-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .pdd-work-list li {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .pdd-work-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: rgba(113,128,150,0.45);
+    }
+
+    .pdd-findings-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .pdd-finding-item {
+      background: var(--off-white);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      border-left: 3px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .pdd-finding-item.pdd-amber  { border-left-color: #c8892a; }
+    .pdd-finding-item.pdd-red    { border-left-color: #c84a2a; }
+    .pdd-finding-item.pdd-dark   { border-left-color: #6a2a2a; }
+
+    .pdd-finding-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .pdd-finding-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .pdd-finding-badge {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .pdd-badge-amber { background: #2a1e0a; color: #c8892a; border: 1px solid #3a2a10; }
+    .pdd-badge-red   { background: #2a0f0a; color: #c84a2a; border: 1px solid #3a1810; }
+    .pdd-badge-dark  { background: #1a0808; color: #a05050; border: 1px solid #2a1010; }
+    .pdd-badge-green { background: #0a1e10; color: #4caf75; border: 1px solid #103a18; }
+
+    .pdd-finding-desc {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    .pdd-reg-box {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+    }
+
+    .pdd-reg-box-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8a6a30;
+      margin-bottom: 0.75rem;
+    }
+
+    .pdd-reg-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .pdd-reg-list li {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: #998060;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .pdd-reg-list li::before {
+      content: "§";
+      position: absolute;
+      left: 0;
+      color: #5a4020;
+      font-size: 0.75rem;
+    }
+
+    .pdd-verdict {
+      border-left: 3px solid #c8892a;
+      padding: 1rem 1.25rem;
+      background: var(--off-white);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.925rem;
+      line-height: 1.7;
+      color: #d4b070;
+    }
+
+    .pdd-footnote {
+      font-size: 0.75rem;
+      color: rgba(113,128,150,0.45);
+      font-style: italic;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .pdd-card-body {
+      padding: 2rem 2.5rem !important;
+      display: flex !important;
+      flex-direction: column;
+      gap: 2rem;
+      box-sizing: border-box;
+    }
+    .pdd-card details > summary {
+      padding: 1.75rem 2.5rem !important;
+      display: flex; flex-direction: column;
+      gap: 0.5rem; position: relative;
+      list-style: none; cursor: pointer;
+    }
+    .pdd-card details > summary::-webkit-details-marker { display: none; }
+
+    /* ── Portfolio horizontal scroll rails ───────────────────── */
+    #portfolio-client-render,
+    #portfolio-personal-render {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      overflow-x: auto;
+      overflow-y: visible;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) var(--border);
+    }
+    #portfolio-client-render::-webkit-scrollbar,
+    #portfolio-personal-render::-webkit-scrollbar { height: 6px; }
+    #portfolio-client-render::-webkit-scrollbar-track,
+    #portfolio-personal-render::-webkit-scrollbar-track {
+      background: var(--border); border-radius: 3px;
+    }
+    #portfolio-client-render::-webkit-scrollbar-thumb,
+    #portfolio-personal-render::-webkit-scrollbar-thumb {
+      background: var(--gold); border-radius: 3px;
+    }
+    /* Each card in the rail */
+    #portfolio-client-render > *  { flex: 0 0 640px; scroll-snap-align: start; }
+    #portfolio-personal-render > * { flex: 0 0 480px; scroll-snap-align: start; }
+    /* Personal project cards need explicit height management */
+    #portfolio-personal-render .project-card { margin-bottom: 0; }
+    /* Mobile: revert to vertical stack */
+    @media (max-width: 768px) {
+      #portfolio-client-render,
+      #portfolio-personal-render {
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
+      }
+      #portfolio-client-render > *,
+      #portfolio-personal-render > * { flex: none; }
+    }
 </style>
 
   <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>

@@ -659,6 +659,315 @@ const siteData = {
   </details>
 
 </div>`
+    },
+    {
+      rawHTML: `<div class="ssl-card">
+  <details>
+    <summary style="padding:1.75rem 2.5rem;display:flex;flex-direction:column;gap:0.5rem;position:relative;list-style:none;cursor:pointer;">
+      <span class="ssl-toggle-hint"></span>
+      <span class="ssl-card-meta">&#9881; Specialty Chemicals &nbsp;·&nbsp; Debt Capital Markets &nbsp;·&nbsp; MLA &nbsp;·&nbsp; Bangladesh &nbsp;·&nbsp; 2023</span>
+      <span class="ssl-card-title">The Raw Material Was Everywhere. No One Had Used It Yet.</span>
+      <span class="ssl-card-subtitle">A greenfield specialty chemicals plant, a two-tranche syndicated facility, and a circular economy story written in rice husk ash.</span>
+      <div class="ssl-tag-row">
+        <span class="ssl-tag">Debt Arrangement</span>
+        <span class="ssl-tag">Syndicated Lending</span>
+        <span class="ssl-tag">Project Finance</span>
+        <span class="ssl-tag">Information Memorandum</span>
+        <span class="ssl-tag">Specialty Chemicals</span>
+        <span class="ssl-tag">Bangladesh</span>
+      </div>
+    </summary>
+
+    <div class="ssl-divider"></div>
+
+    <div class="ssl-card-body" style="padding:2rem 2.5rem;display:flex;flex-direction:column;gap:2rem;">
+
+      <!-- KPI Strip -->
+      <div class="ssl-kpi-strip" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;">
+        <div class="ssl-kpi">
+          <span class="ssl-kpi-number">~&#8364;14M</span>
+          <span class="ssl-kpi-label">Total Debt Arranged</span>
+        </div>
+        <div class="ssl-kpi">
+          <span class="ssl-kpi-number">23.2%</span>
+          <span class="ssl-kpi-label">Project IRR</span>
+        </div>
+        <div class="ssl-kpi">
+          <span class="ssl-kpi-number">~50%</span>
+          <span class="ssl-kpi-label">EBITDA Margin</span>
+        </div>
+        <div class="ssl-kpi">
+          <span class="ssl-kpi-number">100%</span>
+          <span class="ssl-kpi-label">Import Substitution</span>
+        </div>
+      </div>
+
+      <!-- Capacity bars -->
+      <div>
+        <div class="ssl-section-heading">Production Capacity at Full Build-Out</div>
+        <div class="ssl-bar-group">
+          <div class="ssl-bar-row">
+            <span class="ssl-bar-label">Green Precipitated Silica — Phase 1</span>
+            <div class="ssl-bar-track">
+              <div class="ssl-bar-fill ssl-bar-green-phase1" style="width:32%">4,200 t/yr</div>
+            </div>
+          </div>
+          <div class="ssl-bar-row">
+            <span class="ssl-bar-label">Green Precipitated Silica — Phase 1 + 2</span>
+            <div class="ssl-bar-track">
+              <div class="ssl-bar-fill ssl-bar-green-phase2" style="width:100%">13,200 t/yr</div>
+            </div>
+          </div>
+          <div class="ssl-bar-row">
+            <span class="ssl-bar-label">Activated Carbon — Phase 1</span>
+            <div class="ssl-bar-track">
+              <div class="ssl-bar-fill ssl-bar-teal-phase1" style="width:32%">1,200 t/yr</div>
+            </div>
+          </div>
+          <div class="ssl-bar-row">
+            <span class="ssl-bar-label">Activated Carbon — Phase 1 + 2</span>
+            <div class="ssl-bar-track">
+              <div class="ssl-bar-fill ssl-bar-teal-phase2" style="width:28%">3,700 t/yr</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.75rem; color:#555; font-style:italic; margin-top:0.75rem;">
+          Phase 1 targets domestic demand. Phase 2 shifts entirely to export markets.
+        </p>
+      </div>
+
+      <!-- Facility structure -->
+      <div>
+        <div class="ssl-section-heading">Facility Structure</div>
+        <div class="ssl-phase-grid">
+          <div class="ssl-phase-cell">
+            <div class="ssl-phase-label">Facility 1 — Phase 1</div>
+            <div class="ssl-phase-item"><span>Amount</span><span>~&#8364;6.4M</span></div>
+            <div class="ssl-phase-item"><span>Tenor</span><span>7 years</span></div>
+            <div class="ssl-phase-item"><span>Grace Period</span><span>24 months</span></div>
+            <div class="ssl-phase-item"><span>Repayment</span><span>20 equal qtly</span></div>
+            <div class="ssl-phase-item"><span>Indicative Rate</span><span>9.00% p.a.</span></div>
+            <div class="ssl-phase-item"><span>Debt / Equity</span><span>70 / 30</span></div>
+          </div>
+          <div class="ssl-phase-cell">
+            <div class="ssl-phase-label">Facility 2 — Phase 2</div>
+            <div class="ssl-phase-item"><span>Amount</span><span>~&#8364;7.0M</span></div>
+            <div class="ssl-phase-item"><span>Tenor</span><span>7 years</span></div>
+            <div class="ssl-phase-item"><span>Grace Period</span><span>18 months</span></div>
+            <div class="ssl-phase-item"><span>Repayment</span><span>24 equal qtly</span></div>
+            <div class="ssl-phase-item"><span>Indicative Rate</span><span>9.00% p.a.</span></div>
+            <div class="ssl-phase-item"><span>Debt / Equity</span><span>70 / 30</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mandate -->
+      <div>
+        <div class="ssl-section-heading">The Mandate</div>
+        <div class="ssl-body-text">
+          <p>Bangladesh imports 100% of its precipitated silica and activated carbon. Both markets were growing at double digits year-on-year. The raw material to make both products domestically was rice husk ash, a by-product of the country's rice industry, abundant, cheap, and being discarded as agricultural waste.</p>
+          <p>A specialty chemicals company with an established sponsor track record in the upstream product had developed the technology to close that loop. They needed a Mandated Lead Arranger to structure and syndicate a two-tranche term loan to finance a greenfield precipitated silica and activated carbon plant, located in a government-designated economic zone with full tax holiday protections.</p>
+          <p>We were appointed as MLA. The Information Memorandum and full debt structuring were our mandate.</p>
+        </div>
+      </div>
+
+      <!-- The Work -->
+      <div>
+        <div class="ssl-section-heading">The Work</div>
+        <ul class="ssl-work-list">
+          <li>Structured a two-tranche local currency term loan totalling ~&#8364;14M at a 70/30 debt-equity ratio, with differentiated grace periods and repayment schedules aligned to each phase's production ramp-up timeline</li>
+          <li>Prepared the full Information Memorandum for syndication, covering market analysis, technical feasibility, financial projections across a 12-year horizon, risk matrix, and full terms and conditions for both facilities</li>
+          <li>Modelled projected financials from construction through full Phase 2 operations: revenue reaching approximately &#8364;15.6M by Year 4, EBITDA margins sustained above 47% across the operating period, and a project IRR of 23.2%</li>
+          <li>Documented the economic zone incentive package: tax holidays, uninterrupted utilities, and reduced import duties on capital machinery, all of which were load-bearing assumptions in the returns model</li>
+          <li>Structured the security package: first charge on fixed assets, co-payee insurance arrangements, personal sponsor guarantees, and a negative pledge covering both tranches</li>
+          <li>Assessed and documented the full circular economy process chain, from agricultural waste feedstock through to two distinct saleable product lines at a combined capacity of 16,900 tonnes per year</li>
+        </ul>
+      </div>
+
+      <!-- Why the deal made sense -->
+      <div>
+        <div class="ssl-section-heading">Why the Deal Made Sense</div>
+        <div class="ssl-highlight-grid">
+          <div class="ssl-highlight-item ssl-green">
+            <div class="ssl-highlight-title">Captive market, no domestic competition</div>
+            No domestic producer of this product existed. The sponsor's existing customer relationships with multinational industrial buyers transferred directly to the new entity. The sales pipeline preceded the plant.
+          </div>
+          <div class="ssl-highlight-item ssl-green">
+            <div class="ssl-highlight-title">Raw material is agricultural waste</div>
+            Rice husk ash costs a fraction of conventional silica feedstock, is available domestically in abundance, and carries no ecological liability. Lower input cost flows directly to margin and is not replicable by importers.
+          </div>
+          <div class="ssl-highlight-item ssl-teal">
+            <div class="ssl-highlight-title">Structural protections from day one</div>
+            Location in a government-designated economic zone granted tax holidays, guaranteed utility supply, and reduced import duties on machinery. Structural advantages unavailable to any future competitor operating outside the zone.
+          </div>
+          <div class="ssl-highlight-item ssl-teal">
+            <div class="ssl-highlight-title">Two revenue streams, one process</div>
+            Activated carbon is produced as a by-product of precipitated silica manufacturing at minimal additional cost. The second product line is effectively a margin enhancement, not a separate capital commitment.
+          </div>
+        </div>
+      </div>
+
+      <!-- Verdict -->
+      <div class="ssl-verdict">
+        The deal worked because the numbers did not need to be optimistic. At a 9% cost of debt, a 70/30 leverage structure, and conservative capacity utilisation assumptions, the project IRR of 23.2% left substantial headroom. The captive market position, the raw material cost advantage, and the economic zone protections were not the upside case. They were the base case.
+        <br/><br/>
+        Bangladesh was importing something it had the ingredients to make. That tends to be a good place to start.
+      </div>
+
+      <p class="ssl-footnote">Select figures have been converted from BDT at the prevailing 2023 exchange rate and lightly adjusted for confidentiality. Methodologies and outcomes are faithfully represented.</p>
+
+    </div>
+  </details>
+</div>`
+    },
+    {
+      rawHTML: `<div class="pdd-card">
+  <details>
+    <summary style="padding:1.75rem 2.5rem;display:flex;flex-direction:column;gap:0.5rem;position:relative;list-style:none;cursor:pointer;">
+      <span class="pdd-toggle-hint"></span>
+      <span class="pdd-card-meta">&#128269; Regulatory Advisory &nbsp;·&nbsp; Founder Protection &nbsp;·&nbsp; Singapore / Bangladesh &nbsp;·&nbsp; 2023</span>
+      <span class="pdd-card-title">The Fund Knew About the Problem. They Were the Problem.</span>
+      <span class="pdd-card-subtitle">A SaaS startup, a &#8364;100K seed round, a Singapore flip the investor insisted on, and a fund partner who came back to collect a second time.</span>
+      <div class="pdd-tag-row">
+        <span class="pdd-tag">Regulatory Advisory</span>
+        <span class="pdd-tag">Founder Protection</span>
+        <span class="pdd-tag">Corporate Governance</span>
+        <span class="pdd-tag">SaaS</span>
+        <span class="pdd-tag">Singapore</span>
+        <span class="pdd-tag">Bangladesh</span>
+      </div>
+    </summary>
+
+    <div class="pdd-divider"></div>
+
+    <div class="pdd-card-body" style="padding:2rem 2.5rem;display:flex;flex-direction:column;gap:2rem;">
+
+      <!-- KPI Strip -->
+      <div class="pdd-kpi-strip" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;">
+        <div class="pdd-kpi">
+          <span class="pdd-kpi-number">~&#8364;100K</span>
+          <span class="pdd-kpi-label">Seed Round at Stake</span>
+        </div>
+        <div class="pdd-kpi">
+          <span class="pdd-kpi-number">1</span>
+          <span class="pdd-kpi-label">Rogue Fund Partner</span>
+        </div>
+        <div class="pdd-kpi">
+          <span class="pdd-kpi-number">+12%</span>
+          <span class="pdd-kpi-label">Dilution Attempted</span>
+        </div>
+        <div class="pdd-kpi">
+          <span class="pdd-kpi-number">Blocked</span>
+          <span class="pdd-kpi-label">Outcome</span>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div>
+        <div class="pdd-section-heading">How It Unfolded</div>
+        <div class="pdd-timeline">
+          <div class="pdd-timeline-item">
+            <div class="pdd-timeline-label">T minus 14 months</div>
+            <div class="pdd-timeline-title">The Seed Round</div>
+            <div class="pdd-timeline-desc">A small Bangladeshi B2B SaaS company, two founders, an HR automation tool with a paying customer base, raised approximately &#8364;100K from a regional early-stage fund. Straightforward ticket. Standard terms. The fund partner who led the deal was enthusiastic, hands-on, and insisted on one structural condition before closing.</div>
+          </div>
+          <div class="pdd-timeline-item">
+            <div class="pdd-timeline-label">T minus 13 months</div>
+            <div class="pdd-timeline-title">The Flip, at the Fund's Insistence</div>
+            <div class="pdd-timeline-desc">As a condition of the investment, the fund required the founders to restructure the Bangladeshi entity under a Singapore holding company. A standard ask from funds wanting clean exit optionality. The founders complied. The flip was executed without Bangladesh Bank approval for the share transfer, a step the fund's own term sheet made no mention of requiring. The regulatory gap was, from day one, baked into a structure the fund designed.</div>
+          </div>
+          <div class="pdd-timeline-item pdd-dark">
+            <div class="pdd-timeline-label">T minus 4 months</div>
+            <div class="pdd-timeline-title">The Fund Partner Went Rogue</div>
+            <div class="pdd-timeline-desc">The fund partner who led the deal began communicating with the founders outside official channels. He had identified the regulatory non-compliance in the flip structure and was using it, not to help fix it, but as leverage. His proposal: the founders sign over an additional 12% equity stake to a vehicle he controlled personally, outside the fund, or he would report the FERA violations to Bangladesh Bank and block any future investment round. The fund's investment committee was unaware any of this was happening.</div>
+          </div>
+          <div class="pdd-timeline-item pdd-red">
+            <div class="pdd-timeline-label">T = 0 — The Call</div>
+            <div class="pdd-timeline-title">Privately Solicited</div>
+            <div class="pdd-timeline-desc">The founders contacted me directly. They had no lawyer involved, no formal process, and no certainty about whether what was being done to them was even illegal. They needed someone to tell them what their actual position was before they made a decision they could not undo.</div>
+          </div>
+          <div class="pdd-timeline-item pdd-green">
+            <div class="pdd-timeline-label">T plus 3 weeks</div>
+            <div class="pdd-timeline-title">The Partner Stood Down</div>
+            <div class="pdd-timeline-desc">The fund's investment committee was notified through appropriate channels with a documented account of the partner's conduct. The equity demand was withdrawn. A regularization pathway was initiated with Bangladesh Bank. The founders retained their cap table.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What was actually going on -->
+      <div>
+        <div class="pdd-section-heading">Unpacking the Position</div>
+        <div class="pdd-findings-grid">
+          <div class="pdd-finding-item pdd-dark">
+            <div class="pdd-finding-header">
+              <span class="pdd-finding-title">The leverage was constructed, not discovered</span>
+              <span class="pdd-finding-badge pdd-badge-dark">Bad Faith</span>
+            </div>
+            <div class="pdd-finding-desc">The fund partner had required the Singapore flip as a deal condition. He had then waited until the founders were in a vulnerable pre-Series A window before surfacing the compliance issue he had known about since inception. The non-compliance was real. The threat to weaponise it was the fund partner's own play, not the fund's position, and not sanctioned by anyone with authority to make it.</div>
+          </div>
+          <div class="pdd-finding-item pdd-amber">
+            <div class="pdd-finding-header">
+              <span class="pdd-finding-title">The regulatory risk was real but manageable</span>
+              <span class="pdd-finding-badge pdd-badge-amber">FERA 1947</span>
+            </div>
+            <div class="pdd-finding-desc">The unapproved flip did constitute a violation of Bangladesh's Foreign Exchange Regulation Act 1947. Bangladesh Bank approval had been required for the share transfer and had not been sought. However, the exposure was regularizable. The timeline and penalty risk were significant but bounded. The partner had been representing both to the founders as existential. They were not.</div>
+          </div>
+          <div class="pdd-finding-item pdd-red">
+            <div class="pdd-finding-header">
+              <span class="pdd-finding-title">The equity demand had no legal basis</span>
+              <span class="pdd-finding-badge pdd-badge-red">Shareholder Agreement Breach</span>
+            </div>
+            <div class="pdd-finding-desc">The additional 12% equity stake the partner was demanding would have been issued to a personal vehicle outside the fund structure, in direct breach of the fund's shareholder agreement and the partner's own fiduciary obligations to the fund's LPs. He was not acting on behalf of the fund. He was acting for himself. The fund's investment committee, once informed, treated it accordingly.</div>
+          </div>
+          <div class="pdd-finding-item pdd-amber">
+            <div class="pdd-finding-header">
+              <span class="pdd-finding-title">The founders did not know what they did not know</span>
+              <span class="pdd-finding-badge pdd-badge-amber">Information Asymmetry</span>
+            </div>
+            <div class="pdd-finding-desc">The founders were non-lawyers operating a twelve-person SaaS company. They had been told by a fund partner that they faced a serious regulatory problem and that the only way to contain it was to hand over equity. They had no independent basis to assess whether that was true, partly true, or fabricated leverage. Establishing that baseline was the first thing the engagement had to do.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regulatory context -->
+      <div>
+        <div class="pdd-reg-box">
+          <div class="pdd-reg-box-title">The Regulatory Layer: Bangladesh Foreign Investment Rules</div>
+          <ul class="pdd-reg-list">
+            <li>Foreign Exchange Regulation Act (FERA) 1947 governs all cross-border capital flows. Share transfers to non-residents require Bangladesh Bank prior approval, regardless of whether the transferring entity is a startup or a conglomerate.</li>
+            <li>BIDA registration covers the initial inflow of foreign investment. It does not extend to structural reorganisations, equity conversions, or the establishment of a foreign parent over a registered Bangladeshi entity.</li>
+            <li>Regularization of unapproved transactions is possible but discretionary. Bangladesh Bank may impose penalties or require restructuring. The process is not fast, but it is a defined path. It is not an automatic disqualification from future investment.</li>
+            <li>A party threatening to report a regulatory violation as a mechanism to extract personal benefit from the counterparty is a matter of conduct distinct from the regulatory issue itself. The two are not the same problem and do not have the same solution.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- What I did -->
+      <div>
+        <div class="pdd-section-heading">What I Was Asked to Do</div>
+        <ul class="pdd-work-list">
+          <li>Established the founders' actual regulatory position under FERA 1947 independently of the partner's characterisation of it, which turned out to be substantially overstated</li>
+          <li>Documented the sequence of events from the flip's inception, including the fund's original structural requirement, to establish that the compliance gap had been created by the investor's own condition, not by founder negligence</li>
+          <li>Assessed the equity demand against the fund's shareholder agreement and identified that it constituted a personal play by the partner outside his sanctioned authority, not a fund-level position</li>
+          <li>Prepared a written account of the partner's conduct suitable for escalation to the fund's investment committee, structured to be factual, evidenced, and free of language that could be characterised as retaliatory</li>
+          <li>Outlined a regularization roadmap for the Bangladesh Bank approval process, giving the founders a documented, credible path forward that removed the compliance issue as a point of leverage entirely</li>
+        </ul>
+      </div>
+
+      <!-- Verdict -->
+      <div class="pdd-verdict">
+        The founders kept their company and their cap table. The partner stood down within days of the fund's investment committee being notified. The regularization process was initiated on the founders' own timeline, not under duress.
+        <br/><br/>
+        The regulatory problem was real. It needed fixing regardless of who caused it. But it was fixable, and the people who needed to know that most were the two founders sitting across from someone who had spent weeks telling them otherwise.
+        <br/><br/>
+        Knowing the rules well enough to tell someone when they are being lied to about them is, occasionally, the most useful thing you can do.
+      </div>
+
+      <p class="pdd-footnote">This engagement is presented as an illustrative composite. Identifying details, figures, and jurisdiction-specific outcomes have been altered or anonymised. It reflects the nature of founder-side regulatory advisory work in cross-border early-stage contexts.</p>
+
+    </div>
+  </details>
+</div>`
     }
     ],
 
