@@ -1193,6 +1193,7 @@
         clientEl.innerHTML = '<div class="writing-soon">Case work coming soon: real estate feasibility, startup modelling and more.</div>';
       } else {
         clientProjects.forEach(p => {
+          if (p.rawHTML) { clientEl.innerHTML += p.rawHTML; return; }
           clientEl.innerHTML += `
             <div class="project-card">
               <div class="project-header">

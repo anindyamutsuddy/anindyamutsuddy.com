@@ -488,13 +488,451 @@ const siteData = {
     // Anonymise client names. Focus on: what you did, what the output was.
     // Fields: sector, type, tags[], desc, status ("done"|"ongoing")
     client: [
-      // {
-      //   sector: "Real Estate",
-      //   type:   "Feasibility Study",
-      //   tags:   ["Financial Modelling", "DCF", "Land Development"],
-      //   desc:   "Built a full feasibility model for a mixed-use land development...",
-      //   status: "done"
-      // }
+    {
+      rawHTML: `<style>
+    
+
+    
+
+    .ppk-card {
+      max-width: 760px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .ppk-card details > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 2rem 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .ppk-card details > summary::-webkit-details-marker { display: none; }
+
+    .ppk-card-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .ppk-card-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .ppk-card-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      max-width: 580px;
+    }
+
+    .ppk-toggle-hint {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.4rem;
+      color: var(--text-light);
+      transition: color 0.2s;
+    }
+
+    .ppk-card details[open] > summary .ppk-toggle-hint { color: var(--text-light); }
+    .ppk-card details[open] > summary .ppk-toggle-hint::before { content: "−"; }
+    .ppk-card details:not([open]) > summary .ppk-toggle-hint::before { content: "+"; }
+
+    .ppk-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding-top: 0.5rem;
+    }
+
+    .ppk-tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+    }
+
+    .ppk-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    .ppk-card-
+
+    .ppk-kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ppk-kpi {
+      background: var(--off-white);
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .ppk-kpi-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .ppk-kpi-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .ppk-scenario-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ppk-section-heading {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #222;
+      margin-bottom: 1rem;
+    }
+
+    .ppk-bar-group { display: flex; flex-direction: column; gap: 0.55rem; }
+
+    .ppk-bar-row { display: flex; flex-direction: column; gap: 0.25rem; }
+
+    .ppk-bar-label { font-size: 0.8rem; color: var(--text-light); }
+
+    .ppk-bar-track {
+      background: var(--border);
+      border-radius: 4px;
+      height: 28px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .ppk-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+
+    .ppk-bar-blue-dim  { background: var(--navy); }
+    .ppk-bar-blue-full { background: var(--gold); }
+    .ppk-bar-red-dim   { background: #8f3a2a; }
+    .ppk-bar-red-full  { background: #E8614A; }
+
+    .ppk-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .ppk-compare-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ppk-compare-table td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .ppk-compare-table tr:last-child td { border-bottom: none; }
+    .ppk-compare-table td:first-child { color: var(--text-light); font-size: 0.8rem; }
+
+    .ppk-compare-table td.ppk-highlight {
+      color: var(--navy);
+      font-weight: 600;
+      background: var(--off-white);
+    }
+
+    .ppk-body-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .ppk-body-text p + p { margin-top: 0.85rem; }
+
+    .ppk-work-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .ppk-work-list li {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .ppk-work-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: rgba(113,128,150,0.45);
+    }
+
+    .ppk-financing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .ppk-financing-item {
+      padding: 1rem 1.1rem;
+      background: var(--off-white);
+      border-radius: 8px;
+      border-left: 3px solid var(--border);
+    }
+
+    .ppk-financing-item.ppk-recommended {
+      border-left-color: var(--gold);
+    }
+
+    .ppk-financing-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .ppk-financing-desc {
+      font-size: 0.825rem;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    .ppk-verdict {
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.25rem;
+      background: rgba(201,168,76,0.08);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.925rem;
+      line-height: 1.7;
+      color: var(--navy);
+    }
+
+    .ppk-footnote {
+      font-size: 0.75rem;
+      color: rgba(113,128,150,0.45);
+      font-style: italic;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+  </style>
+<div class="ppk-card">
+
+  <details>
+    <summary>
+      <span class="ppk-toggle-hint"></span>
+      <span class="ppk-card-meta">🏗 Real Estate Development &nbsp;·&nbsp; Feasibility &amp; Financing &nbsp;·&nbsp; Bangladesh &nbsp;·&nbsp; 2022</span>
+      <span class="ppk-card-title">More Money. More Debt. Pick One.</span>
+      <span class="ppk-card-subtitle">A satellite township, a financing gap, and a decision the model couldn't make for them.</span>
+      <div class="ppk-tag-row">
+        <span class="ppk-tag">Feasibility Study</span>
+        <span class="ppk-tag">Project Finance</span>
+        <span class="ppk-tag">Financial Modelling</span>
+        <span class="ppk-tag">Financing Structure</span>
+        <span class="ppk-tag">Bangladesh</span>
+        <span class="ppk-tag">Excel</span>
+      </div>
+    </summary>
+
+    <div class="ppk-divider"></div>
+
+    <div class="ppk-card-body">
+
+      <!-- KPI Strip -->
+      <div class="ppk-kpi-strip">
+        <div class="ppk-kpi">
+          <span class="ppk-kpi-number">€325M</span>
+          <span class="ppk-kpi-label">Total Revenue</span>
+        </div>
+        <div class="ppk-kpi">
+          <span class="ppk-kpi-number">170 ha</span>
+          <span class="ppk-kpi-label">Total Site</span>
+        </div>
+        <div class="ppk-kpi">
+          <span class="ppk-kpi-number">4</span>
+          <span class="ppk-kpi-label">Scenarios Modelled</span>
+        </div>
+      </div>
+
+      <!-- Bars -->
+      <div class="ppk-scenario-block">
+        <div class="ppk-section-heading">The Trade-Off in Full</div>
+        <div class="ppk-bar-group">
+          <div class="ppk-bar-row">
+            <span class="ppk-bar-label">Base Case — Net Surplus</span>
+            <div class="ppk-bar-track">
+              <div class="ppk-bar-fill ppk-bar-blue-dim" style="width:56%">€163M</div>
+            </div>
+          </div>
+          <div class="ppk-bar-row">
+            <span class="ppk-bar-label">Sensitivity — Net Surplus</span>
+            <div class="ppk-bar-track">
+              <div class="ppk-bar-fill ppk-bar-blue-full" style="width:100%">€290M</div>
+            </div>
+          </div>
+          <div class="ppk-bar-row">
+            <span class="ppk-bar-label">Base Case — Peak Financing</span>
+            <div class="ppk-bar-track">
+              <div class="ppk-bar-fill ppk-bar-red-dim" style="width:47%">€37M</div>
+            </div>
+          </div>
+          <div class="ppk-bar-row">
+            <span class="ppk-bar-label">Sensitivity — Peak Financing</span>
+            <div class="ppk-bar-track">
+              <div class="ppk-bar-fill ppk-bar-red-full" style="width:60%">€78M</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.75rem; color:#555; font-style:italic;">
+          Sensitivity = full land acquisition completed before sales resume. Same project. Different sequence.
+        </p>
+      </div>
+
+      <!-- Table -->
+      <div>
+        <div class="ppk-section-heading">Scenario Summary</div>
+        <table class="ppk-compare-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Base Case</th>
+              <th>Sensitivity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Revenue</td>
+              <td>€325M</td>
+              <td class="ppk-highlight">€325M</td>
+            </tr>
+            <tr>
+              <td>Net Cash Surplus</td>
+              <td>€163M</td>
+              <td class="ppk-highlight">€290M</td>
+            </tr>
+            <tr>
+              <td>Peak Financing Required</td>
+              <td>€37M</td>
+              <td class="ppk-highlight">€78M</td>
+            </tr>
+            <tr>
+              <td>Contribution Margin</td>
+              <td>~50%</td>
+              <td class="ppk-highlight">~50%</td>
+            </tr>
+            <tr>
+              <td>Project Horizon</td>
+              <td>6 years</td>
+              <td class="ppk-highlight">7 years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mandate -->
+      <div>
+        <div class="ppk-section-heading">The Mandate</div>
+        <div class="ppk-body-text">
+          <p>The plot of land was bigger than 50 Belgian football pitches. A major real estate developer was mid-construction on two satellite township projects on the outskirts of Dhaka, totalling approximately 170 hectares of raw land being acquired in tranches.</p>
+          <p>One project was already deep in motion, with over 85% of its residential plots pre-sold. The second had barely broken ground. Between them sat approximately €162M in infrastructure to be built, a financing gap that would peak in Year 4 well before the bulk of sales revenue arrived, and a board that needed a defensible set of numbers before approaching any financing institution.</p>
+        </div>
+      </div>
+
+      <!-- Work -->
+      <div>
+        <div class="ppk-section-heading">The Work</div>
+        <ul class="ppk-work-list">
+          <li>Quarterly revenue projections across approximately 64 hectares of saleable residential and commercial land spread across five development sectors, sold in tranches over six years</li>
+          <li>Bottom-up infrastructure cost build across 13 workstreams: sand filling, road and bridge construction, sewerage, drainage, water supply, and a 50 MW electricity distribution grid, with quarterly inflation-adjusted unit costs throughout</li>
+          <li>Gap financing module tracking working capital drawdowns, peak disbursement timing, and full repayment schedules at a 10% cost of funds</li>
+          <li>Integration of an independently commissioned primary market survey covering 1,000 respondents and nine focus group discussions, used to validate price assumptions and stress-test buyer demand</li>
+          <li>Four full scenarios modelled: two pricing assumptions crossed with two sales strategies</li>
+        </ul>
+      </div>
+
+      <!-- Financing -->
+      <div>
+        <div class="ppk-section-heading">The Financing Question</div>
+        <div class="ppk-body-text">
+          <p>The sensitivity scenario made a compelling arithmetic case: borrow more upfront, acquire all land before prices move further, and the incremental surplus more than covers the incremental debt. The question was which financing structure kept average cost of funds below the hurdle rate at which that logic held.</p>
+        </div>
+        <br/>
+        <div class="ppk-financing-grid">
+          <div class="ppk-financing-item">
+            <div class="ppk-financing-name">Senior Construction Finance</div>
+            <div class="ppk-financing-desc">The most available option, secured against land and infrastructure assets. Priced at roughly 10% in the local market at the time. Standard covenants, regular LTV monitoring, drawdown conditions. A reliable floor, not a solution.</div>
+          </div>
+          <div class="ppk-financing-item">
+            <div class="ppk-financing-name">Pre-Sale Receivables Monetisation</div>
+            <div class="ppk-financing-desc">The first project's pre-sold EMI payment streams represent a structured receivable with predictable timing. Pledging or discounting these to a bank accelerates cash at below construction-finance rates. The project already self-funds this way, without ever calling it that.</div>
+          </div>
+          <div class="ppk-financing-item ppk-recommended">
+            <div class="ppk-financing-name">Syndicated Loan + Internal Treasury ✦ Recommended</div>
+            <div class="ppk-financing-desc">A syndicated facility across two or three local banks, anchored by a first-loss participation from the group's own treasury, gave the developer the ticket size the sensitivity scenario required without handing any single lender full covenant control. The treasury participation reduced the blended cost of funds below the standalone bank rate and signalled enough internal conviction to move the syndicate. It also meant the group retained flexibility on drawdown timing, which mattered given the phased nature of land acquisition. The arithmetic closed. The structure held.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verdict -->
+      <div class="ppk-verdict">
+        Borrowing more, earlier, was the right call — provided the structure was right. A syndicated loan anchored by internal treasury kept the blended cost of funds below the hurdle rate at which the sensitivity scenario's incremental surplus justified the incremental debt.
+        <br/><br/>
+        The arithmetic, in the end, was the easy part.
+      </div>
+
+      <p class="ppk-footnote">Select figures have been adjusted for confidentiality. Methodologies and outcomes are faithfully represented.</p>
+
+    </div>
+  </details>
+
+</div>`
+    }
     ],
 
     // ── PERSONAL / SELF-INITIATED PROJECTS ─────────────────────
