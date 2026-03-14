@@ -658,6 +658,29 @@
   }
   .skip-link:focus { top: 0; }
 
+  
+    /* Restored missing rules */
+    .ppk-card-body {
+      padding: 2rem 2.5rem !important;
+      display: flex !important;
+      flex-direction: column;
+      gap: 2rem;
+      box-sizing: border-box;
+    }
+    .ppk-card details > summary {
+      padding: 1.75rem 2.5rem !important;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+    }
+    .ppk-card details > summary::-webkit-details-marker { display: none; }
+    .ppk-scenario-block, .ppk-bar-group { box-sizing: border-box; width: 100%; }
+    .ppk-bar-track { box-sizing: border-box; }
+    .ppk-compare-table { box-sizing: border-box; }
+    .ppk-body-text p + p { margin-top: 0.85rem; }
   /* ── PPK Portfolio Card ──────────────────────────────── */
   .ppk-card { width: 100%; box-sizing: border-box;
       max-width: 100%;
@@ -671,7 +694,7 @@
     .ppk-card details > summary {
       list-style: none;
       cursor: pointer;
-      padding: 2rem 2rem 1.75rem;
+      padding: 1.75rem 2.5rem !important;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;

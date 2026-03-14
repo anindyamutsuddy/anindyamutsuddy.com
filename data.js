@@ -492,7 +492,7 @@ const siteData = {
       rawHTML: `<div class="ppk-card">
 
   <details>
-    <summary>
+    <summary style="padding:1.75rem 2.5rem;display:flex;flex-direction:column;gap:0.5rem;position:relative;list-style:none;cursor:pointer;">
       <span class="ppk-toggle-hint"></span>
       <span class="ppk-card-meta">🏗 Real Estate Development &nbsp;·&nbsp; Feasibility &amp; Financing &nbsp;·&nbsp; Bangladesh &nbsp;·&nbsp; 2022</span>
       <span class="ppk-card-title">More Money. More Debt. Pick One.</span>
@@ -509,10 +509,10 @@ const siteData = {
 
     <div class="ppk-divider"></div>
 
-    <div class="ppk-card-body">
+    <div class="ppk-card-body" style="padding:2rem 2.5rem;display:flex;flex-direction:column;gap:2rem;">
 
       <!-- KPI Strip -->
-      <div class="ppk-kpi-strip">
+      <div class="ppk-kpi-strip" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;">
         <div class="ppk-kpi">
           <span class="ppk-kpi-number">€325M</span>
           <span class="ppk-kpi-label">Total Revenue</span>
