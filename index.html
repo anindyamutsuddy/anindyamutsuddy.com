@@ -1640,82 +1640,6 @@
 
   <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js">
-  // ── Dynamic reading list (Google Sheets + PapaParser) ──────────
-  const CURRENTLY_READING_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=0&single=true&output=csv";
-  const PAST_READS_URL        = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=1330536431&single=true&output=csv";
-  let readingListLoaded = false;
-
-  function renderBookCard(book, spine) {
-    const thoughts = book.thoughts
-      ? `<div class="book-thoughts">${book.thoughts}</div>` : '';
-    return `
-      <div class="book-card">
-        <div class="book-spine ${spine}"></div>
-        <div>
-          <div class="book-status ${spine}">${spine === 'reading' ? 'Currently Reading' : 'Read'}</div>
-          <div class="book-title">${book.title || ''}</div>
-          <div class="book-author">${book.author || ''}</div>
-          ${thoughts}
-        </div>
-      </div>`;
-  }
-
-  function loadReadingList() {
-    if (readingListLoaded) return;
-    readingListLoaded = true;
-
-    const crEl = document.getElementById('currently-reading');
-    const prEl = document.getElementById('past-reads');
-    if (!crEl || !prEl) return;
-
-    crEl.innerHTML = '<div class="reading-loading">Loading...</div>';
-    prEl.innerHTML = '<div class="reading-loading">Loading...</div>';
-
-    // Currently reading
-    Papa.parse(CURRENTLY_READING_URL, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: function(results) {
-        if (!results.data.length) {
-          crEl.innerHTML = '<div class="reading-loading">Nothing listed yet.</div>';
-          return;
-        }
-        crEl.innerHTML = results.data
-          .map(row => renderBookCard(row, 'reading'))
-          .join('');
-      },
-      error: function() {
-        crEl.innerHTML = '<div class="reading-error">Could not load reading list.</div>';
-      }
-    });
-
-    // Past reads
-    Papa.parse(PAST_READS_URL, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: function(results) {
-        if (!results.data.length) {
-          prEl.innerHTML = '<div class="reading-loading">Nothing listed yet.</div>';
-          return;
-        }
-        prEl.innerHTML = results.data
-          .map(row => renderBookCard(row, 'read'))
-          .join('');
-      },
-      error: function() {
-        prEl.innerHTML = '<div class="reading-error">Could not load past reads.</div>';
-      }
-    });
-  }
-
-  // Trigger on page show — hook into existing showPage routing
-  const _origShowPage = showPage;
-  function showPage(hash) {
-    _origShowPage(hash);
-    if (hash === 'beyond') loadReadingList();
-  }
 </script>
 </head>
 <body>
@@ -2451,6 +2375,66 @@
       }
     }
   }, true);
+</script>
+
+<script>
+  (function() {
+    var CURRENTLY_READING_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=0&single=true&output=csv";
+    var PAST_READS_URL        = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=1330536431&single=true&output=csv";
+    var loaded = false;
+
+    function renderBookCard(book, spine) {
+      var label    = spine === 'reading' ? 'Currently Reading' : 'Read';
+      var thoughts = book.thoughts
+        ? '<div class="book-thoughts">' + book.thoughts + '</div>' : '';
+      return '<div class="book-card">'
+        + '<div class="book-spine ' + spine + '"></div>'
+        + '<div>'
+        + '<div class="book-status ' + spine + '">' + label + '</div>'
+        + '<div class="book-title">'  + (book.title  || '') + '</div>'
+        + '<div class="book-author">' + (book.author || '') + '</div>'
+        + thoughts
+        + '</div></div>';
+    }
+
+    function fetchAndRender(url, elId, spine) {
+      var el = document.getElementById(elId);
+      if (!el) return;
+      el.innerHTML = '<div class="reading-loading">Loading…</div>';
+      Papa.parse(url, {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          if (!results.data || !results.data.length) {
+            el.innerHTML = '<div class="reading-loading">Nothing listed yet.</div>';
+            return;
+          }
+          el.innerHTML = results.data.map(function(row) {
+            return renderBookCard(row, spine);
+          }).join('');
+        },
+        error: function() {
+          el.innerHTML = '<div class="reading-error">Could not load list — check back soon.</div>';
+        }
+      });
+    }
+
+    function loadReadingList() {
+      if (loaded) return;
+      loaded = true;
+      fetchAndRender(CURRENTLY_READING_URL, 'currently-reading', 'reading');
+      fetchAndRender(PAST_READS_URL,        'past-reads',        'read');
+    }
+
+    // Load eagerly on DOM ready — containers exist in HTML, just hidden by CSS
+    document.addEventListener('DOMContentLoaded', loadReadingList);
+
+    // Also reload if user navigates to Beyond Work after initial load
+    window.addEventListener('hashchange', function() {
+      if (window.location.hash === '#beyond') loadReadingList();
+    });
+  })();
 </script>
 </body>
 </html>
