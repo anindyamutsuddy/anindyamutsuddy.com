@@ -5,6 +5,11 @@
 // ============================================================
 
 const siteData = {
+  // ── META ──────────────────────────────────────────────────
+  meta: {
+    lastUpdated: "11 March 2026"
+  },
+
 
   // ── INDEX: ABOUT ───────────────────────────────────────────
   // Edit the prose and tags shown on your About section
