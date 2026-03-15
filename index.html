@@ -218,7 +218,7 @@
     [data-theme="dark"] .watch-name,
     [data-theme="dark"] .book-title,
     [data-theme="dark"] .activity-title,
-    [data-theme="dark"] .currently-value { color: var(--text); }
+    [data-theme="dark"]
 
     /* Dark mode toggle button */
     .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
@@ -310,14 +310,7 @@
     .pub-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
     .pub-meta { font-size: 0.82rem; color: var(--text-light); margin-bottom: 12px; line-height: 1.6; }
     .pub-meta strong { color: var(--text); font-weight: 600; }
-    .pub-abstract { font-size: 0.85rem; color: var(--text); line-height: 1.75; border-left: 3px solid var(--gold); padding-left: 14px; margin-top: 12px; }  
-    .currently-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .currently-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.2s; }
-    .currently-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.12); transform: translateY(-2px); }
-    .currently-icon { font-size: 1.6rem; flex-shrink: 0; }
-    .currently-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 4px; }
-    .currently-value { font-size: 0.9rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
-    .currently-sub { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
+    .pub-abstract { font-size: 0.85rem; color: var(--text); line-height: 1.75; border-left: 3px solid var(--gold); padding-left: 14px; margin-top: 12px; }
     .watch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 20px; }
     .watch-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all 0.2s; }
     .watch-card:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(201,168,76,0.15); transform: translateY(-3px); }
@@ -343,7 +336,8 @@
     .activity-icon { font-size: 2rem; margin-bottom: 12px; }
     .activity-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .activity-desc { font-size: 0.83rem; color: var(--text-light); line-height: 1.7; }
-    @media (max-width: 768px) { .currently-grid, .activity-grid { grid-template-columns: 1fr; } }  
+    @media (max-width: 768px) {
+    .activity-grid { grid-template-columns: 1fr; } }  
 
 
 
@@ -1636,6 +1630,42 @@
       padding-left: 8px;
     }
     [data-theme="dark"] .book-thoughts { color: var(--text-light); }
+
+    /* ── Right Now dynamic cards ──────────────────────── */
+    .right-now-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) { .right-now-grid { grid-template-columns: 1fr; } }
+    .rn-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 22px 24px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .rn-type {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .rn-type svg {
+      width: 13px; height: 13px; stroke: var(--gold);
+      fill: none; stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0;
+    }
+    .rn-value    { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .rn-subtitle { font-size: 0.82rem; color: var(--text-light); line-height: 1.4; }
+    .rn-notes {
+      font-size: 0.79rem; color: var(--text-light); font-style: italic;
+      line-height: 1.55; border-left: 2px solid var(--gold);
+      padding-left: 9px; margin-top: 2px;
+    }
+    .rn-loading { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
+    [data-theme="dark"] .rn-value { color: var(--text); }
 </style>
 
   <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>
@@ -1759,7 +1789,7 @@
 <section id="currently">
     <div class="section-label">Right Now</div>
     <h2 class="section-title">Beyond Work</h2>
-    <div class="currently-grid" id="currently-grid"></div>
+    <div class="right-now-grid" id="right-now-grid"><div class="rn-loading" style="grid-column:1/-1">Loading…</div></div>
   </section>
   <section id="watches">
     <div class="section-label">Horology</div>
@@ -2124,24 +2154,12 @@
 
     // ── BEYOND WORK ──
     const bd = d.beyond;
-    const cg = document.getElementById('currently-grid');
-    if (cg) {
-      if (bd.currently.reading)  cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="book-open" style="width:22px;height:22px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Reading</div><div class="currently-value">${bd.currently.reading.title}</div><div class="currently-sub">${bd.currently.reading.author}</div></div></div>`;
-      if (bd.currently.watching) cg.innerHTML += `<div class="currently-card"><div class="currently-icon"><i data-lucide="film" style="width:22px;height:22px;color:var(--gold)"></i></div><div><div class="currently-label">Currently Watching</div><div class="currently-value">${bd.currently.watching.title}</div><div class="currently-sub">${bd.currently.watching.platform}</div></div></div>`;
-      if (!bd.currently.watching && bd.watches.length) {
-        const w = bd.watches[0];
-        cg.innerHTML += `<div class="currently-card"><div class="currently-icon">${w.emoji}</div><div><div class="currently-label">Latest Acquisition</div><div class="currently-value">${w.name}</div><div class="currently-sub">${w.brand}</div></div></div>`;
-      }
-    }
+    // Right Now cards are rendered dynamically by loadReadingList() via Google Sheets
     const wg = document.getElementById('watch-grid');
     if (wg) bd.watches.forEach(w => {
       wg.innerHTML += `<div class="watch-card"><div class="watch-emoji"><i data-lucide="${w.icon}" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="watch-brand">${w.brand}</div><div class="watch-name">${w.name}</div></div>`;
     });
-    const bs = document.getElementById('book-shelf');
-    if (bs) bd.books.forEach(b => {
-      const statusLabel = b.status==='reading'?'● Currently Reading':b.status==='want'?'◌ Want to Read':'✓ Read';
-      bs.innerHTML += `<div class="book-card"><div class="book-spine ${b.status}"></div><div><div class="book-status ${b.status}">${statusLabel}</div><div class="book-title">${b.title}</div><div class="book-author">${b.author}</div>${b.note?`<div class="book-note">${b.note}</div>`:''}</div></div>`;
-    });
+    // Reading list rendered dynamically via Google Sheets (PapaParser IIFE below)
     const ag = document.getElementById('activity-grid');
     if (ag) bd.activities.forEach(a => {
       ag.innerHTML += `<div class="activity-card"><div class="activity-icon"><i data-lucide="${a.icon}" style="width:24px;height:24px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
@@ -2422,6 +2440,40 @@
 
     function loadReadingList() {
       if (loaded) return;
+
+    // ── Right Now cards ──────────────────────────────────
+    var RN_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=798674125&single=true&output=csv";
+    var RN_CONFIG = {
+      reading:   { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>', label: 'Reading' },
+      working:   { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>', label: 'Working On' },
+      following: { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>', label: 'Following' }
+    };
+
+    function buildRnCard(row) {
+      var cfg   = RN_CONFIG[row.type] || { icon: '', label: row.type };
+      var notes = row.notes    ? '<div class="rn-notes">'    + row.notes    + '</div>' : '';
+      var sub   = row.subtitle ? '<div class="rn-subtitle">' + row.subtitle + '</div>' : '';
+      return '<div class="rn-card">'
+        + '<div class="rn-type">' + cfg.icon + cfg.label + '</div>'
+        + '<div class="rn-value">' + (row.value || '') + '</div>'
+        + sub + notes + '</div>';
+    }
+
+    Papa.parse(RN_URL, {
+      download: true, header: true, skipEmptyLines: true,
+      complete: function(r) {
+        var order = ['reading', 'working', 'following'];
+        var map = {};
+        r.data.forEach(function(row) { if (row.type) map[row.type] = buildRnCard(row); });
+        var out = order.map(function(t) { return map[t] || ''; }).join('');
+        var el = document.getElementById('right-now-grid');
+        if (el && out) el.innerHTML = out;
+      },
+      error: function() {
+        var el = document.getElementById('right-now-grid');
+        if (el) el.innerHTML = '<div class="rn-loading" style="grid-column:1/-1">Could not load.</div>';
+      }
+    });
       loaded = true;
       fetchAndRender(CURRENTLY_READING_URL, 'currently-reading', 'reading');
       fetchAndRender(PAST_READS_URL,        'past-reads',        'read');

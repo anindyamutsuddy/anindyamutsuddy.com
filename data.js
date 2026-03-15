@@ -175,16 +175,11 @@ const siteData = {
 
   // ── BEYOND WORK PAGE ───────────────────────────────────────
   beyond: {
-    currently: {
-      reading:  { title: "Snow Country", author: "Yasunari Kawabata" },
       watching: null
     },
     watches: [
       { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", icon: "clock" },
       { brand: "Seiko",          name: "Seiko 5",              icon: "clock" }
-    ],
-    books: [
-      { title: "Snow Country",    author: "Yasunari Kawabata", status: "reading", note: "A beautifully restrained Japanese novel about impermanence and longing." }
     ],
     activities: [
       { icon: "mountain", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
