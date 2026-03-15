@@ -1666,6 +1666,11 @@
     }
     .rn-loading { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
     [data-theme="dark"] .rn-value { color: var(--text); }
+
+    .sidebar-updated-row {
+      padding: 6px 16px 10px;
+      text-align: center;
+    }
     .sidebar-updated-text {
       font-size: 0.7rem;
       color: var(--text-light);
@@ -1960,6 +1965,9 @@
     <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer" class="contact-btn"><i data-lucide="linkedin"></i> LinkedIn</a>
     <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ghost"><i data-lucide="map-pin"></i> ${LOCATION}</a>
   </div>
+  <div class="sidebar-updated-row">
+    <span class="sidebar-updated-text">Updated \${d.meta && d.meta.lastUpdated ? d.meta.lastUpdated : ''}</span>
+  </div>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i> Dark mode</button>
 </aside>`;
   }
@@ -2192,7 +2200,7 @@
           </li>`).join('');
         certGrid.innerHTML += `<div class="cert-card">
           <div class="cert-card-header">
-            <div class="cert-icon">${/^[a-z-]+$/.test(cert.icon) ? '<i data-lucide="' + cert.icon + '" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i>' : cert.icon}</div>
+            <div class="cert-icon">${/^[a-z0-9-]+$/.test(cert.icon) ? '<i data-lucide="' + cert.icon + '" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i>' : cert.icon}</div>
             <div><div class="cert-name">${cert.name}</div><div class="cert-issuer">${cert.issuer}</div></div>
           </div>
           <ul class="cert-list">${items}</ul>
