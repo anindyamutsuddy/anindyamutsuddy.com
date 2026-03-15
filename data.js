@@ -265,10 +265,10 @@ const siteData = {
       `
     },
     {
-      title:   "Failed a Class, So That You Don't Have To. A Dial for Your Thoughts.",
-      slug:    "failed-a-class-so-that-you-dont-have-to",
+      title:   "The Spreadsheet Won't Save You",
+      slug:    "the-spreadsheet-wont-save-you",
       date:    "March 2026",
-      excerpt: "My professor passed me on the second attempt, and I am still not sure he should have.",
+      excerpt: "A valuation lesson that spreadsheets can't teach.",
       tags:    ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
       body: `
 <p>My professor passed me on the second attempt, and I am still not sure he should have.</p>
@@ -997,7 +997,7 @@ const siteData = {
         tags:      ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
         desc:      "A Power BI simulator applying R&D capitalisation to a French biotech with a 3:1 R&D-to-revenue ratio. Same firm, same cash; adjust the amortisation life from three to twenty years and watch the company move from worthless to worth owning. Six KPIs updating live across eighteen scenarios. Built after failing Dr. Wouter's valuation class. Dedicated to him accordingly.",
         status:    "coming-soon",
-        blogSlug:  "failed-a-class-so-that-you-dont-have-to",
+        blogSlug:  "the-spreadsheet-wont-save-you",
         embed:     "https://app.powerbi.com/view?r=eyJrIjoiNzc0YjRlNTYtNThiNy00YTVkLWIyZjEtYjM1MWJhN2I2OTZiIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
       }
     ]
