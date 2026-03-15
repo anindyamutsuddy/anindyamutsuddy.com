@@ -1666,10 +1666,93 @@
     }
     .rn-loading { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
     [data-theme="dark"] .rn-value { color: var(--text); }
+
+    .sidebar-updated-row {
+      padding: 6px 16px 10px;
+      text-align: center;
+    }
+    .sidebar-updated-text {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      opacity: 0.65;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Copy link toast ─────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(12px);
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.82rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 9999;
+      white-space: nowrap;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    [data-theme="dark"] .toast { background: var(--off-white); color: var(--text); }
 </style>
 
   <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js">
+
+  // ── Keyboard nav for portfolio rails ───────────────────────────
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    var rail = document.activeElement &&
+               document.activeElement.closest('#portfolio-client-render, #portfolio-personal-render');
+    if (!rail) {
+      // Also trigger if any child of the rail is focused or rail itself is hovered
+      rail = document.querySelector('#portfolio-client-render:hover, #portfolio-personal-render:hover');
+    }
+    if (!rail) return;
+    e.preventDefault();
+    var cardWidth = (rail.querySelector(':scope > *') || {}).offsetWidth || 660;
+    rail.scrollBy({ left: e.key === 'ArrowRight' ? cardWidth + 24 : -(cardWidth + 24), behavior: 'smooth' });
+  });
+
+  // Make rails focusable for keyboard users
+  document.addEventListener('DOMContentLoaded', function() {
+    ['portfolio-client-render','portfolio-personal-render'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'region');
+                el.setAttribute('aria-label', 'Scrollable project cards. Use arrow keys to navigate.'); }
+    });
+  });
+
+  // ── Copy link toast ─────────────────────────────────────────────
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.blog-share-btn');
+    if (!btn) return;
+    var url = btn.dataset.shareUrl || (window.location.origin + window.location.pathname + '#blog');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(showToast);
+    } else {
+      // Fallback for older browsers
+      var ta = document.createElement('textarea');
+      ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); showToast(); } catch(e) {}
+      document.body.removeChild(ta);
+    }
+  });
+
+  function showToast() {
+    var t = document.getElementById('link-toast');
+    if (!t) return;
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2200);
+  }
 </script>
 </head>
 <body>
@@ -1881,6 +1964,9 @@
     <a href="mailto:${EMAIL}" class="contact-btn"><i data-lucide="mail"></i> Email Me</a>
     <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer" class="contact-btn"><i data-lucide="linkedin"></i> LinkedIn</a>
     <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ghost"><i data-lucide="map-pin"></i> ${LOCATION}</a>
+  </div>
+  <div class="sidebar-updated-row">
+    <span class="sidebar-updated-text">Updated \${d.meta && d.meta.lastUpdated ? d.meta.lastUpdated : ''}</span>
   </div>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i> Dark mode</button>
 </aside>`;
@@ -2251,10 +2337,12 @@
           const tagsHtml = post.tags ? post.tags.map(t => `<span class="project-tag">${t}</span>`).join('') : '';
           const postId   = 'post-' + i;
           const slug     = post.slug || postId;
+          const wordCount  = (post.body || '').replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length;
+          const readMins   = Math.max(1, Math.ceil(wordCount / 200));
           const shareUrl = window.location.origin + window.location.pathname + '#blog/' + slug;
           blogPostsEl.innerHTML += `
             <div class="blog-post-card" id="${postId}" data-slug="${slug}">
-              <div class="blog-post-meta">${post.date}</div>
+              <div class="blog-post-meta">${post.date}&nbsp;&nbsp;·&nbsp;&nbsp;${readMins} min read</div>
               <div class="blog-post-title">${post.title}</div>
               <div class="blog-post-tags">${tagsHtml}</div>
               <div class="blog-post-excerpt">${post.excerpt}</div>
@@ -2488,5 +2576,6 @@
     });
   })();
 </script>
+<div class="toast" id="link-toast">Link copied</div>
 </body>
 </html>
