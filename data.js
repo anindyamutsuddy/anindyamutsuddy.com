@@ -174,17 +174,6 @@ const siteData = {
   },
 
   // ── BEYOND WORK PAGE ───────────────────────────────────────
-  beyond: {
-      watching: null
-    },
-    watches: [
-      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", icon: "clock" },
-      { brand: "Seiko",          name: "Seiko 5",              icon: "clock" }
-    ],
-    activities: [
-      { icon: "mountain", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
-      { icon: "users", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
-    ]
   },
 
   // ── BLOG PAGE ──────────────────────────────────────────────
@@ -1002,6 +991,17 @@ const siteData = {
   // ── BLOG: PINNED READS ─────────────────────────────────────
   // Add articles, essays or Substacks you've read and want to share.
   // Fields: title, source, url, tag, date, note (your 1-2 sentence take)
+  beyond: {
+    watches: [
+      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", icon: "clock" },
+      { brand: "Seiko",          name: "Seiko 5",              icon: "clock" }
+    ],
+    activities: [
+      { icon: "mountain", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
+      { icon: "users", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
+    ]
+  },
+
   reads: [
     {
       title:  "The Best Venture Firm You've Never Heard Of",

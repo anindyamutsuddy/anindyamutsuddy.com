@@ -1994,8 +1994,8 @@
     if (current && !current.id.endsWith(hash)) {
       current.style.transition = 'opacity 0.15s ease';
       current.style.opacity = '0';
-      setTimeout(() => { current.style.transition = ''; current.style.opacity = ''; doSwitch(); }, 150);
-    } else { doSwitch(); }
+      setTimeout(() => { current.style.transition = ''; current.style.opacity = ''; doSwitch(); if (typeof lucide !== 'undefined') lucide.createIcons(); }, 150);
+    } else { doSwitch(); if (typeof lucide !== 'undefined') lucide.createIcons(); }
     updateNav(hash);
     // Sync page dots
     document.querySelectorAll('.page-dot').forEach(d =>
@@ -2242,12 +2242,12 @@
     const bd = d.beyond;
     // Right Now cards are rendered dynamically by loadReadingList() via Google Sheets
     const wg = document.getElementById('watch-grid');
-    if (wg) bd.watches.forEach(w => {
+    if (wg && bd.watches) bd.watches.forEach(w => {
       wg.innerHTML += `<div class="watch-card"><div class="watch-emoji"><i data-lucide="${w.icon}" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="watch-brand">${w.brand}</div><div class="watch-name">${w.name}</div></div>`;
     });
     // Reading list rendered dynamically via Google Sheets (PapaParser IIFE below)
     const ag = document.getElementById('activity-grid');
-    if (ag) bd.activities.forEach(a => {
+    if (ag && bd.activities) bd.activities.forEach(a => {
       ag.innerHTML += `<div class="activity-card"><div class="activity-icon"><i data-lucide="${a.icon}" style="width:24px;height:24px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
     });
 
