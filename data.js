@@ -136,16 +136,32 @@ const siteData = {
       name: "Power BI",
       issuer: "Microsoft · Pragmatic Works",
       items: [
-        { text: "Beginner to Pro Workshop",                   sub: "Pragmatic Works · Sep 2024",        status: "done"     },
-        { text: "PL-300: Power BI Data Analyst (In Progress)", sub: "Microsoft Learn · est. 2026",       status: "progress" }
+        { text: "Beginner to Pro Workshop",                    sub: "Pragmatic Works · Sep 2024",  status: "done"     },
+        { text: "PL-300: Power BI Data Analyst (In Progress)", sub: "Microsoft Learn · est. 2026", status: "progress" }
       ]
     },
     {
       icon: "monitor",
       name: "SAP S/4HANA",
-      issuer: "SAP / Udemy",
+      issuer: "SAP Training & Certification",
       items: [
-        { text: "SAP S/4HANA Fundamentals (In Progress)", sub: "Udemy", status: "progress" }
+        { text: "SAP S/4HANA Fundamentals (In Progress)", sub: "SAP Training · training.sap.com", status: "progress" }
+      ]
+    },
+    {
+      icon: "table-2",
+      name: "Excel for FP&A",
+      issuer: "LinkedIn Learning",
+      items: [
+        { text: "Excel for Financial Planning & Analysis (In Progress)", sub: "LinkedIn Learning", status: "progress" }
+      ]
+    },
+    {
+      icon: "trending-up",
+      name: "FP&A Professional (FPAP)",
+      issuer: "Corporate Finance Institute",
+      items: [
+        { text: "Financial Planning & Analysis Professional (Planned)", sub: "CFI · corporatefinanceinstitute.com", status: "planned" }
       ]
     }
     // status options: "done" | "progress" | "planned"

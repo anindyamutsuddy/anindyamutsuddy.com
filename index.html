@@ -1693,7 +1693,8 @@
 </style>
 
   <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js">
+  <script defer src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script>
 
   // ── Keyboard nav for portfolio rails ───────────────────────────
   document.addEventListener('keydown', function(e) {
@@ -1743,6 +1744,21 @@
     setTimeout(function() { t.classList.remove('show'); }, 2200);
   }
 </script>
+
+  <meta name="robots" content="index, follow">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anindya Mutsuddy",
+    "url": "https://anindyamutsuddy.com",
+    "jobTitle": "Corporate Finance Analyst",
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "KU Leuven"},
+    "address": {"@type": "PostalAddress", "addressLocality": "Antwerp", "addressCountry": "BE"},
+    "sameAs": ["https://www.linkedin.com/in/anindyamutsuddy"]
+  }
+  </script>
 </head>
 <body>
 
@@ -1751,7 +1767,7 @@
 <div id="sidebar-root"></div>
 
 <div class="layout main">
-  <main id="main-content">
+  <main role="main" id="main-content">
 
     <!-- ABOUT -->
     <div class="page" id="page-about">
@@ -1943,7 +1959,7 @@
     <div class="open-to-work"><span class="otw-dot"></span>Open to opportunities</div>
   </div>
   <hr class="sidebar-divider"/>
-  <nav>
+  <nav role="navigation" aria-label="Site navigation">
     <p class="nav-label">Pages</p>
     <ul>${navHTML}</ul>
   </nav>
@@ -2281,6 +2297,7 @@
             </div>`;
         });
       }
+      if (typeof lucide !== "undefined") lucide.createIcons();
     }
 
     // ── PORTFOLIO: PERSONAL PROJECTS ──
@@ -2456,7 +2473,8 @@
 
 <!-- Lucide icons — loaded non-blocking at end of body -->
 <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
-        onload="lucide.createIcons()">
+        onload="lucide.createIcons()"></script>
+<script>
   // Auto-scroll portfolio card into view when expanded
   document.addEventListener('toggle', function(e) {
     if (e.target.tagName === 'DETAILS' && e.target.open) {
