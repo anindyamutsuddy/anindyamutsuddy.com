@@ -17,6 +17,35 @@
   <meta name="twitter:image"      content="https://anindyamutsuddy.com/og-image.png"/>
   <meta name="description" content="Corporate Finance Analyst · Investment Banking · Antwerp, Belgium"/>
   <link rel="canonical" href="https://anindyamutsuddy.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anindya Mutsuddy",
+    "givenName": "Anindya",
+    "familyName": "Mutsuddy",
+    "jobTitle": "Corporate Finance Analyst",
+    "url": "https://anindyamutsuddy.com",
+    "image": "https://anindyamutsuddy.com/pfp.jpg",
+    "description": "MBA graduate (Cum Laude, KU Leuven). Seeking analyst roles in corporate finance, investment banking or commercial lending in the Benelux region.",
+    "knowsAbout": ["Corporate Finance", "Investment Banking", "Commercial Lending", "Financial Analysis"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "KU Leuven"
+    },
+    "homeLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Antwerp",
+        "addressCountry": "BE"
+      }
+    },
+    "sameAs": [
+      "https://linkedin.com/in/anindyamutsuddy"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -37,6 +66,7 @@
     nav ul li { margin-bottom: 2px; }
     nav ul li a { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.83rem; font-weight: 500; padding: 8px 14px; border-radius: 8px; transition: all 0.2s; }
     nav ul li a:hover, nav ul li a.active { background: rgba(201,168,76,0.12); color: var(--gold); }
+    .sidebar svg.lucide { width: 16px; height: 16px; vertical-align: middle; }
     .sidebar-contact { margin-top: auto; padding-top: 24px; }
     .sidebar-contact p { font-size: 0.65rem; color: rgba(255,255,255,0.3); margin-bottom: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
 .contact-btn {
@@ -104,9 +134,6 @@
     .blog-date { font-size: 0.75rem; color: var(--text-light); }
     .blog-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .blog-excerpt { font-size: 0.87rem; color: var(--text-light); line-height: 1.6; }
-    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .cert-card { background: var(--white); border-radius: 16px; padding: 24px 28px; border: 1px solid var(--border); transition: all 0.2s; display: flex; flex-direction: column; gap: 6px; }
-    .cert-card:hover { box-shadow: 0 8px 32px rgba(26,39,68,0.08); transform: translateY(-2px); border-color: var(--gold); }
     .cert-icon { font-size: 1.8rem; margin-bottom: 4px; }
     .cert-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
     .cert-issuer { font-size: 0.8rem; color: var(--text-light); }
@@ -191,41 +218,6 @@
     
   
   
-    /* ── Dark Mode ───────────────────────────────── */
-    [data-theme="dark"] {
-      --white:      #1e1a16;
-      --off-white:  #141210;
-      --text:       #e0d8ce;
-      --text-light: #9a8e82;
-      --border:     #3a3028;
-    }
-    [data-theme="dark"] .sidebar        { background: #0f0d0b; }
-    [data-theme="dark"] .skill-tag      { background: #2a2420; color: var(--text); border-color: var(--border); }
-    [data-theme="dark"] .lang-card,
-    [data-theme="dark"] .interest-card,
-    [data-theme="dark"] .card,
-    [data-theme="dark"] .cert-card,
-    [data-theme="dark"] .pub-card,
-    [data-theme="dark"] .watch-card,
-    [data-theme="dark"] .book-card,
-    [data-theme="dark"] .activity-card,
-    [data-theme="dark"] .currently-card,
-    [data-theme="dark"] .empty-state    { background: var(--white); border-color: var(--border); }
-    [data-theme="dark"] .section-title  { color: var(--text); }
-    [data-theme="dark"] .card-title,
-    [data-theme="dark"] .cert-name,
-    [data-theme="dark"] .pub-title,
-    [data-theme="dark"] .watch-name,
-    [data-theme="dark"] .book-title,
-    [data-theme="dark"] .activity-title,
-    [data-theme="dark"]
-
-    /* Dark mode toggle button */
-    .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
-      color: rgba(255,255,255,0.55); font-size: 1rem; cursor: pointer; padding: 6px 10px;
-      margin-top: 12px; width: 100%; transition: all 0.2s; display: flex; align-items: center;
-      justify-content: center; gap: 8px; font-family: inherit; font-size: 0.78rem; font-weight: 500; }
-    .theme-toggle:hover { background: rgba(255,255,255,0.07); color: var(--gold); border-color: var(--gold); }
 
     /* ── Scroll Progress Bar ─────────────────────── */
     #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%;
@@ -233,7 +225,7 @@
 
     /* ── Print Stylesheet ────────────────────────── */
     @media print {
-      #scroll-progress, .hamburger, .overlay, .theme-toggle { display: none !important; }
+      #scroll-progress, .hamburger, .overlay { display: none !important; }
       .sidebar { position: relative !important; width: 100% !important; height: auto !important;
         flex-direction: row !important; padding: 16px 24px !important; left: 0 !important;
         page-break-after: avoid; }
@@ -248,42 +240,13 @@
       a[href]::after { content: " (" attr(href) ")"; font-size: 0.7rem; color: #666; }
       .contact-btn::after { display: none; }
     }
-  
-    /* ── Dark mode text & tag fixes ── */
-    [data-theme="dark"] .about-text          { color: var(--text); }
-    [data-theme="dark"] .about-text strong   { color: var(--gold); }
-    [data-theme="dark"] .tag                 { background: #2a2420; color: var(--text); border: 1px solid var(--border); }
-    [data-theme="dark"] .tag.gold            { background: rgba(201,168,76,0.18); color: var(--gold); border-color: rgba(201,168,76,0.3); }
-    [data-theme="dark"] #last-updated        { color: var(--text-light) !important; }
-    [data-theme="dark"] #last-updated strong { color: var(--text) !important; }
-    [data-theme="dark"] .card-title          { color: var(--text); }
-    [data-theme="dark"] .card-date           { color: var(--text-light); }
-    [data-theme="dark"] .card-subtitle       { color: var(--text-light); }
-    [data-theme="dark"] .card li             { color: var(--text); }
-    [data-theme="dark"] .skill-group h3      { color: var(--text); }
-    [data-theme="dark"] .empty-title         { color: var(--text); }
-    [data-theme="dark"] .empty-text          { color: var(--text-light); }
-    [data-theme="dark"] .section-label       { color: var(--navy); }
-    [data-theme="dark"] .pub-meta            { color: var(--text-light); }
-    [data-theme="dark"] .pub-meta strong     { color: var(--text); }
-    [data-theme="dark"] .book-note           { color: var(--text-light); }
-    [data-theme="dark"] .cert-issuer         { color: var(--text-light); }
-    [data-theme="dark"] .cert-list li        { color: var(--text); }
-    [data-theme="dark"] .activity-desc       { color: var(--text-light); }
-    [data-theme="dark"] .interest-desc       { color: var(--text-light); }
-    [data-theme="dark"] .interest-name       { color: var(--text); }
-    [data-theme="dark"] .lang-level          { color: var(--text-light); }
-    [data-theme="dark"] .lang-name           { color: var(--text); }
-  
-    [data-theme="dark"] .sidebar h1     { color: #f0ebe4 !important; }
-    [data-theme="dark"] .sidebar-profile .title { color: var(--gold) !important; }
-  
     /* ── Extra page CSS ── */
+
     .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .cert-card { background: var(--white); border-radius: 16px; padding: 26px 28px; border: 1px solid var(--border); transition: all 0.2s; }
+    .cert-card { background: var(--white); border-radius: 16px; padding: 26px 28px; border: 1px solid var(--border); transition: all 0.2s; display: flex; flex-direction: column; gap: 6px; }
     .cert-card:hover { box-shadow: 0 8px 32px rgba(26,24,20,0.08); transform: translateY(-2px); border-color: var(--gold); }
     .cert-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-    .cert-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .cert-icon { font-size: 1.8rem; flex-shrink: 0; margin-bottom: 4px; }
     .cert-name { font-size: 0.97rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
     .cert-issuer { font-size: 0.78rem; color: var(--text-light); margin-top: 2px; }
     .cert-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
@@ -300,8 +263,6 @@
     .empty-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .empty-text { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; max-width: 340px; margin: 0 auto; }
 
-.contact-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 0.8rem; font-weight: 700; padding: 9px 16px; border-radius: 10px; margin-bottom: 8px; transition: all 0.2s; letter-spacing: 0.01em; }
-    .contact-btn-ghost { background: transparent; color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.15); font-weight: 500; }
     .pub-card { background: var(--white); border-radius: 16px; padding: 28px 32px; border: 1px solid var(--border); transition: all 0.2s; margin-bottom: 24px; }
     .pub-card:hover { box-shadow: 0 8px 32px rgba(26,24,20,0.08); transform: translateY(-2px); }
     .pub-type { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
@@ -349,7 +310,6 @@
       overflow-x: auto; scrollbar-width: none;
     }
     .scrollspy-nav::-webkit-scrollbar { display: none; }
-    [data-theme="dark"] .scrollspy-nav { background: #1a1714; border-color: var(--border); }
     .spy-link {
       font-size: 0.78rem; font-weight: 600; color: var(--text-light);
       padding: 12px 16px; text-decoration: none; white-space: nowrap;
@@ -357,8 +317,6 @@
     }
     .spy-link:hover { color: var(--navy); }
     .spy-link.active { color: var(--navy); border-bottom-color: var(--gold); }
-    [data-theme="dark"] .spy-link:hover,
-    [data-theme="dark"] .spy-link.active { color: var(--gold); }
 
     /* ── Back to top ── */
     .back-to-top {
@@ -373,8 +331,6 @@
     }
     .back-to-top.visible { opacity: 1; transform: translateY(0); }
     .back-to-top:hover { background: var(--gold); color: var(--navy); }
-    [data-theme="dark"] .back-to-top { background: var(--gold); color: var(--navy); }
-    [data-theme="dark"] .back-to-top:hover { background: #e0bc6a; }
 
     /* ── Page dot navigation ── */
     .page-dots {
@@ -429,7 +385,7 @@
       .sidebar, .hamburger, .overlay,
       .back-to-top, .page-dots, .scrollspy-nav,
       #progress-bar-wrap, .about-tags, #last-updated,
-      .open-to-work, .theme-toggle,
+      .open-to-work,
 
       /* Reset body layout */
       body { display: block !important; background: #fff !important; }
@@ -496,7 +452,6 @@
                  stroke-width:1.75; stroke-linecap:round; stroke-linejoin:round; }
     nav li a svg.lucide { margin-right:6px; }
     .contact-btn svg.lucide { flex-shrink:0; }
-    .theme-toggle svg.lucide { margin-right:4px; }
 
     /* ── Blog page ── */
     .blog-section-label {
@@ -561,9 +516,6 @@
     .read-item:hover .read-arrow {
       color: var(--gold); transform: translateX(3px);
     }
-    [data-theme="dark"] .read-title  { color: var(--text); }
-    [data-theme="dark"] .blog-section-label { color: var(--text-light); }
-    [data-theme="dark"] .read-note   { color: var(--text-light); }
 
     /* ── Project Cards ── */
     .project-card {
@@ -619,10 +571,6 @@
     .embed-placeholder-icon { margin-bottom: 12px; color: var(--gold); }
     .embed-placeholder-text { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; font-style: italic; }
 
-    [data-theme="dark"] .project-card  { background: #1a1712; }
-    [data-theme="dark"] .project-title { color: var(--text); }
-    [data-theme="dark"] .embed-container { background: #1a1712; }
-    [data-theme="dark"] .project-tag   { background: #2a2520; }
 
     @media (max-width: 768px) { .embed-container iframe { height: 320px; } }
     /* ── SPA page visibility ── */
@@ -752,8 +700,6 @@
       background: var(--border);
       margin: 0;
     }
-
-    .ppk-card-
 
     .ppk-kpi-strip { display: grid !important; grid-template-columns: repeat(3,1fr) !important;
       gap: 1px;
@@ -1296,7 +1242,55 @@
 
     .pdd-divider { height: 1px; background: var(--border); }
 
-    .pdd-card-
+    .ppk-card { width: 100%; box-sizing: border-box; max-width: 100%; margin: 0 auto; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .ppk-card details > summary { list-style: none; cursor: pointer; padding: 2rem 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; position: relative; }
+    .ppk-card details > summary::-webkit-details-marker { display: none; }
+    .ppk-card-meta { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
+    .ppk-card-title { font-size: 1.55rem; font-weight: 700; color: var(--navy); line-height: 1.25; max-width: 640px; }
+    .ppk-card-subtitle { font-size: 0.95rem; color: var(--text-light); line-height: 1.5; max-width: 580px; }
+    .ppk-toggle-hint { position: absolute; top: 2rem; right: 2rem; font-size: 1.4rem; color: var(--text-light); }
+    .ppk-card details[open] > summary .ppk-toggle-hint::before { content: "−"; }
+    .ppk-card details:not([open]) > summary .ppk-toggle-hint::before { content: "+"; }
+    .ppk-tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-top: 0.5rem; }
+    .ppk-tag { font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-light); letter-spacing: 0.04em; }
+    .ppk-divider { height: 1px; background: var(--border); }
+    .ppk-card-body { padding: 2rem 2.5rem !important; display: flex !important; flex-direction: column; gap: 2rem; box-sizing: border-box; }
+    .ppk-kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; }
+    .ppk-kpi { background: var(--off-white); padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .ppk-kpi-number { font-size: 1.35rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
+    .ppk-kpi-label { font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4; }
+    .ppk-section-heading { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); padding-bottom: 0.75rem; border-bottom: 1px solid #222; margin-bottom: 1rem; }
+    .ppk-body-text { font-size: 0.9rem; line-height: 1.75; color: var(--text); }
+    .ppk-body-text p + p { margin-top: 0.85rem; }
+    .ppk-work-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .ppk-work-list li { font-size: 0.875rem; line-height: 1.6; color: var(--text-light); padding-left: 1.25rem; position: relative; }
+    .ppk-work-list li::before { content: "→"; position: absolute; left: 0; color: rgba(113,128,150,0.45); }
+    .ppk-verdict { border-left: 3px solid #c8892a; padding: 1rem 1.25rem; background: var(--off-white); border-radius: 0 8px 8px 0; font-size: 0.925rem; line-height: 1.7; color: #d4b070; }
+    .ppk-footnote { font-size: 0.75rem; color: rgba(113,128,150,0.45); font-style: italic; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+
+    .ssl-card { width: 100%; box-sizing: border-box; max-width: 100%; margin: 0 auto; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--white); }
+    .ssl-card details > summary { list-style: none; cursor: pointer; padding: 2rem 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; position: relative; }
+    .ssl-card details > summary::-webkit-details-marker { display: none; }
+    .ssl-card-meta { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); }
+    .ssl-card-title { font-size: 1.55rem; font-weight: 700; color: var(--navy); line-height: 1.25; max-width: 640px; }
+    .ssl-card-subtitle { font-size: 0.95rem; color: var(--text-light); line-height: 1.5; max-width: 580px; }
+    .ssl-toggle-hint { position: absolute; top: 2rem; right: 2rem; font-size: 1.4rem; color: var(--text-light); }
+    .ssl-card details[open] > summary .ssl-toggle-hint::before { content: "−"; }
+    .ssl-card details:not([open]) > summary .ssl-toggle-hint::before { content: "+"; }
+    .ssl-tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-top: 0.5rem; }
+    .ssl-tag { font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-light); letter-spacing: 0.04em; }
+    .ssl-divider { height: 1px; background: var(--border); }
+    .ssl-card-body { padding: 2rem 2.5rem !important; display: flex !important; flex-direction: column; gap: 2rem; box-sizing: border-box; }
+    .ssl-kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; }
+    .ssl-kpi { background: var(--off-white); padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .ssl-kpi-number { font-size: 1.35rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
+    .ssl-kpi-label { font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4; }
+    .ssl-section-heading { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); padding-bottom: 0.75rem; border-bottom: 1px solid #222; margin-bottom: 1rem; }
+    .ssl-body-text { font-size: 0.9rem; line-height: 1.75; color: var(--text); }
+    .ssl-body-text p + p { margin-top: 0.85rem; }
+    .ssl-work-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .ssl-work-list li { font-size: 0.875rem; line-height: 1.6; color: var(--text-light); padding-left: 1.25rem; position: relative; }
+    .ssl-work-list li::before { content: "→"; position: absolute; left: 0; color: rgba(113,128,150,0.45); }
 
     .pdd-kpi-strip {
       display: grid;
@@ -1555,6 +1549,31 @@
     }
     .pdd-card details > summary::-webkit-details-marker { display: none; }
 
+    /* ── ppk-* specialty classes (bar charts, tables, highlights) ── */
+    .ppk-scenario-block { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ppk-bar-group { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ppk-bar-row { display: grid; grid-template-columns: 140px 1fr; gap: 0.75rem; align-items: center; }
+    .ppk-bar-label { font-size: 0.8rem; color: var(--text); text-align: right; }
+    .ppk-bar-track { height: 1.1rem; background: var(--off-white); border-radius: 4px; overflow: hidden; }
+    .ppk-bar-fill { height: 100%; border-radius: 4px; transition: width 0.4s ease; }
+    .ppk-bar-blue-dim { background: #4f7fa0; }
+    .ppk-bar-blue-full { background: #1a5276; }
+    .ppk-bar-red-dim { background: #a0504f; }
+    .ppk-bar-red-full { background: #762a1a; }
+
+    .ppk-compare-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .ppk-compare-table th { text-align: left; padding: 0.6rem 0.75rem; background: var(--navy); color: var(--gold); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid var(--border); }
+    .ppk-compare-table td { padding: 0.55rem 0.75rem; border: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .ppk-compare-table tr:nth-child(even) td { background: var(--off-white); }
+
+    .ppk-highlight { background: rgba(200,137,42,0.08); border-left: 3px solid var(--gold); padding: 0.75rem 1rem; font-size: 0.85rem; line-height: 1.65; border-radius: 0 6px 6px 0; margin: 0.5rem 0; color: var(--text-light); }
+
+    .ppk-financing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+    .ppk-financing-item { background: var(--off-white); padding: 1rem 1.25rem; border-radius: 8px; border: 1px solid var(--border); position: relative; }
+    .ppk-financing-name { font-size: 0.85rem; font-weight: 600; color: var(--navy); display: block; margin-bottom: 0.25rem; }
+    .ppk-financing-desc { font-size: 0.78rem; color: var(--text-light); line-height: 1.5; display: block; }
+    .ppk-recommended { border-left: 3px solid #2e7d32; background: rgba(46,125,50,0.05); }
+
     /* ── Portfolio horizontal scroll rails ───────────────────── */
     #portfolio-client-render,
     #portfolio-personal-render {
@@ -1629,7 +1648,6 @@
       border-left: 2px solid var(--gold);
       padding-left: 8px;
     }
-    [data-theme="dark"] .book-thoughts { color: var(--text-light); }
 
     /* ── Right Now dynamic cards ──────────────────────── */
     .right-now-grid {
@@ -1665,7 +1683,6 @@
       padding-left: 9px; margin-top: 2px;
     }
     .rn-loading { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
-    [data-theme="dark"] .rn-value { color: var(--text); }
 
     /* ── Copy link toast ─────────────────────────────────── */
     .toast {
@@ -1689,7 +1706,6 @@
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
-    [data-theme="dark"] .toast { background: var(--off-white); color: var(--text); }
 </style>
 
   <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>
@@ -1746,19 +1762,6 @@
 </script>
 
   <meta name="robots" content="index, follow">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Anindya Mutsuddy",
-    "url": "https://anindyamutsuddy.com",
-    "jobTitle": "Corporate Finance Analyst",
-    "alumniOf": {"@type": "CollegeOrUniversity", "name": "KU Leuven"},
-    "address": {"@type": "PostalAddress", "addressLocality": "Antwerp", "addressCountry": "BE"},
-    "sameAs": ["https://www.linkedin.com/in/anindyamutsuddy"]
-  }
-  </script>
 </head>
 <body>
 
@@ -1898,6 +1901,213 @@
   </section>
     </div>
 
+    <!-- WORK AUTHORIZATION -->
+    <div class="page" id="page-work-authorization" style="max-width:820px;">
+
+      <!-- ██ Card 1: Current Status ██████████████████████████ -->
+      <div class="pdd-card" style="margin-bottom:28px;">
+        <details open>
+          <summary>
+            <span class="pdd-card-meta">Status</span>
+            <span class="pdd-card-title">Current Status</span>
+            <span class="pdd-card-subtitle">Zoekjaar (orientation year) residence permit &mdash; direct institutional evidence of higher education completion in Belgium.</span>
+            <div class="pdd-tag-row">
+              <span class="pdd-tag">Zoekjaar</span>
+              <span class="pdd-tag">IBZ/DVZ</span>
+              <span class="pdd-tag">Residence Permit</span>
+            </div>
+          </summary>
+          <div class="pdd-card-body">
+            <div class="pdd-section-heading">Current Status</div>
+            <div class="pdd-body-text">
+              <p style="text-align:justify;">Anindya Mutsuddy holds a valid zoekjaar (orientation year) residence permit. Under Belgian federal law (Articles 61/1/9 et seq. of the Act of 15 December 1980), the zoekjaar is granted exclusively to third-country nationals who have obtained a degree from a Belgian institution of higher education, it cannot be issued on any other basis. This is confirmed by the Belgian Immigration Office (IBZ/DVZ). The zoekjaar therefore serves as direct institutional evidence that the holder has completed higher education in Belgium, which is itself the primary qualifying criterion for highly skilled worker status under the Flemish single permit framework.</p>
+              <p style="text-align:justify;">This connection is made explicitly by an immigration lawyer (Altea International), who noted that &ldquo;for candidates who are already in Belgium under a valid &lsquo;search year&rsquo; residence status and who may qualify as highly skilled workers, the procedure may in some cases be more straightforward.&rdquo; Additionally, during the zoekjaar period itself, the third-country national has unrestricted access to the Belgian labour market and may work legally, employers are simply advised by the IBZ to apply for a single permit promptly once a contract is in place.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ██ Card 2: Belgian Single Permit ████████████████████ -->
+      <div class="pdd-card" style="margin-bottom:28px;">
+        <details open>
+          <summary>
+            <span class="pdd-card-meta">Framework</span>
+            <span class="pdd-card-title">What Is the Belgian Single Permit?</span>
+            <span class="pdd-card-subtitle">A standardised combined work and residence authorisation &mdash; not a sponsorship scheme.</span>
+            <div class="pdd-tag-row">
+              <span class="pdd-tag">Single Permit</span>
+              <span class="pdd-tag">Non-Sponsorship</span>
+              <span class="pdd-tag">Flanders</span>
+            </div>
+          </summary>
+          <div class="pdd-card-body">
+            <div class="pdd-section-heading">What Is the Belgian Single Permit?</div>
+            <div class="pdd-body-text">
+              <p style="text-align:justify;">The single permit is Belgium&rsquo;s standardised combined work and residence authorisation for non-EEA nationals employed for more than 90 days. It is not a sponsorship scheme. There is no requirement for employers to register as licensed sponsors, maintain a sponsorship licence, or operate within any framework comparable to the UK Skilled Worker or US H-1B systems.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ██ Card 3: Employer Role █████████████████████████████ -->
+      <div class="pdd-card" style="margin-bottom:28px;">
+        <details open>
+          <summary>
+            <span class="pdd-card-meta">Process</span>
+            <span class="pdd-card-title">What the Employer Actually Does</span>
+            <span class="pdd-card-subtitle">A single application via the VDAB portal &mdash; standard employment paperwork only.</span>
+            <div class="pdd-tag-row">
+              <span class="pdd-tag">VDAB</span>
+              <span class="pdd-tag">&euro;200 Fee</span>
+              <span class="pdd-tag">Minimal Paperwork</span>
+            </div>
+          </summary>
+          <div class="pdd-card-body">
+            <div class="pdd-section-heading">What the Employer Actually Does</div>
+            <div class="pdd-body-text">
+              <p style="text-align:justify;">The employer files a single application via the VDAB single permit portal (Flanders). Required documents are standard employment paperwork, nothing beyond what is already held on file for any new hire:</p>
+            </div>
+            <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden;">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+                <div style="font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold); background:var(--navy); padding:10px 14px; border-bottom:1px solid var(--border);">Document</div>
+                <div style="font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold); background:var(--navy); padding:10px 14px; border-bottom:1px solid var(--border);">Provided by</div>
+                <div style="padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); font-size:0.85rem;">Employment contract</div>
+                <div style="padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); font-size:0.85rem;">Employer</div>
+                <div style="padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); font-size:0.85rem;">Job description</div>
+                <div style="padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); font-size:0.85rem;">Employer</div>
+                <div style="padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); font-size:0.85rem;">Company identification / KBO registration</div>
+                <div style="padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); font-size:0.85rem;">Employer</div>
+                <div style="padding:10px 14px; color:var(--text); font-size:0.85rem;">Diploma, CV, personal ID, residence permit</div>
+                <div style="padding:10px 14px; color:var(--text); font-size:0.85rem;">Candidate</div>
+              </div>
+            </div>
+            <div class="pdd-body-text">
+              <p style="text-align:justify; margin-top:0.75rem;">A one-time regional administrative fee of approximately &euro;200 applies under the 2026 Flanders reform. There is no annual renewal levy and no ongoing compliance framework.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ██ Card 4: Highly Skilled Worker █████████████████████ -->
+      <div class="pdd-card" style="margin-bottom:28px;">
+        <details open>
+          <summary>
+            <span class="pdd-card-meta">Qualification</span>
+            <span class="pdd-card-title">Highly Skilled Worker Pathway</span>
+            <span class="pdd-card-subtitle">MBA from KU Leuven + professional finance role &mdash; both conditions met.</span>
+            <div class="pdd-tag-row">
+              <span class="pdd-tag">Highly Skilled</span>
+              <span class="pdd-tag">No Labour Market Test</span>
+              <span class="pdd-tag">Salary Threshold</span>
+            </div>
+          </summary>
+          <div class="pdd-card-body">
+            <div class="pdd-section-heading">Why This Pathway Applies</div>
+            <div class="pdd-body-text">
+              <p style="text-align:justify;">Under the 2026 Flemish single permit framework, a candidate qualifies for the highly skilled worker route when two conditions are met simultaneously:</p>
+              <ol style="line-height:1.85; padding-left:24px;">
+                <li style="margin-bottom:4px;">The candidate holds a higher education qualification (Master&rsquo;s degree or equivalent)</li>
+                <li style="margin-bottom:4px;">The candidate is performing a genuinely highly qualified function</li>
+              </ol>
+              <p style="text-align:justify;">Anindya satisfies both conditions. He holds an MBA cum laude from KU Leuven (2025), and the roles he is applying for; Financial Analyst, FP&amp;A Analyst, Investment Analyst, Treasury Consultant, are unambiguously highly qualified functions under the European Qualifications Framework. The 2026 reform clarified that the highly skilled route cannot be used to place degree holders in non-qualified roles; it was not designed to affect professional finance positions. This distinction matters because the highly skilled route carries two critical advantages over standard permit categories:</p>
+            </div>
+
+            <div style="border:1px solid var(--border); border-radius:8px; padding:20px 24px; background:var(--off-white);">
+              <div class="pdd-section-heading" style="border-bottom-color:var(--border);">Advantage 1 &mdash; Labour Market Test</div>
+              <p style="margin:0; text-align:justify; line-height:1.85; font-size:0.9rem; color:var(--text);">The standard category requires a nine-week VDAB/EURES vacancy publication period, under which employers must advertise the role and demonstrate no suitable Belgian/EEA candidate was available. This requirement is specific to the &ldquo;other workers&rdquo; category and <strong>does not apply under the highly skilled route</strong> (Pro-Pay, 2026; Parakar, 2026). This conclusion is also structurally confirmed by the Flemish government&rsquo;s own 15-business-day processing target for highly skilled files, a timeline that would be incompatible with a mandatory nine-week advertising obligation. Immigration counsel (Altea International) independently confirmed that labour market testing &ldquo;may not apply&rdquo; for zoekjaar holders qualifying as highly skilled workers.</p>
+            </div>
+
+            <div style="border:1px solid var(--border); border-radius:8px; padding:20px 24px; background:var(--off-white);">
+              <div class="pdd-section-heading" style="border-bottom-color:var(--border);">Advantage 2 &mdash; Salary Threshold (Flanders, 2026)</div>
+              <ul style="margin:0 0 12px; line-height:1.85; padding-left:24px;">
+                <li style="margin-bottom:4px; font-size:0.9rem; color:var(--text);">Under 30 years of age: &euro;39,129.60 gross per year (~&euro;3,261/month gross)</li>
+                <li style="margin-bottom:4px; font-size:0.9rem; color:var(--text);">30 and above: &euro;48,912.00 gross per year (~&euro;4,076/month gross)</li>
+              </ul>
+              <p style="margin:0; text-align:justify; line-height:1.85; font-size:0.9rem; color:var(--text);">Standard analyst and professional finance packages in Belgium comfortably meet the under-30 threshold.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ██ Card 5: Processing Timeline ███████████████████████ -->
+      <div class="pdd-card" style="margin-bottom:28px;">
+        <details open>
+          <summary>
+            <span class="pdd-card-meta">Timeline</span>
+            <span class="pdd-card-title">Processing Timeline</span>
+            <span class="pdd-card-subtitle">15 business days target &mdash; 60 days statutory maximum for highly skilled profiles.</span>
+            <div class="pdd-tag-row">
+              <span class="pdd-tag">15 Business Days</span>
+              <span class="pdd-tag">Uniek Loket</span>
+              <span class="pdd-tag">Streamlined</span>
+            </div>
+          </summary>
+          <div class="pdd-card-body">
+            <div class="pdd-section-heading">Processing Timeline</div>
+            <div class="pdd-body-text">
+              <p style="text-align:justify;">Under the 2026 Flanders reform, the regional authority has set a processing time target of 15 business days for highly skilled profiles with complete files. The official statutory maximum is 60 days. Real-world experience for well-documented highly skilled applications has been consistent with the shorter target.</p>
+            </div>
+            <div class="pdd-section-heading" style="border-bottom-color:var(--border);">Usual Steps</div>
+            <ul style="line-height:1.85; padding-left:24px; color:var(--text); font-size:0.9rem;">
+              <li style="margin-bottom:8px;">The application is submitted via the Uniek loket portal (workinginbelgium.be), the employer simply requests a login from the Flemish government</li>
+              <li style="margin-bottom:8px;">Documentation from the employer&rsquo;s side is minimal, primarily a contract and company details; most documents are provided by the candidate</li>
+              <li style="margin-bottom:8px;">There is a one-time administrative fee depending on circumstances</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ██ Card 6: Key Takeaway ██████████████████████████████ -->
+      <div class="pdd-card" style="margin-bottom:28px;">
+        <details open>
+          <summary>
+            <span class="pdd-card-meta">Summary</span>
+            <span class="pdd-card-title">Key Takeaway</span>
+            <span class="pdd-card-subtitle">A standard administrative filing &mdash; not a sponsorship programme.</span>
+            <div class="pdd-tag-row">
+              <span class="pdd-tag">No Sponsorship</span>
+              <span class="pdd-tag">Standard Filing</span>
+              <span class="pdd-tag">15-Day Processing</span>
+            </div>
+          </summary>
+          <div class="pdd-card-body">
+            <div class="pdd-section-heading">Key Takeaway</div>
+            <div style="border-left:3px solid #c8892a; padding:1.5rem 1.75rem; background:var(--off-white); border-radius:0 8px 8px 0;">
+              <p style="margin:0; text-align:justify; font-size:1.05rem; line-height:1.9; color:#d4b070;">For a candidate with a Belgian Master&rsquo;s degree working in a professional finance role, the single permit is a standard administrative filing, not a sponsorship programme. The labour market test is waived, the salary threshold is met by typical analyst packages, and the processing target is 15 business days. The employer&rsquo;s role is to submit a contract and a job description. That is the full extent of the obligation.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ██ Card 7: Sources ███████████████████████████████████ -->
+      <div class="pdd-card" style="margin-bottom:28px;">
+        <details open>
+          <summary>
+            <span class="pdd-card-meta">References</span>
+            <span class="pdd-card-title">Sources</span>
+            <span class="pdd-card-subtitle">Legal counsel, government bodies, and professional advisory firms.</span>
+            <div class="pdd-tag-row">
+              <span class="pdd-tag">Altea International</span>
+              <span class="pdd-tag">IBZ/DVZ</span>
+              <span class="pdd-tag">Flemish Government</span>
+            </div>
+          </summary>
+          <div class="pdd-card-body">
+            <div class="pdd-section-heading">Sources</div>
+            <ul style="line-height:1.9; padding-left:24px; color:var(--text); font-size:0.9rem;">
+              <li style="margin-bottom:10px;">The above reflects information from direct correspondence with a specialist lawyer in immigration law and international family law at Altea International (Brussels), in April 2026. For case-specific legal advice, Altea can be contacted at <a href="https://www.altea.be" target="_blank" rel="noopener">www.altea.be</a> or +32 2 894 45 70.</li>
+              <li style="margin-bottom:10px;">Belgian Immigration Office (IBZ/DVZ): Search Year After Higher Studies, <a href="https://dofi.ibz.be" target="_blank" rel="noopener">dofi.ibz.be</a>, statutory basis for zoekjaar and higher education requirement</li>
+              <li style="margin-bottom:10px;">Vandelanotte: &ldquo;Economic Migration in 2026: Overview of New Rules in Flanders&rdquo;, February 2026 (<a href="https://www.vandelanotte.be" target="_blank" rel="noopener">vandelanotte.be</a>)</li>
+              <li style="margin-bottom:10px;">Altea International: &ldquo;Single Permit in Flanders: A Major Reform as of 1 January 2026&rdquo;, December 2025</li>
+              <li style="margin-bottom:10px;">KPMG Flash Alert 2026-018: Belgium &ndash; Updated 2026 Salary Criteria for Work and Single Permits</li>
+              <li style="margin-bottom:10px;">Flemish Government (<a href="https://www.vlaanderen.be" target="_blank" rel="noopener">vlaanderen.be</a>): Employing a foreigner in Flanders: highly skilled workers, updated December 2025</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+    </div>
+
   </main>
 </div>
 
@@ -1913,6 +2123,7 @@
   <button class="page-dot"        data-hash="portfolio"      title="Portfolio" aria-label="Portfolio"></button>
   <button class="page-dot"        data-hash="publications"   title="Publications" aria-label="Publications"></button>
   <button class="page-dot"        data-hash="beyond"         title="Beyond Work" aria-label="Beyond Work"></button>
+  <button class="page-dot"        data-hash="work-authorization" title="Work Authorization" aria-label="Work Authorization"></button>
 </nav>
 
 <!-- ── INLINED DATA ── -->
@@ -1934,6 +2145,7 @@
     { icon: "briefcase", label: "Portfolio",       hash: "portfolio"      },
     { icon: "book-open", label: "Publications",    hash: "publications"   },
     { icon: "compass",   label: "Beyond Work",     hash: "beyond"         },
+    { icon: "file-text", label: "Work Authorization", hash: "work-authorization" },
   ];
 
   function buildSidebar(activeHash) {
@@ -1970,13 +2182,12 @@
     <a href="${LINKEDIN}" target="_blank" rel="noopener noreferrer" class="contact-btn"><i data-lucide="linkedin"></i> LinkedIn</a>
     <a href="https://maps.google.com/?q=${encodeURIComponent(LOCATION)}" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-ghost"><i data-lucide="map-pin"></i> ${LOCATION}</a>
   </div>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i> Dark mode</button>
 </aside>`;
   }
 
   function getHash() {
     const h = (window.location.hash || '#about').replace('#','').trim().split('/')[0];
-    const valid = ['about','certifications','blog','portfolio','publications','beyond'];
+    const valid = ['about','certifications','blog','portfolio','publications','beyond','work-authorization'];
     return valid.includes(h) ? h : 'about';
   }
 
@@ -2009,6 +2220,7 @@
       portfolio: 'Portfolio · Anindya Mutsuddy',
       publications: 'Publications · Anindya Mutsuddy',
       beyond: 'Beyond Work · Anindya Mutsuddy',
+      'work-authorization': 'Work Authorization · Anindya Mutsuddy',
     };
     document.title = titles[hash] || 'Anindya Mutsuddy';
     // Staggered card animation
@@ -2065,17 +2277,6 @@
 
 <!-- ── MAIN APP SCRIPT ── -->
 <script>
-  // ── Dark mode ──
-  const root  = document.documentElement;
-  const saved = localStorage.getItem('theme') || 'light';
-  root.setAttribute('data-theme', saved);
-
-  function updateToggleLabel() {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    btn.innerHTML = root.getAttribute('data-theme') === 'dark' ? '<i data-lucide="sun"></i> Light mode' : '<i data-lucide="moon"></i> Dark mode';
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-  }
 
   // ── Scroll progress ──
   const bar = document.getElementById('scroll-progress');
@@ -2087,15 +2288,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    updateToggleLabel();
-    document.addEventListener('click', function(e) {
-      if (e.target && e.target.id === 'theme-toggle') {
-        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        updateToggleLabel();
-      }
-    });
 
     const d = siteData;
 
