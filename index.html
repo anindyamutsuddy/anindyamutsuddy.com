@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<!-- Last updated: Wednesday, 11 March 2026 -->
+<!-- Last updated: 4 October 2026 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%231e1814%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2221%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2213%22%20font-weight%3D%22700%22%20fill%3D%22%23c9a84c%22%20text-anchor%3D%22middle%22%3EAM%3C/text%3E%3C/svg%3E"/>
-  <title>Anindya Mutsuddy · Corporate Finance Analyst</title>
+  <title>Anindya Mutsuddy · Financial Analysis, Data &amp; Research</title>
   <meta property="og:type"        content="website"/>
   <meta property="og:url"         content="https://anindyamutsuddy.com/"/>
-  <meta property="og:title"       content="Anindya Mutsuddy · Corporate Finance Analyst"/>
-  <meta property="og:description" content="MBA graduate (Cum Laude, KU Leuven). Seeking analyst roles in corporate finance, investment banking or commercial lending in the Benelux region."/>
+  <meta property="og:title"       content="Anindya Mutsuddy · Financial Analysis, Data &amp; Research"/>
+  <meta property="og:description" content="MBA graduate (Cum Laude, KU Leuven). Financial modelling, reporting and data — with the empirical research and working dashboards to show for it."/>
   <meta property="og:image"       content="https://anindyamutsuddy.com/og-image.png"/>
   <meta name="twitter:card"       content="summary"/>
-  <meta name="twitter:title"      content="Anindya Mutsuddy · Corporate Finance Analyst"/>
-  <meta name="twitter:description" content="MBA graduate (Cum Laude, KU Leuven). Seeking analyst roles in corporate finance, investment banking or commercial lending in the Benelux region.">
+  <meta name="twitter:title"      content="Anindya Mutsuddy · Financial Analysis, Data &amp; Research"/>
+  <meta name="twitter:description" content="MBA graduate (Cum Laude, KU Leuven). Financial modelling, reporting and data — with the empirical research and working dashboards to show for it.">
   <meta name="twitter:image"      content="https://anindyamutsuddy.com/og-image.png"/>
-  <meta name="description" content="Corporate Finance Analyst · Investment Banking · Antwerp, Belgium"/>
+  <meta name="description" content="Financial Analysis · Modelling, Reporting &amp; Data · Empirical Research · Antwerp, Belgium"/>
   <link rel="canonical" href="https://anindyamutsuddy.com">
   <script type="application/ld+json">
   {
@@ -24,11 +24,10 @@
     "name": "Anindya Mutsuddy",
     "givenName": "Anindya",
     "familyName": "Mutsuddy",
-    "jobTitle": "Corporate Finance Analyst",
     "url": "https://anindyamutsuddy.com",
     "image": "https://anindyamutsuddy.com/pfp.jpg",
-    "description": "MBA graduate (Cum Laude, KU Leuven). Seeking analyst roles in corporate finance, investment banking or commercial lending in the Benelux region.",
-    "knowsAbout": ["Corporate Finance", "Investment Banking", "Commercial Lending", "Financial Analysis"],
+    "description": "MBA graduate (Cum Laude, KU Leuven). Financial modelling, reporting and data — with the empirical research and working dashboards to show for it.",
+    "knowsAbout": ["Corporate Finance", "Financial Modelling", "Financial Reporting", "Data Analysis", "Empirical Research"],
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "KU Leuven"
@@ -405,7 +404,7 @@
         margin-bottom: 2pt;
       }
       #page-about::after {
-        content: "Investment Analyst  ·  Corporate Finance Analyst  ·  Antwerp, Belgium";
+        content: "Financial Analysis & Modelling  ·  Reporting, Data & Research  ·  Antwerp, Belgium";
         display: block;
         font-size: 10pt;
         color: #555;
@@ -533,6 +532,14 @@
     .project-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; margin-bottom: 14px; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .project-tag { font-size: 0.68rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: var(--off-white); color: var(--text-light); border: 1px solid var(--border); letter-spacing: 0.04em; }
+    .project-status-dot.live    { color: #48bb78; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    /* ── Front-page "Selected Work" doorway strip ──
+       Cards link straight out to the live artefacts, so this is a plain grid
+       rather than a scroll rail. Description is clamped so the strip stays tidy
+       whatever length the copy in data.js runs to. */
+    .selected-work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+    .selected-work-grid .project-desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    @media (max-width: 640px) { .selected-work-grid { grid-template-columns: 1fr; } }
 
     /* ── Publication links ── */
     .pub-links { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
@@ -1774,7 +1781,7 @@
     <div class="page" id="page-about">
 <nav class="scrollspy-nav" id="scrollspy-nav">
   <a href="#about" class="spy-link active" data-spy="about">About</a>
-  <a href="#experience" class="spy-link" data-spy="experience">Experience</a>
+  <a href="#work" class="spy-link" data-spy="work">Work</a>
   <a href="#education" class="spy-link" data-spy="education">Education</a>
   <a href="#skills" class="spy-link" data-spy="skills">Skills</a>
   <a href="#languages" class="spy-link" data-spy="languages">Languages</a>
@@ -1787,10 +1794,11 @@
     <p style="font-size:0.75rem;color:var(--text-light);margin-top:20px;" id="last-updated"></p>
   </section>
 
-  <section id="experience">
-    <div class="section-label">Work</div>
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="timeline" id="experience-cards"></div>
+  <section id="work">
+    <div class="section-label">Selected</div>
+    <h2 class="section-title">Selected Work</h2>
+    <p style="font-size:0.88rem;color:var(--text-light);line-height:1.7;margin-bottom:22px;max-width:640px;">Working tools, not screenshots. Open any of them and move the assumptions yourself.</p>
+    <div class="selected-work-grid" id="selected-work-render"></div>
   </section>
 
   <section id="education">
@@ -1856,11 +1864,11 @@
     <div class="section-label">Projects</div>
     <h2 class="section-title">Projects</h2>
 
-    <div class="blog-section-label"><span>Client Work</span></div>
-    <div id="portfolio-client-render"></div>
-
-    <div class="blog-section-label" style="margin-top:48px;"><span>Personal Projects</span></div>
+    <div class="blog-section-label"><span>Research &amp; Dashboards</span></div>
     <div id="portfolio-personal-render"></div>
+
+    <div class="blog-section-label" style="margin-top:48px;"><span>Client Work</span></div>
+    <div id="portfolio-client-render"></div>
 </section>
     </div>
 
@@ -2007,7 +2015,7 @@
                 <li style="margin-bottom:4px;">The candidate holds a higher education qualification (Master&rsquo;s degree or equivalent)</li>
                 <li style="margin-bottom:4px;">The candidate is performing a genuinely highly qualified function</li>
               </ol>
-              <p style="text-align:justify;">Anindya satisfies both conditions. He holds an MBA cum laude from KU Leuven (2025), and the roles he is applying for; Financial Analyst, FP&amp;A Analyst, Investment Analyst, Treasury Consultant, are unambiguously highly qualified functions under the European Qualifications Framework. The 2026 reform clarified that the highly skilled route cannot be used to place degree holders in non-qualified roles; it was not designed to affect professional finance positions. This distinction matters because the highly skilled route carries two critical advantages over standard permit categories:</p>
+              <p style="text-align:justify;">Anindya satisfies both conditions. He holds an MBA cum laude from KU Leuven (2025), and the roles he applies for &mdash; financial analysis, FP&amp;A and comparable degree-level finance positions &mdash; are unambiguously highly qualified functions under the European Qualifications Framework. The 2026 reform clarified that the highly skilled route cannot be used to place degree holders in non-qualified roles; it was not designed to affect professional finance positions. This distinction matters because the highly skilled route carries two critical advantages over standard permit categories:</p>
             </div>
 
             <div style="border:1px solid var(--border); border-radius:8px; padding:20px 24px; background:var(--off-white);">
@@ -2131,7 +2139,7 @@
 <script>
 (function () {
   const NAME     = "Anindya Mutsuddy";
-  const TITLE    = "Investment Analyst<br/>Corporate Finance Analyst";
+  const TITLE    = "Financial Analysis &amp; Modelling<br/>Reporting, Data &amp; Research";
   const EMAIL    = "anindya.mutsuddy@gmail.com";
   const LINKEDIN = "https://linkedin.com/in/anindyamutsuddy";
   const LOCATION = "Antwerp, Belgium";
@@ -2305,7 +2313,9 @@
       lu.innerHTML = `Last updated: <strong style="color:var(--navy);">${months[now.getMonth()]} ${now.getFullYear()}</strong>`;
     }
 
-    // ── EXPERIENCE ──
+    // ── EXPERIENCE ── (section removed 2026-10-04 at your request; the
+    //    container no longer exists so this block stays dormant and harmless.
+    //    Restore the experience section markup to switch it back on.)
     const expContainer = document.getElementById('experience-cards');
     if (expContainer) {
       d.experience.forEach(e => {
@@ -2465,6 +2475,26 @@
 
 
     // ── PORTFOLIO: CLIENT WORK ──
+    // ── ABOUT: "SELECTED WORK" DOORWAY STRIP ──
+    // Derived from data.js -> portfolio.personal, filtered to entries that have a
+    // real embed, so a card without a live dashboard excludes itself. Links go
+    // STRAIGHT to the artefact in a new tab — the point is one click from the
+    // front door, not a route to the Portfolio page.
+    const workEl = document.getElementById('selected-work-render');
+    if (workEl && d.portfolio && d.portfolio.personal) {
+      const featured = d.portfolio.personal.filter(p => p.embed && p.title).slice(0, 3);
+      workEl.innerHTML = featured.map(p => `
+        <div class="project-card">
+          <div class="project-header">
+            <div><div class="project-title">${p.title}</div></div>
+            <div class="project-status-dot ${p.status}">Live</div>
+          </div>
+          <div class="project-desc">${p.desc}</div>
+          <div class="project-tags">${(p.tags || []).map(t => '<span class="project-tag">' + t + '</span>').join('')}</div>
+          <div class="project-blog-link"><a href="${p.embed}" target="_blank" rel="noopener" class="blog-link-btn">Open dashboard &rarr;</a></div>
+        </div>`).join('');
+    }
+
     const clientEl = document.getElementById('portfolio-client-render');
     if (clientEl) {
       const clientProjects = d.portfolio && d.portfolio.client ? d.portfolio.client : [];
@@ -2508,7 +2538,7 @@
             <div class="project-card">
               <div class="project-header">
                 <div class="project-title">${p.title}</div>
-                <div class="project-status-dot ${p.status}">${p.status === 'done' ? 'Completed' : 'In Progress'}</div>
+                <div class="project-status-dot ${p.status}">${p.status === 'live' ? 'Live' : p.status === 'done' ? 'Completed' : p.status === 'coming-soon' ? 'In Progress' : 'Ongoing'}</div>
               </div>
               <div class="project-desc">${p.desc}</div>
               <div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
@@ -2625,7 +2655,7 @@
     });
 
     // ── Scroll-spy for About page sections ──
-    const spySections = ['about','experience','education','skills','languages','interests'];
+    const spySections = ['about','work','education','skills','languages','interests'];
     const spyObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
