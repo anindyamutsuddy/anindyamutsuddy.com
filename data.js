@@ -94,14 +94,6 @@ const siteData = {
     // Add more: { name, level, pct: 0-100 }
   ],
 
-  // ── INDEX: INTERESTS ───────────────────────────────────────
-  interests: [
-    { icon: "mountain", name: "Hiking",          desc: "Exploring trails and new landscapes on foot" },
-    { icon: "book-open", name: "Reading",         desc: "Curious reader across finance, history and fiction" },
-    { icon: "clock", name: "Watch Collecting",desc: "Appreciating the craft of mechanical horology" }
-    // Add more: { icon: "lucide-name", name, desc }
-  ],
-
   // ── CERTIFICATIONS PAGE ────────────────────────────────────
   certifications: [
     {
@@ -170,8 +162,6 @@ const siteData = {
       }
     ]
   },
-
-  // ── BEYOND WORK PAGE ───────────────────────────────────────
 
   // ── BLOG PAGE ──────────────────────────────────────────────
   blog: [
@@ -470,7 +460,7 @@ const siteData = {
     // Fields: sector, type, tags[], desc, status ("done"|"ongoing")
     client: [
     {
-      rawHTML: `<div class="ppk-card">
+      rawHTML: `<div class="ppk-card" data-project-slug="satellite-township">
 
   <details>
     <summary style="padding:1.75rem 2.5rem;display:flex;flex-direction:column;gap:0.5rem;position:relative;list-style:none;cursor:pointer;">
@@ -810,6 +800,7 @@ const siteData = {
     personal: [
       {
         title:     "R&D Capitalisation in Power BI: A Dial for Your Thoughts",
+        slug:      "r-and-d-capitalisation",
         tags:      ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
         desc:      "A Power BI simulator applying R&D capitalisation to a French biotech with a 3:1 R&D-to-revenue ratio. Same firm, same cash; adjust the amortisation life from three to twenty years and watch the company move from worthless to worth owning. Six KPIs updating live across eighteen scenarios.",
         status:    "live",
@@ -818,6 +809,7 @@ const siteData = {
       },
       {
         title:     "102 Firms, 21 Years, One Dashboard",
+        slug:      "102-firms-21-years",
         tags:      ["Power BI", "M&A", "Event Study", "BHAR", "Data Visualisation"],
         desc:      "A five-page Power BI dashboard presenting the findings of my MBA thesis on European joint ventures across chemicals and pharmaceuticals (1998-2019). Covers 102 parent firms, 36-month buy-and-hold abnormal returns, ROA as a performance predictor, and the R&D paradox in pharma.",
         status:    "live",
@@ -826,6 +818,7 @@ const siteData = {
       },
       {
         title:     "25 Years of EU Merger Control",
+        slug:      "eu-merger-control",
         tags:      ["Power BI", "M&A", "EU Commission", "Data Visualisation"],
         desc:      "A deep look at European M&A activity built on 25 years of EU merger control data. The question: of the thousands of deals that crossed the European Commission's desk between 1990 and 2014, what actually got blocked, and why?",
         status:    "coming-soon",
@@ -839,16 +832,6 @@ const siteData = {
   // ── BLOG: PINNED READS ─────────────────────────────────────
   // Add articles, essays or Substacks you've read and want to share.
   // Fields: title, source, url, tag, date, note (your 1-2 sentence take)
-  beyond: {
-    watches: [
-      { brand: "Omega × Swatch", name: "Moonswatch x Snoopy", icon: "clock" },
-      { brand: "Seiko",          name: "Seiko 5",              icon: "clock" }
-    ],
-    activities: [
-      { icon: "mountain", title: "Hiking", desc: "Exploring trails across Belgium and beyond. There is no better way to reset than a long walk with no agenda." },
-      { icon: "users", title: "BSAAB", desc: "Active member of the Bangladeshi Student and Alumni Association in Belgium. Community, connection, and keeping roots alive while building new ones." }
-    ]
-  },
 
   reads: [
     {

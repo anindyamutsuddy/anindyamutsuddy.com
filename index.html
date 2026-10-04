@@ -1714,7 +1714,6 @@
 </style>
 
   <noscript><style>body::after { content: "This site requires JavaScript. Please enable it to view the full portfolio."; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; font-size:1rem; color:#2d3748; padding:2rem; text-align:center; }</style></noscript>
-  <script defer src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <script>
 
   // ── Keyboard nav for portfolio rails ───────────────────────────
@@ -1779,13 +1778,21 @@
 
     <!-- ABOUT -->
     <div class="page" id="page-about">
+<div class="hero" id="hero" style="margin:0 0 28px;">
+  <h1 class="hero-name" style="font-size:clamp(1.9rem,4.5vw,2.9rem);line-height:1.1;letter-spacing:-0.02em;font-weight:700;color:var(--navy);margin:0 0 10px;">Anindya Mutsuddy</h1>
+  <p class="hero-role" style="font-size:clamp(1rem,1.8vw,1.15rem);color:var(--text-light);line-height:1.5;margin:0 0 18px;">Financial Analysis &amp; Modelling &middot; Reporting, Data &amp; Research</p>
+  <div class="project-tags" style="margin:0;">
+    <span class="project-tag">Antwerp, Belgium</span>
+    <span class="project-tag">zoekjaar permit</span>
+    <span class="project-tag">Open to finance, control &amp; research in the Benelux</span>
+  </div>
+</div>
 <nav class="scrollspy-nav" id="scrollspy-nav">
   <a href="#about" class="spy-link active" data-spy="about">About</a>
   <a href="#work" class="spy-link" data-spy="work">Work</a>
   <a href="#education" class="spy-link" data-spy="education">Education</a>
   <a href="#skills" class="spy-link" data-spy="skills">Skills</a>
   <a href="#languages" class="spy-link" data-spy="languages">Languages</a>
-  <a href="#interests" class="spy-link" data-spy="interests">Interests</a>
 </nav>
 <section id="about">
         <h2 class="section-title">About Me</h2>
@@ -1824,12 +1831,6 @@
     <div class="lang-grid" id="lang-grid"></div>
   </section>
 
-  <section id="interests">
-    <div class="section-label">Beyond Work</div>
-    <h2 class="section-title">Interests</h2>
-    <div class="interests-grid" id="interests-grid"></div>
-    <a href="#beyond" onclick="event.preventDefault();window.location.hash='beyond'" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--navy);font-size:0.85rem;font-weight:700;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;">Explore more &#8594;</a>
-  </section>
     </div>
 
     <!-- CERTIFICATIONS -->
@@ -1881,31 +1882,6 @@
   </section>
     </div>
 
-    <!-- BEYOND WORK -->
-    <div class="page" id="page-beyond">
-<section id="currently">
-    <div class="section-label">Right Now</div>
-    <h2 class="section-title">Beyond Work</h2>
-    <div class="right-now-grid" id="right-now-grid"><div class="rn-loading" style="grid-column:1/-1">Loading…</div></div>
-  </section>
-  <section id="watches">
-    <div class="section-label">Horology</div>
-    <h2 class="section-title">Watch Collection</h2>
-    <div class="watch-grid" id="watch-grid"></div>
-  </section>
-  <section id="reading">
-    <div class="section-label">Reading</div>
-    <h2 class="section-title">Reading List</h2>
-    <div id="currently-reading" class="book-shelf" style="margin-bottom:32px;"></div>
-      <div class="blog-section-label" style="margin-top:8px;margin-bottom:20px;"><span>Past Reads</span></div>
-      <div id="past-reads" class="book-shelf"></div>
-  </section>
-  <section id="life">
-    <div class="section-label">&#127758; Life</div>
-    <h2 class="section-title">Outside the Office</h2>
-    <div class="activity-grid" id="activity-grid"></div>
-  </section>
-    </div>
 
     <!-- WORK AUTHORIZATION -->
     <div class="page" id="page-work-authorization">
@@ -2128,7 +2104,6 @@
   <button class="page-dot"        data-hash="blog"           title="Blog" aria-label="Blog"></button>
   <button class="page-dot"        data-hash="portfolio"      title="Portfolio" aria-label="Portfolio"></button>
   <button class="page-dot"        data-hash="publications"   title="Publications" aria-label="Publications"></button>
-  <button class="page-dot"        data-hash="beyond"         title="Beyond Work" aria-label="Beyond Work"></button>
   <button class="page-dot"        data-hash="work-authorization" title="Work Authorization" aria-label="Work Authorization"></button>
 </nav>
 
@@ -2150,7 +2125,6 @@
     { icon: "pen-line",  label: "Blog",           hash: "blog"           },
     { icon: "briefcase", label: "Portfolio",       hash: "portfolio"      },
     { icon: "book-open", label: "Publications",    hash: "publications"   },
-    { icon: "compass",   label: "Beyond Work",     hash: "beyond"         },
     { icon: "file-text", label: "Work Authorization", hash: "work-authorization" },
   ];
 
@@ -2193,7 +2167,7 @@
 
   function getHash() {
     const h = (window.location.hash || '#about').replace('#','').trim().split('/')[0];
-    const valid = ['about','certifications','blog','portfolio','publications','beyond','work-authorization'];
+    const valid = ['about','certifications','blog','portfolio','publications','work-authorization'];
     return valid.includes(h) ? h : 'about';
   }
 
@@ -2225,7 +2199,6 @@
       blog: 'Blog · Anindya Mutsuddy',
       portfolio: 'Portfolio · Anindya Mutsuddy',
       publications: 'Publications · Anindya Mutsuddy',
-      beyond: 'Beyond Work · Anindya Mutsuddy',
       'work-authorization': 'Work Authorization · Anindya Mutsuddy',
     };
     document.title = titles[hash] || 'Anindya Mutsuddy';
@@ -2378,18 +2351,6 @@
       });
     }
 
-    // ── INTERESTS ──
-    const interestsGrid = document.getElementById('interests-grid');
-    if (interestsGrid) {
-      d.interests.forEach(i => {
-        interestsGrid.innerHTML += `<div class="interest-card">
-          <div class="interest-emoji"><i data-lucide="${i.icon}" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i></div>
-          <div class="interest-name">${i.name}</div>
-          <div class="interest-desc">${i.desc}</div>
-        </div>`;
-      });
-    }
-
     // ── CERTIFICATIONS ──
     const certGrid = document.getElementById('cert-grid');
     if (certGrid) {
@@ -2439,19 +2400,6 @@
         </div>`;
       });
     }
-
-    // ── BEYOND WORK ──
-    const bd = d.beyond;
-    // Right Now cards are rendered dynamically by loadReadingList() via Google Sheets
-    const wg = document.getElementById('watch-grid');
-    if (wg && bd.watches) bd.watches.forEach(w => {
-      wg.innerHTML += `<div class="watch-card"><div class="watch-emoji"><i data-lucide="${w.icon}" style="width:28px;height:28px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="watch-brand">${w.brand}</div><div class="watch-name">${w.name}</div></div>`;
-    });
-    // Reading list rendered dynamically via Google Sheets (PapaParser IIFE below)
-    const ag = document.getElementById('activity-grid');
-    if (ag && bd.activities) bd.activities.forEach(a => {
-      ag.innerHTML += `<div class="activity-card"><div class="activity-icon"><i data-lucide="${a.icon}" style="width:24px;height:24px;stroke:var(--gold);stroke-width:1.5"></i></div><div class="activity-title">${a.title}</div><div class="activity-desc">${a.desc}</div></div>`;
-    });
 
 
     // ── PINNED READS ──
@@ -2535,7 +2483,7 @@
                 <div class="embed-placeholder-text">Interactive dashboard coming soon.<br>Built in Power BI, visualising ${p.title.toLowerCase()}.</div>
                </div></div>`;
           personalEl.innerHTML += `
-            <div class="project-card">
+            <div class="project-card"${p.slug ? ` id="project-${p.slug}" data-project-slug="${p.slug}"` : ''}>
               <div class="project-header">
                 <div class="project-title">${p.title}</div>
                 <div class="project-status-dot ${p.status}">${p.status === 'live' ? 'Live' : p.status === 'done' ? 'Completed' : p.status === 'coming-soon' ? 'In Progress' : 'Ongoing'}</div>
@@ -2543,7 +2491,8 @@
               <div class="project-desc">${p.desc}</div>
               <div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
               ${embedHtml}
-              ${p.blogSlug ? `<div class="project-blog-link"><a href="#blog" class="blog-link-btn">Behind the project &rarr;</a></div>` : ''}
+              ${p.blogSlug ? `<div class="project-blog-link"><a href="#blog/${p.blogSlug}" class="blog-link-btn">Behind the project &rarr;</a></div>` : ''}
+              ${p.slug ? `<div class="project-blog-link"><button class="blog-share-btn" data-share-url="${window.location.origin + window.location.pathname + '#portfolio/' + p.slug}" aria-label="Copy a direct link to this project" title="Copy a direct link to this project">Copy link</button></div>` : ''}
             </div>`;
         });
       }
@@ -2625,10 +2574,29 @@
     });
 
     // ── Hash routing on load ──
+    window._openProjectBySlug = function(slug) {
+      if (!slug) return;
+      const card = document.querySelector('[data-project-slug="' + slug + '"]');
+      if (!card) return;
+      setTimeout(() => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        card.style.boxShadow = '0 0 0 3px var(--gold)';
+        setTimeout(() => { card.style.boxShadow = ''; }, 1600);
+      }, 120);
+    };
+    window.addEventListener('hashchange', () => {
+      const f = (window.location.hash || '').replace('#', '');
+      if (f.startsWith('portfolio/')) window._openProjectBySlug(f.replace('portfolio/', ''));
+    });
+
     const fullInitHash = (window.location.hash || '').replace('#', '');
     if (fullInitHash.startsWith('blog/')) {
       const slug = fullInitHash.replace('blog/', '');
       setTimeout(() => window._openPostBySlug(slug), 100);
+    }
+    if (fullInitHash.startsWith('portfolio/')) {
+      const slug = fullInitHash.replace('portfolio/', '');
+      setTimeout(() => window._openProjectBySlug(slug), 300);
     }
 
     // ── Animate bars on section switch ──
@@ -2655,7 +2623,7 @@
     });
 
     // ── Scroll-spy for About page sections ──
-    const spySections = ['about','work','education','skills','languages','interests'];
+    const spySections = ['about','work','education','skills','languages'];
     const spyObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2705,100 +2673,6 @@
       }
     }
   }, true);
-</script>
-
-<script>
-  (function() {
-    var CURRENTLY_READING_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=0&single=true&output=csv";
-    var PAST_READS_URL        = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=1330536431&single=true&output=csv";
-    var loaded = false;
-
-    function renderBookCard(book, spine) {
-      var label    = spine === 'reading' ? 'Currently Reading' : 'Read';
-      var thoughts = book.thoughts
-        ? '<div class="book-thoughts">' + book.thoughts + '</div>' : '';
-      return '<div class="book-card">'
-        + '<div class="book-spine ' + spine + '"></div>'
-        + '<div>'
-        + '<div class="book-status ' + spine + '">' + label + '</div>'
-        + '<div class="book-title">'  + (book.title  || '') + '</div>'
-        + '<div class="book-author">' + (book.author || '') + '</div>'
-        + thoughts
-        + '</div></div>';
-    }
-
-    function fetchAndRender(url, elId, spine) {
-      var el = document.getElementById(elId);
-      if (!el) return;
-      el.innerHTML = '<div class="reading-loading">Loading…</div>';
-      Papa.parse(url, {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          if (!results.data || !results.data.length) {
-            el.innerHTML = '<div class="reading-loading">Nothing listed yet.</div>';
-            return;
-          }
-          el.innerHTML = results.data.map(function(row) {
-            return renderBookCard(row, spine);
-          }).join('');
-        },
-        error: function() {
-          el.innerHTML = '<div class="reading-error">Could not load list — check back soon.</div>';
-        }
-      });
-    }
-
-    function loadReadingList() {
-      if (loaded) return;
-
-    // ── Right Now cards ──────────────────────────────────
-    var RN_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Uhr8tafD6rmfRRBuqGi1dSf3W6CqdPT31zu7weo7328tB6QEE9bzq1NOx4wHvYD3xMOeZ5dCGQaJ/pub?gid=798674125&single=true&output=csv";
-    var RN_CONFIG = {
-      reading:   { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>', label: 'Reading' },
-      working:   { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>', label: 'Working On' },
-      following: { icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>', label: 'Following' }
-    };
-
-    function buildRnCard(row) {
-      var cfg   = RN_CONFIG[row.type] || { icon: '', label: row.type };
-      var notes = row.notes    ? '<div class="rn-notes">'    + row.notes    + '</div>' : '';
-      var sub   = row.subtitle ? '<div class="rn-subtitle">' + row.subtitle + '</div>' : '';
-      return '<div class="rn-card">'
-        + '<div class="rn-type">' + cfg.icon + cfg.label + '</div>'
-        + '<div class="rn-value">' + (row.value || '') + '</div>'
-        + sub + notes + '</div>';
-    }
-
-    Papa.parse(RN_URL, {
-      download: true, header: true, skipEmptyLines: true,
-      complete: function(r) {
-        var order = ['reading', 'working', 'following'];
-        var map = {};
-        r.data.forEach(function(row) { if (row.type) map[row.type] = buildRnCard(row); });
-        var out = order.map(function(t) { return map[t] || ''; }).join('');
-        var el = document.getElementById('right-now-grid');
-        if (el && out) el.innerHTML = out;
-      },
-      error: function() {
-        var el = document.getElementById('right-now-grid');
-        if (el) el.innerHTML = '<div class="rn-loading" style="grid-column:1/-1">Could not load.</div>';
-      }
-    });
-      loaded = true;
-      fetchAndRender(CURRENTLY_READING_URL, 'currently-reading', 'reading');
-      fetchAndRender(PAST_READS_URL,        'past-reads',        'read');
-    }
-
-    // Load eagerly on DOM ready — containers exist in HTML, just hidden by CSS
-    document.addEventListener('DOMContentLoaded', loadReadingList);
-
-    // Also reload if user navigates to Beyond Work after initial load
-    window.addEventListener('hashchange', function() {
-      if (window.location.hash === '#beyond') loadReadingList();
-    });
-  })();
 </script>
 <div class="toast" id="link-toast">Link copied</div>
 </body>
