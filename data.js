@@ -10,13 +10,14 @@ const siteData = {
   // Edit the prose and tags shown on your About section
   about: {
     paragraphs: [
-      `I test things rather than assume them. My MBA thesis (Cum Laude, KU Leuven) followed <strong>102 European joint ventures across 21 years</strong> to ask whether they actually created value for the parents that formed them. The answer was mostly no — which is the kind of result that makes you trust the method more, not less.`,
-      `That instinct is what I bring to a finance team: build the dataset, interrogate it, then report what it actually shows. I work in <strong>financial modelling, reconciliations and reporting</strong> — and I build the tooling rather than wait for it, which is why the dashboards on this site are working software rather than screenshots.`,
+      `Over the past two years I have worked across the whole deal chain, from rebuilding a client's accounting records through to dealroom conversations. What that showed me is where I am actually most useful: <strong>the numbers end</strong>, where the data and the reporting have to be right before anyone can trust a decision.`,
+      `Advisory work is episodic. You build the model, the deal closes, the file goes in a drawer. I am more curious about what outlasts it: why a number moved, whether it is right, and whether you could rebuild it from the source and get the same answer.`,
+      `My MBA thesis (Cum Laude, KU Leuven) followed <strong>102 European joint ventures across 21 years</strong> to ask whether they actually created value for the parents that formed them. The answer was mostly no, which is the kind of result that makes you trust the method more, not less.`,
       `Currently in Antwerp on a <strong>zoekjaar permit</strong>, open to roles across <strong>finance, control and research</strong> in the Benelux region.`
     ],
     tags: [
       { label: "Antwerp, Belgium",    gold: true },
-      { label: "Corporate Finance",   gold: false },
+      { label: "Finance & Control",   gold: false },
       { label: "Financial Modelling", gold: false },
       { label: "Data & Reporting",    gold: false },
       { label: "Empirical Research",  gold: false }
@@ -808,20 +809,20 @@ const siteData = {
     // Fields: title, tags[], desc, status, embed (URL string or null)
     personal: [
       {
+        title:     "R&D Capitalisation in Power BI: A Dial for Your Thoughts",
+        tags:      ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
+        desc:      "A Power BI simulator applying R&D capitalisation to a French biotech with a 3:1 R&D-to-revenue ratio. Same firm, same cash; adjust the amortisation life from three to twenty years and watch the company move from worthless to worth owning. Six KPIs updating live across eighteen scenarios.",
+        status:    "live",
+        blogSlug:  "the-spreadsheet-wont-save-you",
+        embed:     "https://app.powerbi.com/view?r=eyJrIjoiNzc0YjRlNTYtNThiNy00YTVkLWIyZjEtYjM1MWJhN2I2OTZiIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
+      },
+      {
         title:     "102 Firms, 21 Years, One Dashboard",
         tags:      ["Power BI", "M&A", "Event Study", "BHAR", "Data Visualisation"],
         desc:      "A five-page Power BI dashboard presenting the findings of my MBA thesis on European joint ventures across chemicals and pharmaceuticals (1998-2019). Covers 102 parent firms, 36-month buy-and-hold abnormal returns, ROA as a performance predictor, and the R&D paradox in pharma.",
         status:    "live",
         blogSlug:  "102-firms-21-years-one-dashboard",
         embed:     "https://app.powerbi.com/view?r=eyJrIjoiNjRkYjhmNmUtMzI3Mi00OTg5LWI0MDAtMDhmODNlZmFhMWUzIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
-      },
-      {
-        title:     "R&D Capitalisation in Power BI: A Dial for Your Thoughts.",
-        tags:      ["Power BI", "Valuation", "R&D Capitalisation", "Accounting"],
-        desc:      "A Power BI simulator applying R&D capitalisation to a French biotech with a 3:1 R&D-to-revenue ratio. Same firm, same cash; adjust the amortisation life from three to twenty years and watch the company move from worthless to worth owning. Six KPIs updating live across eighteen scenarios.",
-        status:    "live",
-        blogSlug:  "the-spreadsheet-wont-save-you",
-        embed:     "https://app.powerbi.com/view?r=eyJrIjoiNzc0YjRlNTYtNThiNy00YTVkLWIyZjEtYjM1MWJhN2I2OTZiIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
       },
       {
         title:     "25 Years of EU Merger Control",
