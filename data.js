@@ -149,6 +149,9 @@ const siteData = {
       year:        "2025",
       degree:      "Master of Business Administration, Corporate Finance Track",
       honour:      "Cum Laude",
+      pdf:         "papers/mba-thesis-jv.pdf",
+      projectSlug: "jv-long-run-performance",
+      dashboard:   "https://app.powerbi.com/view?r=eyJrIjoiNjRkYjhmNmUtMzI3Mi00OTg5LWI0MDAtMDhmODNlZmFhMWUzIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9",
       abstract:    "This study examines whether European parent firms engaging in joint ventures (chemical vs. pharmaceutical; 1998 to 2019) generate long-term abnormal returns. 36-month BHARs were computed for 102 firms and regression analysis was applied to test the role of profitability (ROA) and R&D intensity. Results show chemicals outperform over three years while pharma does not (difference not significant), and a skewness-adjusted test confirms no significant abnormal returns overall. ROA predicts BHAR in pharma (not chemicals), while R&D shows a weak negative relationship in pharma, suggesting investors may prioritize operational efficiency over R&D spend in that sector."
     },
     papers: [
@@ -807,27 +810,46 @@ const siteData = {
         blogSlug:  "the-spreadsheet-wont-save-you",
         embed:     "https://app.powerbi.com/view?r=eyJrIjoiNzc0YjRlNTYtNThiNy00YTVkLWIyZjEtYjM1MWJhN2I2OTZiIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
       },
-      {
-        title:     "102 Firms, 21 Years, One Dashboard",
-        slug:      "102-firms-21-years",
-        tags:      ["Power BI", "M&A", "Event Study", "BHAR", "Data Visualisation"],
-        desc:      "A five-page Power BI dashboard presenting the findings of my MBA thesis on European joint ventures across chemicals and pharmaceuticals (1998-2019). Covers 102 parent firms, 36-month buy-and-hold abnormal returns, ROA as a performance predictor, and the R&D paradox in pharma.",
-        status:    "live",
-        blogSlug:  "102-firms-21-years-one-dashboard",
-        embed:     "https://app.powerbi.com/view?r=eyJrIjoiNjRkYjhmNmUtMzI3Mi00OTg5LWI0MDAtMDhmODNlZmFhMWUzIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9"
-      },
-      {
-        title:     "25 Years of EU Merger Control",
-        slug:      "eu-merger-control",
-        tags:      ["Power BI", "M&A", "EU Commission", "Data Visualisation"],
-        desc:      "A deep look at European M&A activity built on 25 years of EU merger control data. The question: of the thousands of deals that crossed the European Commission's desk between 1990 and 2014, what actually got blocked, and why?",
-        status:    "coming-soon",
-        blogSlug:  null,
-        embed:     null
-      }
+
     ]
   },
 
+
+
+  // ── PROJECTS PAGE ───────────────────────────────────────────
+  // Research artefacts. Each entry emits a question, method, result, limits and
+  // whatever artefacts exist. Classify by what it PRODUCES, not who reads it.
+  projects: [
+    {
+      slug:     "jv-long-run-performance",
+      kicker:   "Thesis · Replication package",
+      title:    "Do joint ventures create value for European parent firms?",
+      question: "Do firms announcing European joint ventures earn abnormal returns over the three years that follow, and do pre-announcement profitability and R&D intensity predict those returns?",
+      sample:   "102 parent firms (56 speciality chemicals, 46 pharmaceuticals) announcing joint ventures between 1998 and 2019.",
+      dataSource: null,   // TODO: SDC Platinum / Zephyr / Bloomberg — the first thing a committee asks.
+      method: [
+        "36-month buy-and-hold abnormal returns (BHAR) against the STOXX Europe 600",
+        "Skewness-adjusted significance test (Lyon, Barber & Tsai) rather than a naive t-test on BHARs",
+        "Cross-sectional OLS of BHAR on pre-announcement ROA and R&D intensity, by sector"
+      ],
+      result: [
+        "No significant abnormal returns across the pooled sample — average BHAR is indistinguishable from zero.",
+        "Chemicals average +4.2% against the benchmark, pharmaceuticals −2.5%. The gap is visible but not statistically conclusive at this sample size.",
+        "Prior ROA predicts higher BHAR in pharmaceuticals only; the relationship is absent in chemicals.",
+        "R&D intensity is negatively associated with long-run returns in pharmaceuticals, consistent with the mining-out hypothesis."
+      ],
+      limits: [
+        "The sector gap cannot be distinguished from chance at n = 102; it is a pattern, not a finding.",
+        "A 36-month window and a single broad European benchmark carry well-known event-study biases.",
+        "No controls for deal size, JV ownership share, or announcement-period market conditions."
+      ],
+      stack:    ["Excel", "Power BI", "DAX"],
+      repo:     null,   // TODO: port the BHAR + regression work to R or Python. This is the load-bearing artefact.
+      paper:    "papers/mba-thesis-jv.pdf",
+      dashboard: "https://app.powerbi.com/view?r=eyJrIjoiNjRkYjhmNmUtMzI3Mi00OTg5LWI0MDAtMDhmODNlZmFhMWUzIiwidCI6ImMyYzI2MjIxLTY3ZDctNGUwZC05MDYwLWNmY2EyNjJjYzRmZSIsImMiOjl9",
+      blogSlug: "102-firms-21-years-one-dashboard"
+    }
+  ],
 
   // ── BLOG: PINNED READS ─────────────────────────────────────
   // Add articles, essays or Substacks you've read and want to share.
